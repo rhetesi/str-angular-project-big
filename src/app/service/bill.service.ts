@@ -18,7 +18,7 @@ export class BillService {
 
   getAll(): void {
     this.http.get<Bill[]>(this.jsonUrl).subscribe(
-      bils => this.list$.next(bils));
+      bills => this.list$.next(bills));
   }
 
   get(id: number | string): Observable<Bill> {
@@ -27,12 +27,12 @@ export class BillService {
   }
 
   create(bill: Bill): void {
-    this.http.post<Bill>(`${this.jsonUrl}`, bil
+    this.http.post<Bill>(`${this.jsonUrl}`, bill
     ).subscribe(() => this.getAll());
   }
 
   update(bill: Bill): Observable<Bill> {
-    return this.http.patch<Bill>(`${this.jsonUrl}/${bill.id}`, bil
+    return this.http.patch<Bill>(`${this.jsonUrl}/${bill.id}`, bill
     ).pipe(
       tap(() => this.getAll())
     );
