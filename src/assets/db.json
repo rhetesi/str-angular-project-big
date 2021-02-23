@@ -620,6 +620,7 @@
       "lastName": "Cserkó",
       "email": "jcserko@gmail.com",
       "address": {
+        "zip": "6000",
         "country": "Hungary",
         "city": "Kecskemét",
         "street": "Struktúraváltó út 1.",
@@ -647,6 +648,7 @@
       "lastName": "Kovács",
       "email": "gkovacs@gmail.com",
       "address": {
+        "zip": "3500",
         "country": "Hungary",
         "city": "Miskolc",
         "street": "Diósgyőri út 1.",
@@ -660,6 +662,7 @@
       "lastName": "Hajós",
       "email": "ihajos@gmail.com",
       "address": {
+        "zip": "4400",
         "country": "Hungary",
         "city": "Nyíregyháza",
         "street": "Sóstói u. 1.",
@@ -673,6 +676,7 @@
       "lastName": "Für",
       "email": "fmonika@hgmail.com",
       "address": {
+        "zip": "1000",
         "country": "Hungary",
         "city": "Budapest",
         "street": "Soroksári út 1.",
@@ -686,6 +690,7 @@
       "lastName": "Szabó",
       "email": "jszabo@gmail.com",
       "address": {
+        "zip": "6700",
         "country": "Hungary",
         "city": "Szeged",
         "street": "Szőregi út 1.",
@@ -699,9 +704,9 @@
       "lastName": "Bella",
       "email": "bviktor@gmail.com",
       "address": {
-        "zip": "1001",
+        "zip": "9000",
         "country": "Hungary",
-        "city": "Budapest",
+        "city": "Győr",
         "street": "Nagyvárad tér 1.",
         "notes": "erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst"
       },
@@ -727,6 +732,7 @@
       "lastName": "Langstrath",
       "email": "rlangstrath8@amazonaws.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Xiaomenjia",
         "street": "38 Nobel Way",
@@ -740,6 +746,7 @@
       "lastName": "Klaes",
       "email": "cklaes9@soundcloud.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Geshan",
         "street": "9781 Haas Alley",
@@ -809,6 +816,7 @@
       "lastName": "Acutt",
       "email": "kacutte@google.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Sicheng",
         "street": "2682 Dennis Parkway",
@@ -836,6 +844,7 @@
       "lastName": "Setchfield",
       "email": "rsetchfieldg@liveinternet.ru",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Luorong",
         "street": "20 School Park",
@@ -849,6 +858,7 @@
       "lastName": "Nijssen",
       "email": "fnijssenh@parallels.com",
       "address": {
+        "zip": "1000",
         "country": "Honduras",
         "city": "Santa Rosa de Aguán",
         "street": "2 Westport Point",
@@ -862,6 +872,7 @@
       "lastName": "Tineman",
       "email": "ttinemani@theatlantic.com",
       "address": {
+        "zip": "1000",
         "country": "Kazakhstan",
         "city": "Burunday",
         "street": "078 Petterle Drive",
@@ -889,6 +900,7 @@
       "lastName": "Caldecot",
       "email": "ccaldecotk@uiuc.edu",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Guzhan",
         "street": "896 Cardinal Center",
@@ -902,6 +914,7 @@
       "lastName": "Jeffress",
       "email": "hjeffressl@instagram.com",
       "address": {
+        "zip": "1000",
         "country": "Latvia",
         "city": "Ragana",
         "street": "0 Rieder Point",
@@ -915,6 +928,7 @@
       "lastName": "Bridie",
       "email": "hbridiem@nbcnews.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Woshui",
         "street": "25 Sutteridge Crossing",
@@ -928,6 +942,7 @@
       "lastName": "Lehrmann",
       "email": "rlehrmannn@flavors.me",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Kamalaputi",
         "street": "759 Hauk Center",
@@ -941,6 +956,7 @@
       "lastName": "Drable",
       "email": "sdrableo@delicious.com",
       "address": {
+        "zip": "1000",
         "country": "Kazakhstan",
         "city": "Qarqaraly",
         "street": "98 Marquette Point",
@@ -968,6 +984,7 @@
       "lastName": "Greve",
       "email": "fgreveq@wsj.com",
       "address": {
+        "zip": "1000",
         "country": "Tanzania",
         "city": "Mahuta",
         "street": "3 Spenser Road",
@@ -995,6 +1012,7 @@
       "lastName": "Treversh",
       "email": "ktrevershs@amazon.co.uk",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Kelungkung",
         "street": "92857 8th Lane",
@@ -1008,6 +1026,7 @@
       "lastName": "Stamper",
       "email": "astampert@github.io",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Daliyuan",
         "street": "5533 Lawn Avenue",
@@ -1105,6 +1124,7 @@
       "lastName": "Jaray",
       "email": "ljaray10@bbc.co.uk",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Shixiang",
         "street": "11 Golden Leaf Avenue",
@@ -1132,6 +1152,7 @@
       "lastName": "Camilio",
       "email": "ccamilio12@jimdo.com",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Tanahmerah",
         "street": "64 Jay Junction",
@@ -1159,6 +1180,7 @@
       "lastName": "Petasch",
       "email": "bpetasch14@imdb.com",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Kumai",
         "street": "74221 Kim Park",
@@ -1186,6 +1208,7 @@
       "lastName": "Medcalfe",
       "email": "imedcalfe16@goo.ne.jp",
       "address": {
+        "zip": "1000",
         "country": "Malawi",
         "city": "Mchinji",
         "street": "2 Merrick Pass",
@@ -1227,6 +1250,7 @@
       "lastName": "Rean",
       "email": "mrean19@goodreads.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Datong",
         "street": "7370 Jay Trail",
@@ -1254,6 +1278,7 @@
       "lastName": "Szimoni",
       "email": "rszimoni1b@si.edu",
       "address": {
+        "zip": "1000",
         "country": "Albania",
         "city": "Xibër-Murrizë",
         "street": "8960 3rd Point",
@@ -1267,6 +1292,7 @@
       "lastName": "Freund",
       "email": "pfreund1c@vistaprint.com",
       "address": {
+        "zip": "1000",
         "country": "Greece",
         "city": "Galatás",
         "street": "3156 Warbler Avenue",
@@ -1280,6 +1306,7 @@
       "lastName": "Van Der Weedenburg",
       "email": "kvanderweedenburg1d@umn.edu",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Situ",
         "street": "283 Esker Center",
@@ -1293,6 +1320,7 @@
       "lastName": "Shalliker",
       "email": "ashalliker1e@clickbank.net",
       "address": {
+        "zip": "1000",
         "country": "Greece",
         "city": "Lárdos",
         "street": "3024 Magdeline Center",
@@ -1306,6 +1334,7 @@
       "lastName": "Billingham",
       "email": "ybillingham1f@cloudflare.com",
       "address": {
+        "zip": "1000",
         "country": "Armenia",
         "city": "Dashtavan",
         "street": "15 Manitowish Way",
@@ -1347,6 +1376,7 @@
       "lastName": "Stratiff",
       "email": "pstratiff1i@theglobeandmail.com",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Tomohon",
         "street": "79360 Valley Edge Avenue",
@@ -1402,6 +1432,7 @@
       "lastName": "Frankcomb",
       "email": "afrankcomb1m@cornell.edu",
       "address": {
+        "zip": "1000",
         "country": "Jordan",
         "city": "Ar Ramthā",
         "street": "29 Manley Park",
@@ -1415,6 +1446,7 @@
       "lastName": "Prendeguest",
       "email": "mprendeguest1n@yahoo.co.jp",
       "address": {
+        "zip": "1000",
         "country": "Ukraine",
         "city": "Kolodenka",
         "street": "77 Del Mar Trail",
@@ -1428,6 +1460,7 @@
       "lastName": "Clue",
       "email": "cclue1o@globo.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Limen",
         "street": "29 Barby Trail",
@@ -1441,6 +1474,7 @@
       "lastName": "Reppaport",
       "email": "areppaport1p@usda.gov",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Xiaojiezi",
         "street": "70 Lindbergh Junction",
@@ -1454,6 +1488,7 @@
       "lastName": "Guild",
       "email": "iguild1q@about.me",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Dangjiaxian",
         "street": "3067 Old Gate Crossing",
@@ -1467,6 +1502,7 @@
       "lastName": "Stallebrass",
       "email": "cstallebrass1r@fema.gov",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Fushan",
         "street": "7 Claremont Pass",
@@ -1508,6 +1544,7 @@
       "lastName": "Harmar",
       "email": "mharmar1u@mac.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Maoya",
         "street": "1654 Butternut Crossing",
@@ -1535,6 +1572,7 @@
       "lastName": "Galletly",
       "email": "jgalletly1w@newsvine.com",
       "address": {
+        "zip": "1000",
         "country": "Honduras",
         "city": "Quebrada de Arena",
         "street": "20214 Sachtjen Hill",
@@ -1576,6 +1614,7 @@
       "lastName": "Juden",
       "email": "cjuden1z@163.com",
       "address": {
+        "zip": "1000",
         "country": "Senegal",
         "city": "Ndofane",
         "street": "64 Superior Street",
@@ -1631,6 +1670,7 @@
       "lastName": "Eggleton",
       "email": "keggleton23@google.com.au",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Fatubia",
         "street": "1075 Merry Terrace",
@@ -1658,6 +1698,7 @@
       "lastName": "Pargiter",
       "email": "kpargiter25@ebay.co.uk",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Jincheng",
         "street": "55 Pepper Wood Parkway",
@@ -1685,6 +1726,7 @@
       "lastName": "Shufflebotham",
       "email": "kshufflebotham27@cyberchimps.com",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Beicheng",
         "street": "93951 Huxley Court",
@@ -1698,6 +1740,7 @@
       "lastName": "Mutlow",
       "email": "fmutlow28@tuttocitta.it",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Fucun",
         "street": "397 Cottonwood Lane",
@@ -1725,6 +1768,7 @@
       "lastName": "Lawey",
       "email": "slawey2a@usa.gov",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Wuxing",
         "street": "3 Talisman Way",
@@ -1780,6 +1824,7 @@
       "lastName": "Jakoviljevic",
       "email": "cjakoviljevic2e@t-online.de",
       "address": {
+        "zip": "1000",
         "country": "Kazakhstan",
         "city": "Aksu",
         "street": "1 Clemons Hill",
@@ -1793,6 +1838,7 @@
       "lastName": "Treacy",
       "email": "ktreacy2f@ezinearticles.com",
       "address": {
+        "zip": "1000",
         "country": "Vietnam",
         "city": "Quận Sáu",
         "street": "67594 Hooker Terrace",
@@ -1806,6 +1852,7 @@
       "lastName": "Doniso",
       "email": "idoniso2g@simplemachines.org",
       "address": {
+        "zip": "1000",
         "country": "Nepal",
         "city": "Birātnagar",
         "street": "3388 Tennyson Terrace",
@@ -1861,6 +1908,7 @@
       "lastName": "Mattityahou",
       "email": "tmattityahou2k@comcast.net",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Shazhou",
         "street": "3 Glendale Park",
@@ -1874,6 +1922,7 @@
       "lastName": "De Vaar",
       "email": "sdevaar2l@marketwatch.com",
       "address": {
+        "zip": "1000",
         "country": "Indonesia",
         "city": "Lhokkruet",
         "street": "3240 Welch Place",
@@ -1887,6 +1936,7 @@
       "lastName": "Enbury",
       "email": "cenbury2m@virginia.edu",
       "address": {
+        "zip": "1000",
         "country": "China",
         "city": "Haolaishan",
         "street": "05612 Annamark Lane",
@@ -1900,6 +1950,7 @@
       "lastName": "Splevings",
       "email": "bsplevings2n@engadget.com",
       "address": {
+        "zip": "1000",
         "country": "Ecuador",
         "city": "Huaquillas",
         "street": "457 Hanson Avenue",
