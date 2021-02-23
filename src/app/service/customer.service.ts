@@ -9,7 +9,7 @@ import { Customer } from '../model/customer';
 })
 export class CustomerService {
 
-  jsonUrl: string = 'http://localhost:3000/datas';
+  jsonUrl: string = 'http://localhost:3000/customers';
 
   list$: BehaviorSubject<Customer[]> =
     new BehaviorSubject<Customer[]>([]);
