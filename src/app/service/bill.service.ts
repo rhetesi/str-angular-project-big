@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { bil } from '../model/bill';
+import { bill } from '../model/bill';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class billService {
 
   jsonUrl: string = 'http://localhost:3000/bill';
 
