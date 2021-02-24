@@ -5,13 +5,13 @@ export class Bill {
     status: "new" | "paid" = "new";
     
 
-    constructor(properties?: Bill) {
+     constructor(properties?: Bill) {
         if (properties) {
             this.id = properties.id || 0;
             this.orderId = properties.orderId || 0;
             this.amount = properties.amount || 0;
         }
-    }
+    } 
 }
 
 //Bill (id, orderID, amount, status:new|paid)  

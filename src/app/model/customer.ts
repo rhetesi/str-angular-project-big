@@ -14,6 +14,7 @@ export class Customer {
             this.firstName = properties.firstName || '';
             this.lastName = properties.lastName || '';
             this.email = properties.email || '';
+            this.active = properties.active || false;
             
         }
     }
