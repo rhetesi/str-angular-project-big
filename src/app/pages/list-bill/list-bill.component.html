@@ -22,7 +22,6 @@
                 <thead class=" text-info">
                   <tr>
                     <th>orderID</th>
-                    <th>productID</th>
                     <th>amount</th>
                     <th>status</th>
                     <th></th>
@@ -31,7 +30,6 @@
                 <tbody>
                   <tr *ngFor="let bill of billList$ | async">
                     <td>{{bill.orderID}}</td>
-                    <td>{{bill.productID}}</td>
                     <td>{{bill.amount}}</td>
                     <td>{{bill.status}}</td>
                     <td>
