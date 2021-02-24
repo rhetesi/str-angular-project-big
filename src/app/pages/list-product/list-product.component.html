@@ -6,8 +6,8 @@
 
             <div class="row">
                 <div class="col-4 offset-8 mt-3 mb-3">
-                  <input [formControl]="phraseControl" type="text" class="form-control"
-                    placeholder="find product">
+                  <input [(ngModel)]="phraseControl" type="text" class="form-control"
+                    placeholder="find product"> [(ngModel)]
                 </div>
             </div>  
           <div class="card card-plain">
@@ -66,3 +66,9 @@
       </div>
     </div>
   </div>
+
+
+
+  
+    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+
