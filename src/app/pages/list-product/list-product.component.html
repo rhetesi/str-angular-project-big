@@ -1,1 +1,76 @@
-<p>list-product works!</p>
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-4 offset-8 mt-3 mb-3">
+                  <input [(ngModel)]="phraseControl" type="text" class="form-control"
+                    placeholder="find product">
+                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                    <i class="material-icons">search</i></button>
+                </div>
+                
+            </div>  
+          <div class="card card-plain">
+            <div class="card-header">
+              <button [routerLink]="[0]" type="button" class="btn btn-success btn-block btn-lg">
+                <i class="material-icons">create</i>
+              </button>
+            </div>
+          </div>  
+          <div class="card">
+            <div class="card-header card-header-success">
+              <h4 class="card-title text-uppercase">Products</h4>
+              <p class="card-category">All Products are shown below</p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>productID</th>
+                      <th>catID</th>
+                      <th>name</th>
+                      <th>description</th>
+                      <th>image</th>
+                      <th>price</th>
+                      <th>stock</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of productList$ | async">
+                      <td>{{ product.productID }}</td>
+                      <td>{{ product.catID }} </td>
+                      <td>{{ product.name }}</td>
+                      <td>{{ product.description }}</td>
+                      <td>{{ product.image }}</td>
+                      <td>{{ product.price }}</td>
+                      <td>{{ product.stock }}</td>
+                      <td>
+                        <div class="btn-group">
+                          <button [routerLink]="[product.id]" class="btn btn-success">
+                            <i class="material-icons">create</i>
+                          </button>
+                          <button (click)="onDelete(product)" class="btn btn-danger">
+                            <i class="material-icons">delete_forever</i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+   
+
