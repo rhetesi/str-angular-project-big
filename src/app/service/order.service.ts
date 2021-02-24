@@ -9,7 +9,7 @@ import { Order } from '../model/order'
 })
 export class OrderService {
 
-  jsonUrl: string = 'http://localhost:3000/order';
+  jsonUrl: string = 'http://localhost:3000/orders';
 
   list$: BehaviorSubject<Order[]> =
     new BehaviorSubject<Order[]>([]);
@@ -18,7 +18,7 @@ export class OrderService {
 
   getAll(): void {
     this.http.get<Order[]>(this.jsonUrl).subscribe(
-      customers => this.list$.next(order));
+      orders => this.list$.next(orders));
   }
 
   get(id: number | string): Observable<Order> {
