@@ -20,7 +20,7 @@ import { ListProductComponent } from './pages/list-product/list-product.componen
     ListOrderComponent,
     NavbarComponent,
     DashboardComponent,
-    ListProductComponent
+    ListProductComponent,
   ],
   imports: [
     BrowserModule,
