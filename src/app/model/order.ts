@@ -1,10 +1,10 @@
 export class Order {
     id: number = 0;
     customerID: number = 0;
-    productId: number = 0;
+    productID: number = 0;
     amount: number = 0;
     status: "new" | "shipped" | "paid" = "new";
-    
+
 }
 
 //Order (id, customerID, productID, amount, status:new|shipped|paid)
