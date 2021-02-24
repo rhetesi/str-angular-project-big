@@ -21,7 +21,7 @@ import { ListBillComponent } from './pages/list-bill/list-bill.component';
     NavbarComponent,
     DashboardComponent,
     ListProductComponent,
-    ListBillComponent
+    ListBillComponent,
   ],
   imports: [
     BrowserModule,
