@@ -22,6 +22,6 @@ export class ListBillComponent implements OnInit {
   }
 
   onDelete(bill: Bill) {
-    this.billService.delete(bill);
+    this.billService.remove(bill);
   }
 }
