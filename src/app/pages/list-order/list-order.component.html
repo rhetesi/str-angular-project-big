@@ -18,7 +18,7 @@
         <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-primary btn-block btn-lg">
-              <i class="material-icons">create</i>
+              Add new  +
             </button>
           </div>
         </div>
@@ -48,7 +48,7 @@
                     <td>{{order.status}}</td>
                     <td>
                       <div class="btn-group">
-                        <button [routerLink]="[order.id]" class="btn btn-info">
+                        <button [routerLink]="[order.id]" class="btn btn-primary">
                           <i class="material-icons">create</i>
                         </button>
                         <button (click)="onDelete(order)" class="btn btn-danger">
