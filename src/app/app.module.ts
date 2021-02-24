@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ListOrderComponent } from './page/list-order/list-order.component';
+import { ListOrderComponent } from './pages/list-order/list-order.component';
 
 @NgModule({
   declarations: [
