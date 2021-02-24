@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListOrderComponent } from './page/list-order/list-order.component';
+import { ListOrderComponent } from './pages/list-order/list-order.component';
 
 const routes: Routes = [
   // {
