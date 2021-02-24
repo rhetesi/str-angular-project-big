@@ -5,23 +5,23 @@
 
         <div class="card card-plain">
           <div class="card-header">
-            <button [routerLink]="[0]" type="button" class="btn btn-primary btn-block btn-lg">
+            <button [routerLink]="[0]" type="button" class="btn btn-info btn-block btn-lg">
               <i class="material-icons">create</i>
             </button>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-header card-header-primary">
+          <div class="card-header card-header-info">
             <h4 class="card-title text-uppercase">orders</h4>
             <p class="card-category">All orders are shown below</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-hover">
-                <thead class=" text-primary">
+                <thead class=" text-info">
                   <tr>
-                    <th>customerID</th>
+                    <th>orderID</th>
                     <th>productID</th>
                     <th>amount</th>
                     <th>status</th>
@@ -30,8 +30,8 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let bill of billList$ | async">
-                    <td>{{bill.customerID}}</td>
-                    <td>{{bill.productID}} </td>
+                    <td>{{bill.orderID}}</td>
+                    <td>{{bill.productID}}</td>
                     <td>{{bill.amount}}</td>
                     <td>{{bill.status}}</td>
                     <td>
@@ -39,7 +39,7 @@
                         <button [routerLink]="[bill.id]" class="btn btn-info">
                           <i class="material-icons">create</i>
                         </button>
-                        <button (click)="onDelete(bill)" class="btn btn-danger">
+                        <button (click)="onDelete(bill)" class="btn btn-info">
                           <i class="material-icons">delete_forever</i>
                         </button>
                       </div>

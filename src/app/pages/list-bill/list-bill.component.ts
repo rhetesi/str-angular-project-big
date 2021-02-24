@@ -12,7 +12,6 @@ export class ListBillComponent implements OnInit {
 
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   testBill: Observable<Bill> = this.billService.get(1);
-  billService: any;
 
   constructor(
     private billService: BillService,
