@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "str-angular-project-big"
+  "defaultProject": "str-angular-project-big",
+  "cli": {
+    "analytics": "b98d750b-7818-491b-9e6a-d254557ebd9e"
+  }
 }
