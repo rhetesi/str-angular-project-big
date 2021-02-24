@@ -10,6 +10,7 @@ import { ListOrderComponent } from './pages/list-order/list-order.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
+import { ListProductComponent } from './pages/list-product/list-product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
     ListOrderComponent,
     NavbarComponent,
     DashboardComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,
