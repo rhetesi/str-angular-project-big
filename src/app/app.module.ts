@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListProductComponent } from './pages/list-product/list-product.component';
+import { ListBillComponent } from './pages/list-bill/list-bill.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { ListProductComponent } from './pages/list-product/list-product.componen
     NavbarComponent,
     DashboardComponent,
     ListProductComponent,
+    ListBillComponent
   ],
   imports: [
     BrowserModule,

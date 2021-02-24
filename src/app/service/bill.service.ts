@@ -8,6 +8,9 @@ import { Bill } from '../model/bill';
   providedIn: 'root'
 })
 export class BillService {
+  delete(bill: typeof Bill) {
+    throw new Error('Method not implemented.');
+  }
 
   jsonUrl: string = 'http://localhost:3000/bills';
 
