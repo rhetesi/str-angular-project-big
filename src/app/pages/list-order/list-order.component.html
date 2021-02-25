@@ -42,11 +42,11 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let order of orderList$ | async | filter:phrase:filterKey">
-                    <td>{{order.customerID}}</td>
-                    <td>{{order.productID}} </td>
-                    <td>{{order.amount}}</td>
-                    <td>{{order.status}}</td>
-                    <td>
+                    <td *ngIf="order.id!==0">{{order.customerID}}</td>
+                    <td *ngIf="order.id!==0">{{order.productID}} </td>
+                    <td *ngIf="order.id!==0">{{order.amount}}</td>
+                    <td *ngIf="order.id!==0">{{order.status}}</td>
+                    <td *ngIf="order.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[order.id]" class="btn btn-primary">
                           <i class="material-icons">create</i>
