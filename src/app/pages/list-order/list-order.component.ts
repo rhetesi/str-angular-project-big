@@ -16,7 +16,7 @@ export class ListOrderComponent implements OnInit {
 
   phrase: string = '';
   filterKey: string = 'customerID';
-  filterKeys: string[] = Object.keys(new Order());
+  filterKeys: string[] = Object.keys(new Order()).slice(1);
 
   constructor(
     private orderService: OrderService,
