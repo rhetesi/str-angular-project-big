@@ -3,13 +3,13 @@
     <div class="row">
       <div class="col-md-12">
 
-        <div class="card card-plain">
+        <!-- <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-info btn-block btn-lg">
               <i class="material-icons">create</i>
             </button>
           </div>
-        </div>
+        </div> -->
 
         <div class="card">
           <div class="card-header card-header-info">
@@ -32,16 +32,17 @@
                     <td>{{bill.orderID}}</td>
                     <td>{{bill.amount}}</td>
                     <td>{{bill.status}}</td>
+                    <!-- Szerkesztő komponens nincs még, ideiglenesen letiltva
                     <td>
                       <div class="btn-group">
                         <button [routerLink]="[bill.id]" class="btn btn-info">
                           <i class="material-icons">create</i>
                         </button>
-                        <button (click)="onDelete(bill)" class="btn btn-info">
+                        <button (click)="onDelete(bill)" class="btn btn-danger">
                           <i class="material-icons">delete_forever</i>
                         </button>
                       </div>
-                    </td>
+                    </td> -->
                   </tr>
                 </tbody>
               </table>
