@@ -38,7 +38,7 @@ export class OrderService {
     );
   }
 
-  delete(order: Order): void {
+  remove(order: Order): void {
     this.http.delete(`${this.jsonUrl}/${order.id}`
     ).subscribe(() => this.getAll());
   }
