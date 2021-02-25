@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +14,9 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListProductComponent } from './pages/list-product/list-product.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
 import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
+import { EditOrderComponent } from './editor/edit-order/edit-order.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { InfoCardComponent } from './common/info-card/info-card.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +29,21 @@ import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
     ListProductComponent,
     ListBillComponent,
     EditBillComponent,
+    EditOrderComponent,
+    FilterPipe,
+    InfoCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right'
+    }),
+    ToastContainerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
