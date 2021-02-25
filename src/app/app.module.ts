@@ -38,7 +38,7 @@ import { InfoCardComponent } from './common/info-card/info-card.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 1000,
+      timeOut: 5000,
       positionClass: 'toast-top-right'
     }),
     ToastContainerModule,
