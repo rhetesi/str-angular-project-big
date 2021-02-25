@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -34,3 +36,20 @@ export class ListProductComponent implements OnInit {
   }
 
 }
+
+/*
+
+export class ListOrderComponent implements OnInit {
+
+  filterKey: string = 'customerID';
+  filterKeys: string[] = Object.keys(new Order());
+
+  ngOnInit(): void {
+    this.orderService.getAll();
+  }
+
+
+}
+
+
+*/

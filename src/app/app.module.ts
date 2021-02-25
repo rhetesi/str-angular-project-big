@@ -12,6 +12,9 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListProductComponent } from './pages/list-product/list-product.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
 import { EditCustomerComponent } from './editor/edit-customer/edit-customer.component';
+import { EditOrderComponent } from './editor/edit-order/edit-order.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { InfoCardComponent } from './common/info-card/info-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { EditCustomerComponent } from './editor/edit-customer/edit-customer.comp
     ListProductComponent,
     ListBillComponent,
     EditCustomerComponent,
+    EditOrderComponent,
+    FilterPipe,
+    InfoCardComponent,
   ],
   imports: [
     BrowserModule,
