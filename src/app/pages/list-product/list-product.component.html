@@ -3,21 +3,21 @@
     <div class="row">
       <div class="col-md-12">
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-4 offset-8 mt-3 mb-3">
             <input [(ngModel)]="phraseControl" type="text" class="form-control" placeholder="find product">
             <button type="submit" class="btn btn-white btn-round btn-just-icon">
               <i class="material-icons">search</i></button>
           </div>
 
-        </div>
-        <div class="card card-plain">
+        </div> -->
+        <!-- <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-success btn-block btn-lg">
               <i class="material-icons">create</i>
             </button>
           </div>
-        </div>
+        </div> -->
         <div class="card">
           <div class="card-header card-header-success">
             <h4 class="card-title text-uppercase">Products</h4>
@@ -26,12 +26,12 @@
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-hover">
-                <thead class=" text-primary">
+                <thead class=" text-success">
                   <tr>
                     <th>productID</th>
                     <th>catID</th>
                     <th>name</th>
-                    <th>type</th>
+                    <!-- <th>type</th> -->
                     <th>description</th>
                     <th>price</th>
                     <th>featured</th>
@@ -44,12 +44,14 @@
                     <td>{{ product.id }}</td>
                     <td>{{ product.catID }} </td>
                     <td>{{ product.name }}</td>
-                    <td>{{ product.type }}</td>
+                    <!-- <td>{{ product.type }}</td> -->
                     <td>{{ product.description }}</td>
                     <td>{{ product.price }}</td>
                     <td>{{ product.featured }}</td>
                     <td>{{ product.active }}</td>
-                    <td>{{ product.image }}</td>
+                    <td>
+                      <img class="prod_image" [src]="product.image" [alt]="product.image">
+                    </td>
                     <td>
                       <div class="btn-group">
                         <button [routerLink]="[product.id]" class="btn btn-success">
