@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div class="col-6 offset-3">
+  <div class="row mt-4 mb-4">
+    <div *ngIf="(product$ | async) as product" class="col-6 offset-3">
         <p>Edit-Product</p>
-        <form #productFrom="ngForm" (ngSubmit)="onFormSubmit(productFrom)">     
+        <form #productFrom="ngForm" (ngSubmit)="onUpdate(productForm, product)">     
           <div class="form-group">
             <label>CatID</label>
             <input [(ngModel)]="product.catID" name="catID" type="text"

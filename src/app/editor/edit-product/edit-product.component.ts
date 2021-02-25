@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-edit-product',
@@ -13,18 +14,19 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class EditProductComponent implements OnInit {
   
+  product$: Observable<Product> = this.activatedRoute.params.pipe(
+      switchMap( params => this.productService.get (params.id))
+  );
+  
   clicked: boolean = false;
   category: string = 'new';
-
-  Product: Observable<Product> = this.activatedRoute.params.pipe(
-      switchMap( params => this.productService.get (params.id))
-  )
   
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private router: Router,
+    private notifyService: NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +46,39 @@ export class EditProductComponent implements OnInit {
 
   onCreate(form: NgForm, product: Product): void {
       this.productService.create(product)
+  }
+  showHtmlToaster(product: Product) {
+    let title: string = "You have updated this Product:";
+    if (!product.id) {
+      title = "You have added this new Product:";
+    }
+    this.notifyService.showSuccessWithTimeout(`
+      <br>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>catID</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>featured</th>
+            <th>active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-success">
+            <td>${product.catID}</td>
+            <td>${product.name}</td>
+            <td>${product.description}</td>
+            <td>${product.price}</td>
+            <td>${product.featured}</td>
+            <td>${product.active}</td>
+          </tr>
+        </tbody>
+      </table>`,
+      title,
+      10000)
   }
 
 }
