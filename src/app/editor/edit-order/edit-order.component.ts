@@ -71,7 +71,7 @@ export class EditOrderComponent implements OnInit {
         </tbody>
       </table>`,
       title,
-      5000)
+      10000)
   }
 
 }

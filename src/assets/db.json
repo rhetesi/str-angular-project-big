@@ -2329,8 +2329,8 @@
       "id": 1,
       "customerID": 17,
       "productID": 17,
-      "amount": "19600",
-      "status": "shipped"
+      "amount": "19601",
+      "status": "paid"
     },
     {
       "id": 2,
@@ -2680,6 +2680,20 @@
       "customerID": "12",
       "productID": "10",
       "amount": "5000",
+      "status": "new"
+    },
+    {
+      "id": 52,
+      "customerID": "17",
+      "productID": "18",
+      "amount": "2500",
+      "status": "new"
+    },
+    {
+      "id": 53,
+      "customerID": "18",
+      "productID": "17",
+      "amount": "2001",
       "status": "new"
     }
   ]

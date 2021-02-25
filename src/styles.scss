@@ -12,7 +12,7 @@
   color: rgb(105, 105, 105);
   font-weight: bold;
   position: absolute;
-  top: -1000px;
+  top: -500px;
   right: 30px;
   animation-name: animation;
   animation-duration: 1s;
@@ -20,6 +20,6 @@
 }
 
 @keyframes animation {
-  0% {right: 30px; top: -1050px; opacity: 0;}
-  100% {right: 30px; top: -1000px; opacity: 1;}
+  0% {right: 30px; top: -550px; opacity: 0;}
+  100% {right: 30px; top: -500px; opacity: 1;}
 }
