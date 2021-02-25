@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-6 offset-3">
+        <form #productFrom="ngForm" (ngSubmit)="onFormSubmit(productFrom)">     
+          <div class="form-group">
+            <label>CatID</label>
+            <input [(ngModel)]="product.catID" name="catID" type="number"
+              class="form-control" pattern=".{1,3}" required>
+              <div [hidden]="productFrom.controls.catID?.valid" class="error-message">
+                A catID minimum 1 maximum 3 karakter lehet!
+              </div>
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input [(ngModel)]="product.name" name="name" type="text"
+              class="form-control" pattern=".{1,20}" required>
+            <div [hidden]="productFrom.controls.name?.valid" class="error-message">
+              A névnek minimum 1 maximum 20 karakter hosszúnak kell lennie!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input [(ngModel)]="product.description" name="Description" type="text"
+              class="form-control" pattern=".{1,200}" required> 
+              <div [hidden]="productFrom.controls.description?.valid" class="error-message">
+                A description minimum 1 maximum 200 karakter hosszú lehet!
+              </div>             
+          </div>
+          <div class="form-group">
+            <label>type</label>
+            <input [(ngModel)]="product.type" name="type" type="text"
+              class="form-control" required>
+              <div [hidden]="productFrom.controls.type?.valid" class="error-message">
+                A névnek minimum 1 maximum 20 karakter hosszúnak kell lennie!
+              </div>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input [(ngModel)]="product.price" name="price" type="text"
+              class="form-control" required>
+              <div [hidden]="productFrom.controls.price?.valid" class="error-message">
+                A névnek minimum 1 maximum 20 karakter hosszúnak kell lennie!
+              </div>
+          </div>
+          <div class="form-group">
+            <label>Featured</label>
+            <input [(ngModel)]="product.featured" name="featured" type="text"
+              class="form-control" required>
+              <div [hidden]="productFrom.controls.featured?.valid" class="error-message">
+                A névnek minimum 1 maximum 20 karakter hosszúnak kell lennie!
+              </div>
+          </div>
+          <button [disabled]="productFrom.invalid || updating" class="btn btn-block btn-primary">
+            <i *ngIf="!updating" class="fa fa-save"></i>
+            <i *ngIf="updating" class="fa fa-refresh"></i>
+          </button>
+        </form>
+      </div>
+    </div>
