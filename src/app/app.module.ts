@@ -11,6 +11,7 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListProductComponent } from './pages/list-product/list-product.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
+import { EditCustomerComponent } from './editor/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ListBillComponent } from './pages/list-bill/list-bill.component';
     DashboardComponent,
     ListProductComponent,
     ListBillComponent,
+    EditCustomerComponent,
   ],
   imports: [
     BrowserModule,

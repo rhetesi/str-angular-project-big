@@ -1,0 +1,68 @@
+<div class="row">
+    <div *ngIf="customer" class="col-6 offset-3">
+      <form #customerForm="ngForm" (ngSubmit)="onUpdate(customer)">
+        <div class="form-group">
+          <label for="">First Name</label>
+          <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control" pattern="[A-Za-z]{1,32}" required>
+          <div [hidden]="customerForm.controls.firstName?.valid || customerForm.controls.firstName?.pristine" class="error-message">
+            wrong data !
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Last Name</label>
+          <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control" pattern="[A-Za-z]{1,32}" required>   
+          <div [hidden]="customerForm.controls.lastName?.valid || customerForm.controls.lastName?.pristine" class="error-message">
+            wrong data!
+          </div>       
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input name="email" [(ngModel)]="customer.email" type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
+          <div [hidden]="customerForm.controls.email?.valid || customerForm.controls.email?.pristine" class="error-message">
+            wrong data!
+          </div>       
+        </div>
+        <div class="form-group">
+          <label for="">Zip</label>
+          <input name="zip" [(ngModel)]="customer.address.zip" type="number" class="form-control" pattern="[1-9]{4}" required>
+          <div [hidden]="customerForm.controls.zip?.valid || customerForm.controls.zip?.pristine" class="error-message">
+            wrong data!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Country</label>
+          <input name="country" [(ngModel)]="customer.address.country" type="text" class="form-control"  pattern="[A-Za-z]{3}" required>
+          <div [hidden]="customerForm.controls.country?.valid || customerForm.controls.country?.pristine" class="error-message">
+            wrong data!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">City</label>
+          <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control"  pattern="[A-Za-z]{3}" required>   
+          <div [hidden]="customerForm.controls.city?.valid || customerForm.controls.city?.pristine" class="error-message">
+            wrong data!
+          </div>       
+        </div>
+        <div class="form-group">
+          <label for="">Street</label>
+          <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control"  pattern="[A-Za-z0-9'\.\-\s\,]"required>
+          <div [hidden]="customerForm.controls.street?.valid || customerForm.controls.street?.pristine" class="error-message">
+            wrong data!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Notes</label>
+          <input name="notes" [(ngModel)]="customer.address.notes" type="text" class="form-control" required>
+          <div [hidden]="customerForm.controls.notes?.valid || customerForm.controls.notes?.pristine" class="error-message">
+            wrong data!
+          </div>
+        </div>
+        <div class="btn-group">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <i  class="material-icons">save</i>
+        </button>
+      </form>
+    </div>
+  </div>
+
