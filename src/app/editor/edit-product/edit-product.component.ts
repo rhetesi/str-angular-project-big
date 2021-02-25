@@ -13,9 +13,13 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class EditProductComponent implements OnInit {
   
+  updating: boolean = false;
+  category: string = 'new';
+
   Product: Observable<Product> = this.activatedRoute.params.pipe(
       switchMap( params => this.productService.get (params.id))
   )
+  
 
   constructor(
     private activatedRoute: ActivatedRoute,

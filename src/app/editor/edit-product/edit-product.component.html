@@ -50,7 +50,7 @@
                 A névnek minimum 1 maximum 20 karakter hosszúnak kell lennie!
               </div>
           </div>
-          <button [disabled]="productForm.invalid || updating" class="btn btn-block btn-primary">
+          <button [disabled]="productForm.invalid || updating" class="btn btn-block btn-success">
             <i *ngIf="!updating" class="fa fa-save"></i>
             <i *ngIf="updating" class="fa fa-refresh"></i>
           </button>
