@@ -1,6 +1,7 @@
-<div class container-fluid>
+<div class="container">
   <div class="row">
     <div class="col-6 offset-3">
+        <p>Edit-Product</p>
         <form #productFrom="ngForm" (ngSubmit)="onFormSubmit(productFrom)">     
           <div class="form-group">
             <label>CatID</label>
@@ -50,9 +51,9 @@
                 A névnek minimum 1 maximum 20 karakter hosszúnak kell lennie!
               </div>
           </div>
-          <button [disabled]="productForm.invalid || updating" class="btn btn-block btn-success">
-            <i *ngIf="!updating" class="fa fa-save"></i>
-            <i *ngIf="updating" class="fa fa-refresh"></i>
+          <button [disabled]="productForm.invalid || clicked" class="btn btn-block btn-success">
+            <i *ngIf="!clicked" class="fa fa-save"></i>
+            <i *ngIf="clicked" class="fa fa-refresh"></i>
           </button>
         </form>
       </div>
