@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListOrderComponent } from './pages/list-order/list-order.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: DashboardComponent,
-  // },
+  {
+   path: '',
+   component: DashboardComponent,
+  },
+  
   {
     path: 'orders',
     component: ListOrderComponent,
