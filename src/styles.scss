@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+.toast-container {
+  position: relative;
+}
+
+.toast-container .ngx-toastr {
+  background-color: rgb(255, 255, 255);
+  margin: 0 0 6px;
+  padding: 25px 50px 25px 50px;
+  border-radius: 5px !important;
+  box-shadow: 0 0 12px #999;
+  color: rgb(105, 105, 105);
+  font-weight: bold;
+  position: absolute;
+  top: -1000px;
+  right: 30px;
+  animation-name: animation;
+  animation-duration: 1s;
+  z-index: 999;
+}
+
+@keyframes animation {
+  0% {right: 30px; top: -1050px; opacity: 0;}
+  100% {right: 30px; top: -1000px; opacity: 1;}
+}

@@ -1,0 +1,22 @@
+.error-message {
+  font-style: italic;
+  font-size: 0.8em;
+  color: rgba(155, 4, 4, .7);
+  animation-name: error;
+  animation-duration: .5s;
+  position: relative;
+}
+
+@keyframes error {
+  0% {right: 10px; opacity: 0;}
+  100% {right: 0px; opacity: 1;}
+}
+
+.fa-refresh {
+  animation: saving 1s linear infinite;
+}
+
+@keyframes saving {
+  0% {rotate: 0deg;}
+  100% {rotate: 360deg;}
+}
