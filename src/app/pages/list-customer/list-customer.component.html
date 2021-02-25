@@ -1,13 +1,13 @@
 <div class="content">
   <div class="col-md-10 offset-1">
 
-    <div class="card card-plain">
+    <!-- <div class="card card-plain">
       <div class="card-header">
         <button [routerLink]="[0]" type="button" class="btn btn-warning btn-block btn-lg">
           <i class="material-icons">create</i>
         </button>
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -36,10 +36,13 @@
                 <td>{{ customer.lastName }}</td>
                 <td>{{ customer.email }}</td>
                 <td>
-                  {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+' '+customer.address.street }}<br />
+                  {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+', '+customer.address.street }}
+
+                  <!-- <br /> -->
                   <!-- <small><i>{{ customer.address.notes }}</i></small> -->
                 </td>
                 <td>{{ customer.active }}</td>
+                <!-- Letiltva, mert még nemműködik
                 <td>
                   <div class="btn-group">
                     <button [routerLink]="[customer.id]" class="btn btn-warning">
@@ -49,7 +52,7 @@
                       <i class="material-icons">delete_forever</i>
                     </button>
                   </div>
-                </td>
+                </td> -->
               </tr>
 
             </tbody>
