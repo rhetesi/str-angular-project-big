@@ -11,31 +11,35 @@ export class DashboardComponent implements OnInit {
   cards: InfoCard[] = [
     {
      title: 'Customers',
-     content: '102',
+    //  content: '102',
+     content: '',
      cardClass: 'card-header-warning',
-     footer: 'ide is jön vmi',
+     footer: 'Ügyfelek',
      icon: 'account_circle',
     },
     {
      title: 'Products',
-     content: '321',
+     content: '',
+    //  content: '321',
      cardClass: 'card-header-success',
-     footer: 'ide is jön vmi',
+     footer: 'Termékek',
      icon: 'store',
     },
     {
      title: 'Orders',
-     content: 'sum1',
-     cardClass: 'card-header-danger',
-     footer: 'ide is jön vmi',
-     icon: 'info_outline',
+     content: '',
+    //  content: 'sum1',
+     cardClass: 'card-header-primary',
+     footer: 'Rendelések',
+     icon: 'content_paste',
     },
     {
      title: 'Bills',
-     content: 'sum2',
+     content: '',
+    //  content: 'sum2',
      cardClass: 'card-header-info',
-     footer: 'ide is jön vmi',
-     icon: 'update',
+     footer: 'Számlák',
+     icon: 'library_books',
     }
   ]
 
