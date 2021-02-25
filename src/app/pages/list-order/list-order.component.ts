@@ -27,7 +27,7 @@ export class ListOrderComponent implements OnInit {
   }
 
   onDelete(order: Order) {
-    this.orderService.delete(order);
+    this.orderService.remove(order);
   }
 }
 
