@@ -2327,9 +2327,9 @@
     },
     {
       "id": 1,
-      "customerID": 17,
-      "productID": 17,
-      "amount": "19601",
+      "customerID": "22",
+      "productID": "20",
+      "amount": "19896",
       "status": "paid"
     },
     {
