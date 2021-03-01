@@ -15,8 +15,10 @@ export class ListProductComponent implements OnInit {
   productList$: BehaviorSubject<Product[]> =
   this.productService.list$;
 
-  phraseControl: FormControl = new FormControl('');
+  
   phrase: string = '';
+  filterKey: string = 'productID';
+  filterKeys: string[] = Object.keys(new Product()).slice(1);
 
   constructor(
     private productService: ProductService,
@@ -24,11 +26,7 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAll();
-    this.phraseControl.valueChanges.pipe(
-      debounceTime(800)
-    ).subscribe(
-      newValue => this.phrase = newValue
-    );
+    
   }
 
   onDelete(product: Product) {
