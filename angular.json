@@ -34,6 +34,7 @@
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "material-dashboard-master/assets/scss/material-dashboard.scss",
               "material-dashboard-master/assets/demo/demo.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": [

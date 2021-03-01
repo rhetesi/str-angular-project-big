@@ -30,7 +30,7 @@
           <div class="d-flex justify-content-between">
             <label for="">amount</label>
             <div [hidden]="orderForm.controls.amount?.valid" class="error-message mt-1">
-              The amount must be an integer between 2000 and 40000.
+              The amount must be an integer between 2000 and 49999.
             </div>
           </div>
           <input name="amount" [(ngModel)]="order.amount" type="text"

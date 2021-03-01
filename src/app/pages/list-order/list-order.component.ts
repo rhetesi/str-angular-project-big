@@ -19,6 +19,8 @@ export class ListOrderComponent implements OnInit {
   filterKey: string = 'customerID';
   filterKeys: string[] = Object.keys(new Order()).slice(1);
 
+  choosen: string = 'all';
+
   constructor(
     private orderService: OrderService,
     private notifyService : NotificationService,
@@ -41,7 +43,7 @@ export class ListOrderComponent implements OnInit {
           </tr>
         </thead>
         <tbody>
-          <tr class="text-danger>
+          <tr class="text-danger">
             <td>${order.customerID}</td>
             <td>${order.productID} </td>
             <td>${order.amount}</td>
