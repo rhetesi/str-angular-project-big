@@ -1,39 +1,31 @@
-/* .error-message {
-    font-style: italic;
-    font-size: 0.8em;
-    color: rgb(200, 4, 4);
-  }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(180deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .fa-refresh {
-    animation: rotate 1s linear infinite;
-  } */
+.error-message {
+  font-style: italic;
+  font-size: 0.8em;
+  color: rgba(155, 4, 4, .7);
+  animation-name: error;
+  animation-duration: .5s;
+  position: relative;
+}
 
-  /* .error-message {
-    font-style: italic;
-    font-size: 0.8em;
-    color: rgb(155, 4, 4);
-    animation: fadeIn .5s;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  } */
-  
+@keyframes error {
+  0% {right: 10px; opacity: 0;}
+  100% {right: 0px; opacity: 1;}
+}
+
+.fa-refresh {
+  animation: saving 1s linear infinite;
+}
+
+@keyframes saving {
+  0% {rotate: 0deg;}
+  100% {rotate: 360deg;}
+}
+
+p{
+  color: rgb(231, 16, 16);
+}
+
+span{
+  color: rgb(231, 16, 16);
+}
+

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
+import { EditCustomerComponent } from './editor/edit-customer/edit-customer.component';
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
 import { ListCustomerComponent } from './pages/list-customer/list-customer.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
    path: 'bills',
    component: ListBillComponent,
+  },
+  {
+    path: 'customers/:id',
+    component: EditCustomerComponent,
   },
   {
     path: '**',

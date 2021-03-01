@@ -11,67 +11,69 @@
 </div>
 
 <div class="content">
-  <div class="col-md-10 offset-1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
 
-    <!-- <div class="card card-plain">
-      <div class="card-header">
-        <button [routerLink]="[0]" type="button" class="btn btn-warning btn-block btn-lg">
-          <i class="material-icons">create</i>
-        </button>
-      </div>
-    </div> -->
+        <div class="card card-plain">
+          <div class="card-header">
+            <button [routerLink]="[0]" type="button" class="btn btn-warning btn-block btn-lg">
+              Add new  +
+            </button>
+          </div>
+        </div>
 
-
-
-    <div class="card">
-      <div class="card-header card-header-warning">
-        <h4 class="card-title ">Customer Table</h4>
-        <p class="card-category">Customer list</p>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table">
-
-            <thead class=" text-warning">
-              <th>id</th>
-              <th>firstName</th>
-              <th>lastName</th>
-              <th>email</th>
-              <th>address</th>
-              <th>active</th>
-            </thead>
-
-            <tbody>
-              <tr *ngFor="let customer of customerList$ | async">
-                <td>{{ customer.id }}</td>
-                <td>{{ customer.firstName }}</td>
-                <td>{{ customer.lastName }}</td>
-                <td>{{ customer.email }}</td>
-                <td>
-                  {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+', '+customer.address.street }}
-
-                  <!-- <br /> -->
-                  <!-- <small><i>{{ customer.address.notes }}</i></small> -->
-                </td>
-                <td>{{ customer.active }}</td>
-                <!-- Letiltva, mert még nemműködik
-                <td>
-                  <div class="btn-group">
-                    <button [routerLink]="[customer.id]" class="btn btn-warning">
-                      <i class="material-icons">create</i>
-                    </button>
-                    <button (click)="onDelete(customer)" class="btn btn-danger">
-                      <i class="material-icons">delete_forever</i>
-                    </button>
-                  </div>
-                </td> -->
-              </tr>
-
-            </tbody>
-
-          </table>
+        <div class="card">
+          <div class="card-header card-header-warning">
+            <h4 class="card-title text-uppercase">customers</h4>
+            <p class="card-category">All customers are shown below</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class=" text-warning">
+                  <tr>
+                   <!--  <th>ID</th> -->
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Notes</th>
+                    <th>Active</th>
+                    <!-- <th> </th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let customer of customerList$ | async | filter:phrase:filterKey">
+                   <!--  <td *ngIf="customer.id!==0">{{customer.id}}</td> -->
+                    <td *ngIf="customer.id!==0">{{customer.firstName}} </td>
+                    <td *ngIf="customer.id!==0">{{customer.lastName}}</td>
+                    <td *ngIf="customer.id!==0">{{customer.email}}</td>
+                    <td *ngIf="customer.id!==0">
+                      {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+', '+customer.address.street }}</td>
+                      <td *ngIf="customer.id!==0">{{ customer.address.notes }}</td>
+                      <td *ngIf="customer.id!==0">{{ customer.active }}</td> 
+                    <td *ngIf="customer.id!==0">
+                      <div class="btn-group">
+                        <button [routerLink]="[customer.id]" class="btn btn-primary">
+                          <i class="material-icons">create</i>
+                        </button>
+                        <button (click)="onDelete(customer)" class="btn btn-danger">
+                          <i class="material-icons">delete_forever</i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
+</div>
+
+  
+  

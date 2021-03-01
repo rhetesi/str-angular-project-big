@@ -615,6 +615,20 @@
   ],
   "customers": [
     {
+      "id": 0,
+      "firstName": "",
+      "lastName": "",
+      "email": "characters@characters.domain",
+      "address": {
+        "zip": "0",
+        "country": "",
+        "city": "",
+        "street": "",
+        "notes": ""
+      },
+      "active": false
+    },
+    {
       "id": 1,
       "firstName": "József",
       "lastName": "Cserkó",
@@ -2327,7 +2341,7 @@
     },
     {
       "id": 1,
-      "customerID": 17,
+      "customerID": "15",
       "productID": 17,
       "amount": "19601",
       "status": "paid"
@@ -2701,6 +2715,20 @@
       "customerID": "19",
       "productID": "19",
       "amount": "3000",
+      "status": "new"
+    },
+    {
+      "id": 55,
+      "customerID": "15",
+      "productID": "15",
+      "amount": "2355",
+      "status": "new"
+    },
+    {
+      "id": 56,
+      "customerID": "15",
+      "productID": "16",
+      "amount": "2365",
       "status": "new"
     }
   ]
