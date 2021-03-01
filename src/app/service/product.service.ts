@@ -1,3 +1,24 @@
+// import { Injectable } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
+// import { Product } from '../model/product';
+// import { BaseService } from './base.service';
+// import { ConfigService } from './config.service';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class ProductService extends BaseService<Product> {
+
+//   constructor(
+//     public http: HttpClient,
+//     public config: ConfigService,
+//   ) {
+//     super(http, config, 'products');
+//    }
+
+// }
+
+// Eredeti, működő ProductService
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
