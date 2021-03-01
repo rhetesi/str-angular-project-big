@@ -1,3 +1,4 @@
+// Új, Base & Config Service-ekre alapuló Product Service - valamiért nem ad adatot
 // import { Injectable } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 // import { Product } from '../model/product';
@@ -17,6 +18,7 @@
 //    }
 
 // }
+// Új kód vége
 
 // Eredeti, működő ProductService
 import { Injectable } from '@angular/core';
