@@ -58,9 +58,13 @@ export class DashboardComponent implements OnInit {
      title: 'Bills',
      content:
         this.billList$.pipe(
-          map(params => params.filter(item => item.status!=='paid').
-          reduce((acc, one) => acc + parseInt('' + one.amount), 0))
+          map(params => params.filter(item => item.status !== 'paid').
+          reduce((acc, one) => acc +  + one.amount, 0))
         ),
+      //  this.billList$.pipe(
+      //     map(params => params.filter(item => item.status!=='paid').
+      //     reduce((acc, one) => acc + parseInt('' + one.amount), 0))
+      //   ),
      cardClass: 'card-header-info',
      footer: 'Számlák',
      icon: 'library_books',
