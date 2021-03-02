@@ -21,16 +21,19 @@
           <table class="table">
 
             <thead class=" text-warning">
-              <th>id</th>
-              <th>firstName</th>
-              <th>lastName</th>
-              <th>email</th>
-              <th>address</th>
-              <th>active</th>
+              <th (click)="onColumnSelect('id')">id</th>
+              <th (click)="onColumnSelect('firstName')">firstName</th>
+              <th (click)="onColumnSelect('lastName')">lastName</th>
+              <th (click)="onColumnSelect('email')">email</th>
+              <th (click)="onColumnSelect('address')">address</th>
+              <th (click)="onColumnSelect('active')">active</th>
+              <th><i *ngIf="!direction" class="material-icons">expand_more</i>
+                <i *ngIf="direction" class="material-icons">expand_less</i>
+                </th>
             </thead>
 
             <tbody>
-              <tr *ngFor="let customer of customerList$ | async">
+              <tr *ngFor="let customer of customerList$ | async | sorter:sortColumn:sortDirect">
                 <td>{{ customer.id }}</td>
                 <td>{{ customer.firstName }}</td>
                 <td>{{ customer.lastName }}</td>

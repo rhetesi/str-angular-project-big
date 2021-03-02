@@ -11,7 +11,7 @@
               The customerID must be a positive integer.
             </div>
           </div>
-          <input name="customerID" [(ngModel)]="order.customerID" type="text"
+          <input name="customerID" [(ngModel)]="order.customerID" type="number"
             class="form-control" pattern="^[1-9][0-9]*$" required>
         </div>
 
@@ -22,7 +22,7 @@
               The productID must be a positive integer.
             </div>
           </div>
-          <input name="productID" [(ngModel)]="order.productID" type="text"
+          <input name="productID" [(ngModel)]="order.productID" type="number"
           class="form-control" pattern="^[1-9][0-9]*$" required>
         </div>
 
@@ -33,7 +33,7 @@
               The amount must be an integer between 2000 and 40000.
             </div>
           </div>
-          <input name="amount" [(ngModel)]="order.amount" type="text"
+          <input name="amount" [(ngModel)]="order.amount" type="number"
             class="form-control" pattern="^[2-9][0-9]{3}$|^[1-4][0-9]{4}$" required>
         </div>
 

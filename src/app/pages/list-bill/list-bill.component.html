@@ -21,14 +21,17 @@
               <table class="table table-hover">
                 <thead class=" text-info">
                   <tr>
-                    <th>orderID</th>
-                    <th>amount</th>
-                    <th>status</th>
+                    <th (click)="onColumnSelect('orderID')">orderID</th>
+                    <th (click)="onColumnSelect('amount')">amount</th>
+                    <th (click)="onColumnSelect('status')">status</th>
                     <th></th>
+                    <th><i *ngIf="!direction" class="material-icons">expand_more</i>
+                      <i *ngIf="direction" class="material-icons">expand_less</i>
+                      </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let bill of billList$ | async">
+                  <tr *ngFor="let bill of billList$ | async | sorter:sortColumn:sortDirect">
                     <td>{{bill.orderID}}</td>
                     <td>{{bill.amount}}</td>
                     <td>{{bill.status}}</td>

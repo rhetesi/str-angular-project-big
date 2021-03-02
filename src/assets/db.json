@@ -2019,301 +2019,301 @@
     {
       "id": 1,
       "orderID": 19,
-      "amount": "15100",
+      "amount": 15100,
       "status": "paid"
     },
     {
       "id": 2,
       "orderID": 15,
-      "amount": "9100",
+      "amount": 9100,
       "status": "new"
     },
     {
       "id": 3,
       "orderID": 3,
-      "amount": "20800",
+      "amount": 20800,
       "status": "paid"
     },
     {
       "id": 4,
       "orderID": 10,
-      "amount": "7100",
+      "amount": 7100,
       "status": "paid"
     },
     {
       "id": 5,
       "orderID": 1,
-      "amount": "22000",
+      "amount": 22000,
       "status": "new"
     },
     {
       "id": 6,
       "orderID": 32,
-      "amount": "7000",
+      "amount": 7000,
       "status": "new"
     },
     {
       "id": 7,
       "orderID": 40,
-      "amount": "7900",
+      "amount": 7900,
       "status": "new"
     },
     {
       "id": 8,
       "orderID": 20,
-      "amount": "10600",
+      "amount": 10600,
       "status": "new"
     },
     {
       "id": 9,
       "orderID": 25,
-      "amount": "18900",
+      "amount": 18900,
       "status": "paid"
     },
     {
       "id": 10,
       "orderID": 12,
-      "amount": "23400",
+      "amount": 23400,
       "status": "new"
     },
     {
       "id": 11,
       "orderID": 2,
-      "amount": "19900",
+      "amount": 19900,
       "status": "new"
     },
     {
       "id": 12,
       "orderID": 18,
-      "amount": "13300",
+      "amount": 13300,
       "status": "paid"
     },
     {
       "id": 13,
       "orderID": 36,
-      "amount": "9600",
+      "amount": 9600,
       "status": "paid"
     },
     {
       "id": 14,
       "orderID": 27,
-      "amount": "17800",
+      "amount": 17800,
       "status": "new"
     },
     {
       "id": 15,
       "orderID": 43,
-      "amount": "9500",
+      "amount": 9500,
       "status": "paid"
     },
     {
       "id": 16,
       "orderID": 35,
-      "amount": "7400",
+      "amount": 7400,
       "status": "new"
     },
     {
       "id": 17,
       "orderID": 11,
-      "amount": "10100",
+      "amount": 10100,
       "status": "paid"
     },
     {
       "id": 18,
       "orderID": 27,
-      "amount": "10600",
+      "amount": 10600,
       "status": "new"
     },
     {
       "id": 19,
       "orderID": 35,
-      "amount": "23600",
+      "amount": 23600,
       "status": "paid"
     },
     {
       "id": 20,
       "orderID": 19,
-      "amount": "5100",
+      "amount": 5100,
       "status": "paid"
     },
     {
       "id": 21,
       "orderID": 33,
-      "amount": "7200",
+      "amount": 7200,
       "status": "paid"
     },
     {
       "id": 22,
       "orderID": 5,
-      "amount": "6800",
+      "amount": 6800,
       "status": "new"
     },
     {
       "id": 23,
       "orderID": 17,
-      "amount": "9500",
+      "amount": 9500,
       "status": "paid"
     },
     {
       "id": 24,
       "orderID": 33,
-      "amount": "9100",
+      "amount": 9100,
       "status": "new"
     },
     {
       "id": 25,
       "orderID": 23,
-      "amount": "16900",
+      "amount": 16900,
       "status": "paid"
     },
     {
       "id": 26,
       "orderID": 48,
-      "amount": "23700",
+      "amount": 23700,
       "status": "paid"
     },
     {
       "id": 27,
       "orderID": 39,
-      "amount": "9200",
+      "amount": 9200,
       "status": "new"
     },
     {
       "id": 28,
       "orderID": 32,
-      "amount": "24100",
+      "amount": 24100,
       "status": "new"
     },
     {
       "id": 29,
       "orderID": 34,
-      "amount": "10100",
+      "amount": 10100,
       "status": "new"
     },
     {
       "id": 30,
       "orderID": 4,
-      "amount": "21200",
+      "amount": 21200,
       "status": "new"
     },
     {
       "id": 31,
       "orderID": 7,
-      "amount": "11800",
+      "amount": 11800,
       "status": "new"
     },
     {
       "id": 32,
       "orderID": 15,
-      "amount": "14500",
+      "amount": 14500,
       "status": "new"
     },
     {
       "id": 33,
       "orderID": 2,
-      "amount": "7900",
+      "amount": 7900,
       "status": "paid"
     },
     {
       "id": 34,
       "orderID": 43,
-      "amount": "12100",
+      "amount": 12100,
       "status": "paid"
     },
     {
       "id": 35,
       "orderID": 50,
-      "amount": "13900",
+      "amount": 13900,
       "status": "new"
     },
     {
       "id": 36,
       "orderID": 31,
-      "amount": "15700",
+      "amount": 15700,
       "status": "new"
     },
     {
       "id": 37,
       "orderID": 20,
-      "amount": "21900",
+      "amount": 21900,
       "status": "new"
     },
     {
       "id": 38,
       "orderID": 47,
-      "amount": "11200",
+      "amount": 11200,
       "status": "new"
     },
     {
       "id": 39,
       "orderID": 3,
-      "amount": "16900",
+      "amount": 16900,
       "status": "paid"
     },
     {
       "id": 40,
       "orderID": 1,
-      "amount": "9500",
+      "amount": 9500,
       "status": "paid"
     },
     {
       "id": 41,
       "orderID": 41,
-      "amount": "12000",
+      "amount": 12000,
       "status": "new"
     },
     {
       "id": 42,
       "orderID": 40,
-      "amount": "15000",
+      "amount": 15000,
       "status": "new"
     },
     {
       "id": 43,
       "orderID": 12,
-      "amount": "11700",
+      "amount": 11700,
       "status": "paid"
     },
     {
       "id": 44,
       "orderID": 10,
-      "amount": "16700",
+      "amount": 16700,
       "status": "paid"
     },
     {
       "id": 45,
       "orderID": 6,
-      "amount": "5400",
+      "amount": 5400,
       "status": "paid"
     },
     {
       "id": 46,
       "orderID": 10,
-      "amount": "19200",
+      "amount": 19200,
       "status": "paid"
     },
     {
       "id": 47,
       "orderID": 11,
-      "amount": "21200",
+      "amount": 21200,
       "status": "new"
     },
     {
       "id": 48,
       "orderID": 13,
-      "amount": "17700",
+      "amount": 17700,
       "status": "new"
     },
     {
       "id": 49,
       "orderID": 23,
-      "amount": "15300",
+      "amount": 15300,
       "status": "new"
     },
     {
       "id": 50,
       "orderID": 2,
-      "amount": "12200",
+      "amount": 12200,
       "status": "paid"
     }
   ],
@@ -2327,261 +2327,254 @@
     },
     {
       "id": 1,
-      "customerID": "22",
+      "customerID": 22,
       "productID": 17,
-      "amount": "19601",
+      "amount": 19601,
       "status": "paid"
     },
     {
       "id": 2,
       "customerID": 42,
       "productID": 43,
-      "amount": "17900",
+      "amount": 17900,
       "status": "new"
     },
     {
       "id": 3,
       "customerID": 14,
       "productID": 35,
-      "amount": "12900",
+      "amount": 12900,
       "status": "new"
     },
     {
       "id": 4,
       "customerID": 8,
       "productID": 11,
-      "amount": "7000",
+      "amount": 7000,
       "status": "new"
-    },
-    {
-      "id": 5,
-      "customerID": 4,
-      "productID": 12,
-      "amount": "11700",
-      "status": "paid"
     },
     {
       "id": 6,
       "customerID": 27,
       "productID": 40,
-      "amount": "6000",
+      "amount": 6000,
       "status": "new"
     },
     {
       "id": 7,
       "customerID": 37,
       "productID": 28,
-      "amount": "16400",
+      "amount": 16400,
       "status": "new"
     },
     {
       "id": 8,
       "customerID": 24,
       "productID": 12,
-      "amount": "9400",
+      "amount": 9400,
       "status": "paid"
     },
     {
       "id": 9,
       "customerID": 11,
       "productID": 32,
-      "amount": "9300",
+      "amount": 9300,
       "status": "shipped"
     },
     {
       "id": 10,
       "customerID": 10,
       "productID": 21,
-      "amount": "14600",
+      "amount": 14600,
       "status": "paid"
     },
     {
       "id": 11,
       "customerID": 19,
       "productID": 8,
-      "amount": "21900",
+      "amount": 21900,
       "status": "shipped"
     },
     {
       "id": 12,
       "customerID": 28,
       "productID": 10,
-      "amount": "6500",
+      "amount": 6500,
       "status": "paid"
     },
     {
       "id": 13,
       "customerID": 11,
       "productID": 47,
-      "amount": "18400",
+      "amount": 18400,
       "status": "new"
     },
     {
       "id": 14,
       "customerID": 8,
       "productID": 16,
-      "amount": "14500",
+      "amount": 14500,
       "status": "shipped"
     },
     {
       "id": 15,
       "customerID": 33,
       "productID": 3,
-      "amount": "18800",
+      "amount": 18800,
       "status": "new"
     },
     {
       "id": 16,
       "customerID": 16,
       "productID": 37,
-      "amount": "10700",
+      "amount": 10700,
       "status": "new"
     },
     {
       "id": 17,
       "customerID": 4,
       "productID": 3,
-      "amount": "5500",
+      "amount": 5500,
       "status": "new"
     },
     {
       "id": 18,
       "customerID": 37,
       "productID": 30,
-      "amount": "18200",
+      "amount": 18200,
       "status": "paid"
     },
     {
       "id": 19,
       "customerID": 35,
       "productID": 36,
-      "amount": "22600",
+      "amount": 22600,
       "status": "shipped"
     },
     {
       "id": 20,
       "customerID": 8,
       "productID": 45,
-      "amount": "14800",
+      "amount": 14800,
       "status": "paid"
     },
     {
       "id": 21,
       "customerID": 19,
       "productID": 37,
-      "amount": "17200",
+      "amount": 17200,
       "status": "new"
     },
     {
       "id": 22,
       "customerID": 10,
       "productID": 14,
-      "amount": "16600",
+      "amount": 16600,
       "status": "paid"
     },
     {
       "id": 23,
       "customerID": 15,
       "productID": 28,
-      "amount": "20600",
+      "amount": 20600,
       "status": "shipped"
     },
     {
       "id": 24,
       "customerID": 2,
       "productID": 6,
-      "amount": "22100",
+      "amount": 22100,
       "status": "new"
     },
     {
       "id": 25,
       "customerID": 16,
       "productID": 43,
-      "amount": "10600",
+      "amount": 10600,
       "status": "paid"
     },
     {
       "id": 26,
       "customerID": 32,
       "productID": 3,
-      "amount": "18500",
+      "amount": 18500,
       "status": "new"
     },
     {
       "id": 27,
       "customerID": 17,
       "productID": 35,
-      "amount": "8800",
+      "amount": 8800,
       "status": "new"
     },
     {
       "id": 28,
       "customerID": 44,
       "productID": 36,
-      "amount": "10000",
+      "amount": 10000,
       "status": "shipped"
     },
     {
       "id": 29,
       "customerID": 28,
       "productID": 27,
-      "amount": "17300",
+      "amount": 17300,
       "status": "paid"
     },
     {
       "id": 30,
       "customerID": 37,
       "productID": 34,
-      "amount": "12100",
+      "amount": 12100,
       "status": "new"
     },
     {
       "id": 31,
       "customerID": 16,
       "productID": 27,
-      "amount": "23000",
+      "amount": 23000,
       "status": "paid"
     },
     {
       "id": 32,
       "customerID": 24,
       "productID": 26,
-      "amount": "14600",
+      "amount": 14600,
       "status": "paid"
     },
     {
       "id": 33,
       "customerID": 12,
       "productID": 27,
-      "amount": "20400",
+      "amount": 20400,
       "status": "paid"
     },
     {
       "id": 34,
       "customerID": 24,
       "productID": 48,
-      "amount": "23800",
+      "amount": 23800,
       "status": "paid"
     },
     {
       "id": 35,
       "customerID": 8,
       "productID": 13,
-      "amount": "6900",
+      "amount": 6900,
       "status": "shipped"
     },
     {
       "id": 36,
       "customerID": 28,
       "productID": 23,
-      "amount": "9400",
+      "amount": 9400,
       "status": "shipped"
     },
     {
       "id": 37,
       "customerID": 42,
       "productID": 3,
-      "amount": "13400",
+      "amount": 13400,
       "status": "new"
     },
     {
@@ -2595,112 +2588,112 @@
       "id": 39,
       "customerID": 22,
       "productID": 18,
-      "amount": "12800",
+      "amount": 12800,
       "status": "paid"
     },
     {
       "id": 40,
       "customerID": 41,
       "productID": 33,
-      "amount": "14700",
+      "amount": 14700,
       "status": "new"
     },
     {
       "id": 41,
       "customerID": 36,
       "productID": 13,
-      "amount": "23200",
+      "amount": 23200,
       "status": "new"
     },
     {
       "id": 42,
       "customerID": 19,
       "productID": 16,
-      "amount": "13600",
+      "amount": 13600,
       "status": "new"
     },
     {
       "id": 43,
       "customerID": 46,
       "productID": 38,
-      "amount": "21600",
+      "amount": 21600,
       "status": "paid"
     },
     {
       "id": 44,
       "customerID": 3,
       "productID": 41,
-      "amount": "16500",
+      "amount": 16500,
       "status": "paid"
     },
     {
       "id": 45,
       "customerID": 38,
       "productID": 13,
-      "amount": "5400",
+      "amount": 5400,
       "status": "paid"
     },
     {
       "id": 46,
       "customerID": 46,
       "productID": 36,
-      "amount": "21400",
+      "amount": 21400,
       "status": "paid"
     },
     {
       "id": 47,
       "customerID": 31,
       "productID": 41,
-      "amount": "12000",
+      "amount": 12000,
       "status": "new"
     },
     {
       "id": 48,
       "customerID": 31,
       "productID": 34,
-      "amount": "10700",
+      "amount": 10700,
       "status": "paid"
     },
     {
       "id": 49,
       "customerID": 31,
       "productID": 11,
-      "amount": "17900",
+      "amount": 17900,
       "status": "new"
     },
     {
       "id": 50,
       "customerID": 43,
       "productID": 41,
-      "amount": "13700",
+      "amount": 13700,
       "status": "new"
     },
     {
       "id": 51,
-      "customerID": "12",
-      "productID": "10",
-      "amount": "5000",
+      "customerID": 12,
+      "productID": 10,
+      "amount": 5000,
       "status": "new"
     },
     {
       "id": 52,
-      "customerID": "17",
-      "productID": "18",
-      "amount": "2500",
+      "customerID": 17,
+      "productID": 18,
+      "amount": 2500,
       "status": "new"
     },
     {
       "id": 53,
-      "customerID": "18",
-      "productID": "17",
-      "amount": "2001",
+      "customerID": 18,
+      "productID": 17,
+      "amount": 2001,
       "status": "new"
     },
     {
       "id": 54,
-      "customerID": "19",
-      "productID": "19",
-      "amount": "3000",
+      "customerID": 19,
+      "productID": 19,
+      "amount": 3000,
       "status": "new"
     }
   ]

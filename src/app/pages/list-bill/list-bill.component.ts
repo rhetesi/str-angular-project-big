@@ -13,6 +13,11 @@ export class ListBillComponent implements OnInit {
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   testBill: Observable<Bill> = this.billService.get(1);
 
+  column: string = '';
+  direction: boolean = false;
+  sortColumn: string = '';
+  sortDirect: string = 'asc';
+
   constructor(
     private billService: BillService,
   ) { }
@@ -24,4 +29,12 @@ export class ListBillComponent implements OnInit {
   onDelete(bill: Bill) {
     this.billService.remove(bill);
   }
+
+  onColumnSelect(columnHead: string): void{
+    this.sortColumn = columnHead;
+    this.direction = !this.direction;
+    this.sortDirect == 'asc' ?
+    this.sortDirect = 'dsc' :
+    this.sortDirect = 'asc';
+    }
 }

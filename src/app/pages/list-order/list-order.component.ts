@@ -18,6 +18,10 @@ export class ListOrderComponent implements OnInit {
   phrase: string = '';
   filterKey: string = 'customerID';
   filterKeys: string[] = Object.keys(new Order()).slice(1);
+  column: string = '';
+  direction: boolean = false;
+  sortColumn: string = '';
+  sortDirect: string = 'asc';
 
   constructor(
     private orderService: OrderService,
@@ -53,5 +57,13 @@ export class ListOrderComponent implements OnInit {
       "You have deleted this event:",
       5000)
   }
+
+  onColumnSelect(columnHead: string): void{
+    this.sortColumn = columnHead;
+    this.direction = !this.direction;
+    this.sortDirect == 'asc' ?
+    this.sortDirect = 'dsc' :
+    this.sortDirect = 'asc';
+    }
 }
 
