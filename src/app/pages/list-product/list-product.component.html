@@ -32,7 +32,7 @@
         <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-success btn-block btn-lg">
-              Add new  +
+              Add new +
             </button>
           </div>
         </div>
@@ -64,26 +64,18 @@
                     <td *ngIf="product.id!==0">{{ product.catID }} </td>
                     <td *ngIf="product.id!==0">{{ product.name }}</td>
                     <!-- <td>{{ product.type }}</td> -->
-<<<<<<< HEAD
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.price }}</td>
+                    <td *ngIf="product.id!==0">{{ product.description }}</td>
+                    <td *ngIf="product.id!==0">{{ product.price }}</td>
                     <!-- <td>{{ product.featured }}</td> -->
-                    <td><span *ngIf="product.featured" class="material-icons">
+                    <td *ngIf="product.id!==0"><span *ngIf="product.featured" class="material-icons">
                         done
                       </span>
                     </td>
                     <!-- <td>{{ product.active }}</td> -->
-                    <td><span *ngIf="product.active" class="material-icons">
+                    <td *ngIf="product.id!==0"><span *ngIf="product.active" class="material-icons">
                         done
                       </span></td>
-                    <td>
-=======
-                    <td *ngIf="product.id!==0">{{ product.description }}</td>
-                    <td *ngIf="product.id!==0">{{ product.price }}</td>
-                    <td *ngIf="product.id!==0">{{ product.featured }}</td>
-                    <td *ngIf="product.id!==0">{{ product.active }}</td>
                     <td *ngIf="product.id!==0">
->>>>>>> origin/Viktor
                       <img class="prod_image" [src]="product.image" [alt]="product.image">
                     </td>
                     <td *ngIf="product.id!==0">
