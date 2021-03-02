@@ -2017,6 +2017,12 @@
   ],
   "bills": [
     {
+      "id": 0,
+      "orderID": 0,
+      "amount": "",
+      "status": ""
+    },
+    {
       "id": 1,
       "orderID": 19,
       "amount": "15100",
