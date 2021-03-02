@@ -13,6 +13,7 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListProductComponent } from './pages/list-product/list-product.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
+import { EditProductComponent } from './editor/edit-product/edit-product.component';
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { InfoCardComponent } from './common/info-card/info-card.component';
@@ -29,6 +30,7 @@ import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
     DashboardComponent,
     ListProductComponent,
     ListBillComponent,
+    EditProductComponent,
     EditOrderComponent,
     FilterPipe,
     InfoCardComponent,
