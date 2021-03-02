@@ -1,6 +1,18 @@
 {
   "products": [
     {
+      "id": 0,
+      "catID": 2,
+      "name": "Agárd",
+      "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+      "image": "./assets/img/agard.jpg",
+      "price": 17574,
+      "stock": 30,
+      "featured": true,
+      "type": "",
+      "active": true
+    },
+    {
       "id": 1,
       "catID": 2,
       "name": "Agárd",

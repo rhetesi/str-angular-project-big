@@ -48,8 +48,8 @@ export class EditProductComponent implements OnInit {
     let title: string = "You have updated this product:";
     if (!product.id) {
       title = "You have added this new product:";
-  }
-  this.notifyService.showSuccessWithTimeout(`
+    }
+    this.notifyService.showSuccessWithTimeout(`
       <br>
       <br>
       <table class="table">
@@ -75,6 +75,6 @@ export class EditProductComponent implements OnInit {
         </tbody>
       </table>`,
       title,
-      10000)
-    }
+        10000)
+      }
 }

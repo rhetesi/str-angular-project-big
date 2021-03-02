@@ -55,19 +55,20 @@
                     <th>featured</th>
                     <th>active</th>
                     <th>image</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let product of productList$ | async">
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.catID }} </td>
-                    <td>{{ product.name }}</td>
+                    <td *ngIf="product.id!==0">{{ product.id }}</td>
+                    <td *ngIf="product.id!==0">{{ product.catID }} </td>
+                    <td *ngIf="product.id!==0">{{ product.name }}</td>
                     <!-- <td>{{ product.type }}</td> -->
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.price }}</td>
-                    <td>{{ product.featured }}</td>
-                    <td>{{ product.active }}</td>
-                    <td>
+                    <td *ngIf="product.id!==0">{{ product.description }}</td>
+                    <td *ngIf="product.id!==0">{{ product.price }}</td>
+                    <td *ngIf="product.id!==0">{{ product.featured }}</td>
+                    <td *ngIf="product.id!==0">{{ product.active }}</td>
+                    <td *ngIf="product.id!==0">
                       <img class="prod_image" [src]="product.image" [alt]="product.image">
                     </td>
                     <td *ngIf="product.id!==0">
