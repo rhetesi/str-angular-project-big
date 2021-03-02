@@ -16,6 +16,7 @@ import { ListBillComponent } from './pages/list-bill/list-bill.component';
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { InfoCardComponent } from './common/info-card/info-card.component';
+import { SumPipe } from './pipes/sum.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { InfoCardComponent } from './common/info-card/info-card.component';
     EditOrderComponent,
     FilterPipe,
     InfoCardComponent,
+    SumPipe,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +40,8 @@ import { InfoCardComponent } from './common/info-card/info-card.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
-      positionClass: 'toast-top-right'
+      // timeOut: 5000,
+      // positionClass: 'toast-top-right'
     }),
     ToastContainerModule,
   ],

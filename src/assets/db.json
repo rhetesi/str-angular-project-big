@@ -2322,12 +2322,12 @@
       "id": 0,
       "customerID": 0,
       "productID": 0,
-      "amount": "",
+      "amount": "0",
       "status": ""
     },
     {
       "id": 1,
-      "customerID": 17,
+      "customerID": "16",
       "productID": 17,
       "amount": "19601",
       "status": "paid"
@@ -2694,13 +2694,6 @@
       "customerID": "18",
       "productID": "17",
       "amount": "2001",
-      "status": "new"
-    },
-    {
-      "id": 54,
-      "customerID": "19",
-      "productID": "19",
-      "amount": "3000",
       "status": "new"
     }
   ]
