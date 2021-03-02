@@ -3,18 +3,7 @@
     <div class="row mt-5">
       <div *ngIf="(bill$ | async) as bill" class="col-6 offset-3">Edit bill
         <form #billForm="ngForm" (ngSubmit)="onUpdate(billForm, bill)">
-  
-          <div class="form-group">
-            <div class="d-flex justify-content-between">
-              <label for="">id</label>
-              <div [hidden]="billForm.controls.id?.valid" class="error-message mt-1">
-                The id must be a positive integer.
-              </div>
-            </div>
-            <input name="id" [(ngModel)]="bill.id" type="text"
-              class="form-control" pattern="^[1-9][0-9]*$" required>
-          </div>
-  
+   
           <div class="form-group">
             <div class="d-flex justify-content-between">
               <label for="">orderID</label>

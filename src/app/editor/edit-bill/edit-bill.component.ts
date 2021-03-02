@@ -55,7 +55,6 @@ export class EditBillComponent implements OnInit {
       <table class="table">
         <thead>
           <tr>
-            <th>id</th>
             <th>orderID</th>
             <th>amount</th>
             <th>status</th>
@@ -63,7 +62,6 @@ export class EditBillComponent implements OnInit {
         </thead>
         <tbody>
           <tr class="text-success">
-            <td>${bill.id}</td>
             <td>${bill.orderID} </td>
             <td>${bill.amount}</td>
             <td>${bill.status}</td>
