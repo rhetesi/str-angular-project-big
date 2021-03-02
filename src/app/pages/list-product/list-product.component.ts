@@ -16,7 +16,12 @@ export class ListProductComponent implements OnInit {
   this.productService.list$;
 
   phraseControl: FormControl = new FormControl('');
+
   phrase: string = '';
+  column: string = '';
+  direction: boolean = false;
+  sortColumn: string = '';
+  sortDirect: string = 'asc';
 
   constructor(
     private productService: ProductService,
@@ -34,6 +39,14 @@ export class ListProductComponent implements OnInit {
   onDelete(product: Product) {
     this.productService.remove(product);
   }
+
+  onColumnSelect(columnHead: string): void{
+    this.sortColumn = columnHead;
+    this.direction = !this.direction;
+    this.sortDirect == 'asc' ?
+    this.sortDirect = 'dsc' :
+    this.sortDirect = 'asc';
+    }
 
 }
 

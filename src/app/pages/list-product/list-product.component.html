@@ -28,20 +28,23 @@
               <table class="table table-hover">
                 <thead class=" text-success">
                   <tr>
-                    <th>productID</th>
-                    <th>catID</th>
-                    <th>name</th>
+                    <th (click)="onColumnSelect('id')">productID</th>
+                    <th (click)="onColumnSelect('catID')">catID</th>
+                    <th (click)="onColumnSelect('name')">name</th>
                     <!-- <th>type</th> -->
-                    <th>description</th>
-                    <th>price</th>
-                    <th>featured</th>
-                    <th>active</th>
-                    <th>image</th>
+                    <th (click)="onColumnSelect('description')">description</th>
+                    <th (click)="onColumnSelect('price')">price</th>
+                    <th (click)="onColumnSelect('featured')">featured</th>
+                    <th (click)="onColumnSelect('active')">active</th>
+                    <th (click)="onColumnSelect('image')">image</th>
+                    <th><i *ngIf="!direction" class="material-icons">expand_more</i>
+                      <i *ngIf="direction" class="material-icons">expand_less</i>
+                      </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let product of productList$ | async">
-                    <td>{{ product.id }}</td>
+                  <tr *ngFor="let product of productList$ | async | sorter:sortColumn:sortDirect">
+                    <td>{{ product.id}}</td>
                     <td>{{ product.catID }} </td>
                     <td>{{ product.name }}</td>
                     <!-- <td>{{ product.type }}</td> -->

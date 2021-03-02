@@ -16,6 +16,7 @@ import { ListBillComponent } from './pages/list-bill/list-bill.component';
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { InfoCardComponent } from './common/info-card/info-card.component';
+import { SorterPipe } from './pipes/sorter.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { InfoCardComponent } from './common/info-card/info-card.component';
     EditOrderComponent,
     FilterPipe,
     InfoCardComponent,
+    SorterPipe,
   ],
   imports: [
     BrowserModule,

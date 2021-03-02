@@ -1,3 +1,13 @@
 .prod_image {
   height: 100px;
 }
+
+table {
+  thead {
+    th:hover {
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
