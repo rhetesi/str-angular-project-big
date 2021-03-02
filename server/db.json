@@ -5,7 +5,7 @@
       "catID": 2,
       "name": "Agárd",
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
-      "image": "https://drive.google.com/file/d/13zYl_sPRdFQV8FYiwWc00BGvIqcG8JeX/view?usp=sharing",
+      "image": "/agard.jpg",
       "price": 17574,
       "stock": 30,
       "featured": true,

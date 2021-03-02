@@ -47,8 +47,15 @@
                     <!-- <td>{{ product.type }}</td> -->
                     <td>{{ product.description }}</td>
                     <td>{{ product.price }}</td>
-                    <td>{{ product.featured }}</td>
-                    <td>{{ product.active }}</td>
+                    <!-- <td>{{ product.featured }}</td> -->
+                    <td><span *ngIf="product.featured" class="material-icons">
+                        done
+                      </span>
+                    </td>
+                    <!-- <td>{{ product.active }}</td> -->
+                    <td><span *ngIf="product.active" class="material-icons">
+                        done
+                      </span></td>
                     <td>
                       <img class="prod_image" [src]="product.image" [alt]="product.image">
                     </td>
