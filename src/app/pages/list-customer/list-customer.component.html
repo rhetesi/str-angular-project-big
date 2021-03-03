@@ -68,7 +68,48 @@
                   </tr>
                 </tbody>
               </table>
-
+<!-- Summary -->
+<div class="card">
+  <div class="card-header card-header-warning d-xl-flex flex-row flex-nowrap justify-content-between">
+    <div>
+      <h4 class="card-title text-uppercase">customers activity</h4>
+      <p class="card-category">The status of customers</p>
+    </div>
+    <div class="d-lg-flex flex-row flex-nowrap justify-content-around bg-white rounded m-1 mt-2 p-1">
+      <h5 class="card-title font-weight-bold text-warning m-3">Choose status!</h5>
+      <div class="d-md-flex flex-row flex-nowrap">
+        <div class="m-3">
+          <label class="m-0" for="all">
+            <input id="all" class="mx-2 mt-1" type="radio" name="all" [value]="'all'"
+              [(ngModel)]="choosen" checked>all
+          </label>
+        </div>
+        <div class="m-3" *ngFor="let choise of ['true', 'false']">
+          <label class="m-0" [for]="choise">
+            <input [id]="choise" class="mx-2 mt-1" type="radio" name="active" [value]="[choise]"
+              [(ngModel)]="choosen">{{ choise }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover text-center">
+        <thead class="text-warning">
+          <th>Active (piece)</th>
+           <th></th>
+        </thead>
+        <tr>
+          <td *ngIf="choosen==='all'">{{choosen}}: {{(customerList$ | async )?.length}}</td>
+          <td *ngIf="choosen!=='all'">{{choosen}}: {{(customerList$ | async |
+            filter:choosen:'active')?.length}}</td>
+           <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
 
               
             </div>

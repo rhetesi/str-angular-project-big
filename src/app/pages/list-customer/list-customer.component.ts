@@ -20,13 +20,9 @@ export class ListCustomerComponent implements OnInit {
 
   phrase: string = '';
   filterKey: string = 'firstName';
- //filterKeys: string[] = Object.keys(new Customer()).slice(1);
+  filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'country', 'city', 'notes', 'active'];
 
-     
-
-filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'country', 'city', 'notes', 'active'];
-
-
+  choosen: string = 'all';
 
   constructor(
     private customerService: CustomerService,
