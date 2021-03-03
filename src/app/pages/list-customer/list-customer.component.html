@@ -18,7 +18,7 @@
         <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-warning btn-block btn-lg">
-              Add new  +
+              Add new +
             </button>
           </div>
         </div>
@@ -33,7 +33,7 @@
               <table class="table table-hover">
                 <thead class=" text-warning">
                   <tr>
-                   <!--  <th>ID</th> -->
+                    <!--  <th>ID</th> -->
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -45,16 +45,19 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let customer of customerList$ | async | filter:phrase:filterKey">
-                   <!--  <td *ngIf="customer.id!==0">{{customer.id}}</td> -->
+                    <!--  <td *ngIf="customer.id!==0">{{customer.id}}</td> -->
                     <td *ngIf="customer.id!==0">{{customer.firstName}} </td>
                     <td *ngIf="customer.id!==0">{{customer.lastName}}</td>
                     <td *ngIf="customer.id!==0">{{customer.email}}</td>
-                  <!--   <td *ngIf="customer.id!==0">
+                    <!--   <td *ngIf="customer.id!==0">
                       {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+', '+customer.address.street }}</td> -->
-                      <td *ngIf="customer.id!==0">
-                        {{ customer.address.zip }} {{ customer.address.country }} {{ customer.address.city }} {{ customer.address.street }}</td>
-                      <td *ngIf="customer.id!==0">{{ customer.address.notes }}</td>
-                      <td *ngIf="customer.id!==0">{{ customer.active }}</td> 
+                    <td *ngIf="customer.id!==0">
+                      {{ customer.address.zip }} {{ customer.address.country }} {{ customer.address.city }}
+                      {{ customer.address.street }}</td>
+                    <td *ngIf="customer.id!==0">{{ customer.address.notes }}</td>
+                    <td *ngIf="customer.id!==0"><span *ngIf="customer.active" class="material-icons">
+                        done
+                      </span></td>
                     <td *ngIf="customer.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[customer.id]" class="btn btn-warning">
@@ -70,7 +73,7 @@
               </table>
 
 
-              
+
             </div>
           </div>
         </div>
@@ -79,6 +82,3 @@
     </div>
   </div>
 </div>
-
-  
-  

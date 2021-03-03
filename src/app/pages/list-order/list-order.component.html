@@ -45,7 +45,18 @@
                     <td *ngIf="order.id!==0">{{order.customerID}}</td>
                     <td *ngIf="order.id!==0">{{order.productID}} </td>
                     <td *ngIf="order.id!==0">{{order.amount}}</td>
-                    <td *ngIf="order.id!==0">{{order.status}}</td>
+                    <td *ngIf="order.id!==0">
+                      <span *ngIf="order.status==='new'" class="material-icons">
+                        fiber_new
+                      </span>
+                      <span *ngIf="order.status==='paid'" class="material-icons">
+                        paid
+                      </span>
+                      <span *ngIf="order.status==='shipped'" class="material-icons">
+                        local_shipping
+                      </span>
+                      <!-- {{order.status}} -->
+                    </td>
                     <td *ngIf="order.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[order.id]" class="btn btn-primary">
