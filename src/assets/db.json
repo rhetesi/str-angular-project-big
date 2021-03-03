@@ -643,8 +643,8 @@
     {
       "id": 1,
       "firstName": "József",
-      "lastName": "Cserkó",
-      "email": "jcserko@gmail.com",
+      "lastName": "Cserpes",
+      "email": "jozsefc@gmail.com",
       "address": {
         "zip": "6000",
         "country": "Hungary",
@@ -657,8 +657,8 @@
     {
       "id": 2,
       "firstName": "Gergely",
-      "lastName": "Gáll",
-      "email": "ggall@gamil.com",
+      "lastName": "Gárdos",
+      "email": "ggardos@gamil.com",
       "address": {
         "zip": "1000",
         "country": "Hungary",
@@ -755,13 +755,13 @@
     {
       "id": 9,
       "firstName": "Richárd",
-      "lastName": "Balog",
-      "email": "rbalogh8@gamil.hu",
+      "lastName": "Balogh",
+      "email": "rbalogh@gmail.com",
       "address": {
         "zip": "1000",
         "country": "Hungary",
         "city": "Budapest",
-        "street": "Szentendrei út 1.",
+        "street": "Fehérvári út 1.",
         "notes": "nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti"
       },
       "active": true
@@ -2045,7 +2045,7 @@
     {
       "id": 0,
       "orderID": 0,
-      "amount": "",
+      "amount": 0,
       "status": ""
     },
     {
@@ -2740,6 +2740,13 @@
       "customerID": "15",
       "productID": "16",
       "amount": "2365",
+      "status": "new"
+    },
+    {
+      "id": 55,
+      "customerID": "12",
+      "productID": "17",
+      "amount": "2001",
       "status": "new"
     }
   ]

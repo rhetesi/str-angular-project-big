@@ -19,6 +19,8 @@ export class ListBillComponent implements OnInit {
   filterKey: string = 'orderID';
   filterKeys: string[] = Object.keys(new Bill()).slice(1);
 
+  choosen: string = 'all';
+
   constructor(
     private billService: BillService,
     private notifyService : NotificationService,
@@ -34,7 +36,6 @@ export class ListBillComponent implements OnInit {
       <table class="table">
         <thead>
           <tr>
-            <th>id</th>
             <th>orderID</th>
             <th>amount</th>
             <th>status</th>
@@ -42,7 +43,6 @@ export class ListBillComponent implements OnInit {
         </thead>
         <tbody>
           <tr class="text-danger>
-            <td>${bill.id}</td>
             <td>${bill.orderID} </td>
             <td>${bill.amount}</td>
             <td>${bill.status}</td>
