@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
           map(params => params.filter(item => item.active).length)
         ),
      cardClass: 'card-header-warning',
-     footer: 'Ügyfelek',
+     footer: 'Number of active customers.',
      icon: 'account_circle',
     },
     {
@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit {
           map(params => params.filter(item => item.active).length)
         ),
      cardClass: 'card-header-success',
-     footer: 'Termékek',
+     footer: 'Number of active products.',
      icon: 'store',
     },
     {
@@ -51,18 +51,18 @@ export class DashboardComponent implements OnInit {
           map(params => params.filter(item => item.status!=='paid').length)
         ),
      cardClass: 'card-header-primary',
-     footer: 'Rendelések',
+     footer: 'Number of unpaid orders.',
      icon: 'content_paste',
     },
     {
-     title: 'Bills',
+     title: 'Invoices',
      content:
         this.billList$.pipe(
           map(params => params.filter(item => item.status!=='paid').
-          reduce((acc, one) => acc + parseInt('' + one.amount), 0))
+            reduce((acc, one) => acc + parseInt('' + one.amount), 0))
         ),
      cardClass: 'card-header-info',
-     footer: 'Számlák',
+     footer: 'Amount of unpaid invoices in hungarian forint.',
      icon: 'library_books',
     }
   ]
