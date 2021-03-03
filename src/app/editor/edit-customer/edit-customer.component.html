@@ -27,38 +27,28 @@
           <div class="d-flex justify-content-between">
             <label for="">First Name <span>*</span></label>
           </div>
-          <<<<<<< HEAD <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control"
-            pattern="[A-Za-z].{2,15}" required />
-        </div>
-        <div [hidden]="customerForm.controls.firstName?.valid" class="error-message mt-1">
-          The first name must be min 3 and max 15 characters long!
-          =======
+
           <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control"
             pattern="^[A-ZÁÉÓÖŐÜÚŰ][a-záéüöóőú]{2,14}" required />
         </div>
         <div [hidden]="customerForm.controls.firstName?.valid" class="error-message mt-1">
           The first name must start with a capital letter and can be at min 3 max 15 characters long!
           Example: John
-          >>>>>>> origin/Ildi
+
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Last Name <span>*</span></label>
           </div>
-          <<<<<<< HEAD <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control"
-            pattern="[A-Za-z].{2,15}" required />
-        </div>
-        <div [hidden]="customerForm.controls.lastName?.valid" class="error-message mt-1">
-          The last name must be min 3 and max 15 characters long!
-          =======
+
           <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control"
             pattern="^[A-ZÁÉÓÖŐÜÚŰ][a-záéüöóőú]{2,14}" required />
         </div>
         <div [hidden]="customerForm.controls.lastName?.valid" class="error-message mt-1">
           The last name must start with a capital letter and can be at min 3 max 15 characters long!
           Example: Doe
-          >>>>>>> origin/Ildi
+
         </div>
 
         <div class="form-group">
@@ -90,7 +80,7 @@
             <label for="">Country <span>*</span></label>
           </div>
           <input name="country" [(ngModel)]="customer.address.country" type="text" class="form-control"
-            pattern="[A-Za-z].{2,24}" required />
+            pattern="[A-ZÁÉÍÓÖŐÚÜŰ].[a-záéíóöőúüű]{2,23}" required />
         </div>
         <div [hidden]="customerForm.controls.country?.valid" class="error-message mt-1">
           The country must be min 3 and max 25 characters long!
@@ -100,8 +90,8 @@
           <div class="d-flex justify-content-between">
             <label for="">City <span>*</span></label>
           </div>
-          <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control"
-            pattern="[A-Za-z].{2,24}" required />
+          <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control" pattern="value{2,23}"
+            required />
         </div>
         <div [hidden]="customerForm.controls.city?.valid" class="error-message mt-1">
           The city must be min 3 and max 25 characters long!
@@ -113,6 +103,8 @@
           </div>
           <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control"
             pattern="[A-Za-z].{2,49}" required />
+          <!-- <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control"
+            pattern="[A-ZÁÉÍÓÖŐÚÜŰ].[a-záéíóöőúüű]{2,49}" required /> -->
         </div>
         <div [hidden]="customerForm.controls.street?.valid" class="error-message mt-1">
           The street must be min 3 and max 50 characters long!
