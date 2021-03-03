@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
+import { EditCustomerComponent } from './editor/edit-customer/edit-customer.component';
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { EditProductComponent } from './editor/edit-product/edit-product.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'products/:id',
     component: EditProductComponent,
+  },
+  {
+    path: 'customers/:id',
+    component: EditCustomerComponent,
   },
   {
     path: '**',

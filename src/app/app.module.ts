@@ -14,6 +14,7 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { ListProductComponent } from './pages/list-product/list-product.component';
 import { ListBillComponent } from './pages/list-bill/list-bill.component';
 import { EditProductComponent } from './editor/edit-product/edit-product.component';
+import { EditCustomerComponent } from './editor/edit-customer/edit-customer.component';
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { InfoCardComponent } from './common/info-card/info-card.component';
@@ -31,6 +32,7 @@ import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
     ListProductComponent,
     ListBillComponent,
     EditProductComponent,
+    EditCustomerComponent,
     EditOrderComponent,
     FilterPipe,
     InfoCardComponent,
