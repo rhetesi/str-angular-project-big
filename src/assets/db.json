@@ -652,7 +652,7 @@
         "street": "Struktúraváltó út 1.",
         "notes": "dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 2,
@@ -680,7 +680,7 @@
         "street": "Diósgyőri út 1.",
         "notes": "luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 4,
@@ -694,7 +694,7 @@
         "street": "Sóstói u. 1.",
         "notes": "proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 5,
@@ -722,7 +722,7 @@
         "street": "Szőregi út 1.",
         "notes": "sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 7,
@@ -736,7 +736,7 @@
         "street": "Nagyvárad tér 1.",
         "notes": "erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 8,
@@ -754,14 +754,14 @@
     },
     {
       "id": 9,
-      "firstName": "Randall",
-      "lastName": "Langstrath",
-      "email": "rlangstrath8@amazonaws.com",
+      "firstName": "Richárd",
+      "lastName": "Balog",
+      "email": "rbalogh8@gamil.hu",
       "address": {
         "zip": "1000",
-        "country": "China",
-        "city": "Xiaomenjia",
-        "street": "38 Nobel Way",
+        "country": "Hungary",
+        "city": "Budapest",
+        "street": "Szentendrei út 1.",
         "notes": "nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti"
       },
       "active": true
