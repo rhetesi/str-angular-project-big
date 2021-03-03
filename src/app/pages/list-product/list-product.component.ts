@@ -16,7 +16,7 @@ export class ListProductComponent implements OnInit {
   productList$: BehaviorSubject<Product[]> =
   this.productService.list$;
 
-  
+  choosen: string = 'all'
   phrase: string = '';
   filterKey: string = 'catID';
   filterKeys: string[] = Object.keys(new Product()).slice(1);
