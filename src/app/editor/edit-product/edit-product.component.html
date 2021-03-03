@@ -16,17 +16,17 @@
           <div class="d-flex justify-content-between">
             <label for="">product Name</label>
             <div [hidden]="productForm.controls.name?.valid" class="error-message mt-1">
-              The productName must be a positive integer.
+              A névnek nagybetűvel kell kezdődni és 2-14 karkter hosszú lehet.
             </div>
           </div>
           <input name="productName" [(ngModel)]="product.name" type="text"
-          class="form-control" pattern=".{ 5,20 }" required>
+          class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰ][a-záéüöóőú]{2,14}$" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">product type</label>
             <div [hidden]="productForm.controls.type?.valid" class="error-message mt-1">
-              A névnek minimum 5 maximum 20 karakternek kell lennie
+              A típus minimum 5 maximum 20 karakternek kell lennie
             </div>
           </div>
           <input name="type" [(ngModel)]="product.type" type="text"
@@ -39,18 +39,18 @@
               A leírás minimum20 maximum 1000 karakter hosszú lehet!
             </div>
           </div>
-          <input name="description" [(ngModel)]="product.description" type="text"
-            class="form-control" pattern=".{20,1000}" required>
+          <textarea name="description" [(ngModel)]="product.description" type="textarea"
+            class="form-control" pattern="[A-ZÁÉÓÖŐÜÚŰa-záéüöóőú]{2,1400}$" required></textarea>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">product price</label>
             <div [hidden]="productForm.controls.price?.valid" class="error-message mt-1">
-              Az ár minimum 4 maximum 10 karakter lehet!
+              Az ár csak szám lehet, minimum 4 maximum 10 karakter!
             </div>
           </div>
           <input name="price" [(ngModel)]="product.price" type="text"
-            class="form-control" pattern=".{4,10}" required>
+            class="form-control" pattern="^[0-9]{4,10}$" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -59,10 +59,22 @@
               true / false
             </div>
           </div>
-          <input name="featured" [(ngModel)]="product.featured" type="text"
-            class="form-control" pattern="" required>
+          <input name="featured" [(ngModel)]="product.featured" type="checkbox"
+            class="form-check-control" pattern="" required>
             <!----featured re validation true /false-->
-        </div> 
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">active</label>
+            <div [hidden]="productForm.controls.active?.valid" class="error-message mt-1">
+              true / false
+            </div>
+          </div>
+          <input name="active" [(ngModel)]="product.active" type="checkbox"
+            class="form-check-control" pattern="" required>
+            <!----featured re validation true /false-->
+        </div>
+
         <button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit" class="btn btn-success btn-block btn-lg mt-2">
           <i *ngIf="!clicked" class="fa fa-save"></i>
           <i *ngIf="clicked" class="fa fa-refresh"></i>

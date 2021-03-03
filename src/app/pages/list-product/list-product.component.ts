@@ -18,7 +18,7 @@ export class ListProductComponent implements OnInit {
 
   
   phrase: string = '';
-  filterKey: string = 'productID';
+  filterKey: string = 'catID';
   filterKeys: string[] = Object.keys(new Product()).slice(1);
 
   constructor(
