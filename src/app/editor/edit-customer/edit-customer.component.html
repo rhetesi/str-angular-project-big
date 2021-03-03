@@ -2,11 +2,8 @@
   <div class="row mt-5">
     <div *ngIf="customer$ | async as customer" class="col-6 offset-3">
       Edit customer
-      <form
-        #customerForm="ngForm"
-        (ngSubmit)="onUpdate(customerForm, customer)"
-      >
-       <!--  <div class="form-group">
+      <form #customerForm="ngForm" (ngSubmit)="onUpdate(customerForm, customer)">
+        <!--  <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">ID <span>*</span></label>
           </div>
@@ -30,19 +27,10 @@
           <div class="d-flex justify-content-between">
             <label for="">First Name <span>*</span></label>
           </div>
-          <input
-            name="firstName"
-            [(ngModel)]="customer.firstName"
-            type="text"
-            class="form-control"
-            pattern="[A-Za-z].{2,15}"
-            required
-          />
+          <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control"
+            pattern="[A-Za-z].{2,15}" required />
         </div>
-        <div
-          [hidden]="customerForm.controls.firstName?.valid"
-          class="error-message mt-1"
-        >
+        <div [hidden]="customerForm.controls.firstName?.valid" class="error-message mt-1">
           The first name must be min 3 and max 15 characters long!
         </div>
 
@@ -50,19 +38,10 @@
           <div class="d-flex justify-content-between">
             <label for="">Last Name <span>*</span></label>
           </div>
-          <input
-            name="lastName"
-            [(ngModel)]="customer.lastName"
-            type="text"
-            class="form-control"
-            pattern="[A-Za-z].{2,15}"
-            required
-          />
+          <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control"
+            pattern="[A-Za-z].{2,15}" required />
         </div>
-        <div
-          [hidden]="customerForm.controls.lastName?.valid"
-          class="error-message mt-1"
-        >
+        <div [hidden]="customerForm.controls.lastName?.valid" class="error-message mt-1">
           The last name must be min 3 and max 15 characters long!
         </div>
 
@@ -70,148 +49,88 @@
           <div class="d-flex justify-content-between">
             <label for="">Email <span>*</span></label>
           </div>
-          <input
-            name="email"
-            [(ngModel)]="customer.email"
-            type="email"
-            class="form-control"
-            pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,6}"
-            required
-          />
+          <input name="email" [(ngModel)]="customer.email" type="email" class="form-control"
+            pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,6}" required />
         </div>
-        <div
-          [hidden]="customerForm.controls.email?.valid"
-          class="error-message mt-1"
-        >
+        <div [hidden]="customerForm.controls.email?.valid" class="error-message mt-1">
           Email that must be in the following order: characters@characters.domain
-           
+
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Zip <span>*</span></label>
           </div>
-          <input
-            name="zip"
-            [(ngModel)]="customer.address.zip"
-            type="text"
-            class="form-control"
-            pattern="[1-9].{3}"
-            required
-          />
-          <div
-            [hidden]="customerForm.controls.zip?.valid"
-            class="error-message mt-1"
-          >
+          <input name="zip" [(ngModel)]="customer.address.zip" type="text" class="form-control" pattern="[1-9].{3}"
+            required />
+          <div [hidden]="customerForm.controls.zip?.valid" class="error-message mt-1">
             The zip code can be up to 4 digits long!
           </div>
- 
+
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Country <span>*</span></label>
           </div>
-          <input
-            name="country"
-            [(ngModel)]="customer.address.country"
-            type="text"
-            class="form-control"
-            pattern="[A-Za-z].{2,24}"
-            required
-          />
+          <input name="country" [(ngModel)]="customer.address.country" type="text" class="form-control"
+            pattern="[A-Za-z].{2,24}" required />
         </div>
-        <div
-          [hidden]="customerForm.controls.country?.valid"
-          class="error-message mt-1"
-        >
-        The country must be min 3 and max 25 characters long!
+        <div [hidden]="customerForm.controls.country?.valid" class="error-message mt-1">
+          The country must be min 3 and max 25 characters long!
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">City <span>*</span></label>
           </div>
-          <input
-            name="city"
-            [(ngModel)]="customer.address.city"
-            type="text"
-            class="form-control"
-            pattern="[A-Za-z].{2,24}"
-            required
-          />
+          <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control"
+            pattern="[A-Za-z].{2,24}" required />
         </div>
-        <div
-          [hidden]="customerForm.controls.city?.valid"
-          class="error-message mt-1"
-        >
-        The city must be min 3 and max 25 characters long!
+        <div [hidden]="customerForm.controls.city?.valid" class="error-message mt-1">
+          The city must be min 3 and max 25 characters long!
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Street <span>*</span></label>
           </div>
-          <input
-            name="street"
-            [(ngModel)]="customer.address.street"
-            type="text"
-            class="form-control"
-            pattern="[A-Za-z].{2,49}"
-            required
-          />
+          <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control"
+            pattern="[A-Za-z].{2,49}" required />
         </div>
-        <div
-          [hidden]="customerForm.controls.street?.valid"
-          class="error-message mt-1"
-        >
-        The street must be min 3 and max 50 characters long!
+        <div [hidden]="customerForm.controls.street?.valid" class="error-message mt-1">
+          The street must be min 3 and max 50 characters long!
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Notes <span>*</span></label>
           </div>
-          <input
-            name="notes"
-            [(ngModel)]="customer.address.notes"
-            type="text"
-            class="form-control"
-            pattern=".{3,}"
-            required
-          />
+          <input name="notes" [(ngModel)]="customer.address.notes" type="text" class="form-control" pattern=".{3,}"
+            required />
         </div>
-        <div
-          [hidden]="customerForm.controls.notes?.valid"
-          class="error-message mt-1"
-        >
-        The notes must be min 3 characters long!
+        <div [hidden]="customerForm.controls.notes?.valid" class="error-message mt-1">
+          The notes must be min 3 characters long!
         </div>
 
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Active <span>*</span></label>
-            </div>
-          
+          </div>
 
-            <select class="custom-select border col-12 mr-5" name="active" 
-            [(ngModel)]="customer.active" required >
-              <option *ngFor="let key of ['true', 'false']" [value]="[key]">{{key}}</option>
-            </select>
-            <div [hidden]="customerForm.controls.status?.valid" 
-            class="error-message mt-1">
-              <!-- Choose a status (true or false)! -->
-            </div>
+
+          <select class="custom-select border col-12 mr-5" name="active" [(ngModel)]="customer.active" required>
+            <option *ngFor="let key of [true, false]" [value]="[key]">{{key}}</option>
+          </select>
+          <div [hidden]="customerForm.controls.status?.valid" class="error-message mt-1">
+            <!-- Choose a status (true or false)! -->
+          </div>
         </div>
 
 
 
-        <button
-          [disabled]="customerForm.invalid || clicked"
-          (click)="showHtmlToaster(customer)"
-          type="submit"
-          class="btn btn-warning btn-block btn-lg mt-2"
-        >
+        <button [disabled]="customerForm.invalid || clicked" (click)="showHtmlToaster(customer)" type="submit"
+          class="btn btn-warning btn-block btn-lg mt-2">
           <i *ngIf="!clicked" class="fa fa-save"></i>
           <i *ngIf="clicked" class="fa fa-refresh"></i>
         </button>
@@ -221,4 +140,3 @@
     </div>
   </div>
 </div>
-
