@@ -1,25 +1,37 @@
+<div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
+  <span class="font-weight-bold text-uppercase col-2 pt-2 ml-5">Search by:</span>
+  <select class="form-control border col-3 mr-5" [(ngModel)]="filterKey">
+    <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
+  </select>
+  <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
+  <button type="submit" class="btn btn-white btn-round btn-just-icon">
+    <i class="material-icons">search</i>
+    <div class="ripple-container"></div>
+  </button>
+</div>
+
 <div class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
 
-        <!-- <div class="card card-plain">
+        <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-info btn-block btn-lg">
-              <i class="material-icons">create</i>
+              Add new +
             </button>
           </div>
-        </div> -->
+        </div>
 
         <div class="card">
           <div class="card-header card-header-info">
-            <h4 class="card-title text-uppercase">orders</h4>
-            <p class="card-category">All orders are shown below</p>
+            <h4 class="card-title text-uppercase">bills</h4>
+            <p class="card-category">All bills are shown below</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-hover">
-                <thead class=" text-info">
+                <thead class="text-info">
                   <tr>
                     <th>orderID</th>
                     <th>amount</th>
@@ -28,12 +40,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let bill of billList$ | async">
-                    <td>{{bill.orderID}}</td>
-                    <td>{{bill.amount}}</td>
-                    <td>{{bill.status}}</td>
-                    <!-- Szerkesztő komponens nincs még, ideiglenesen letiltva
-                    <td>
+                  <tr *ngFor="let bill of billList$ | async | filter:phrase:filterKey">
+                    <td *ngIf="bill.id!==0">{{bill.orderID}} </td>
+                    <td *ngIf="bill.id!==0">{{bill.amount}}</td>
+                    <td *ngIf="bill.id!==0">
+                      <span *ngIf="bill.status==='new'" class="material-icons">
+                        fiber_new
+                      </span>
+                      <span *ngIf="bill.status==='paid'" class="material-icons">
+                        paid
+                      </span>
+                    </td>
+                    <td *ngIf="bill.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[bill.id]" class="btn btn-info">
                           <i class="material-icons">create</i>
@@ -42,7 +60,7 @@
                           <i class="material-icons">delete_forever</i>
                         </button>
                       </div>
-                    </td> -->
+                    </td>
                   </tr>
                 </tbody>
               </table>
