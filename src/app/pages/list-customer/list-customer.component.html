@@ -49,13 +49,15 @@
                     <td *ngIf="customer.id!==0">{{customer.firstName}} </td>
                     <td *ngIf="customer.id!==0">{{customer.lastName}}</td>
                     <td *ngIf="customer.id!==0">{{customer.email}}</td>
-                    <td *ngIf="customer.id!==0">
-                      {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+', '+customer.address.street }}</td>
+                  <!--   <td *ngIf="customer.id!==0">
+                      {{ customer.address.zip+' '+customer.address.country+' '+customer.address.city+', '+customer.address.street }}</td> -->
+                      <td *ngIf="customer.id!==0">
+                        {{ customer.address.zip }} {{ customer.address.country }} {{ customer.address.city }} {{ customer.address.street }}</td>
                       <td *ngIf="customer.id!==0">{{ customer.address.notes }}</td>
                       <td *ngIf="customer.id!==0">{{ customer.active }}</td> 
                     <td *ngIf="customer.id!==0">
                       <div class="btn-group">
-                        <button [routerLink]="[customer.id]" class="btn btn-primary">
+                        <button [routerLink]="[customer.id]" class="btn btn-warning">
                           <i class="material-icons">create</i>
                         </button>
                         <button (click)="onDelete(customer)" class="btn btn-danger">
@@ -66,6 +68,9 @@
                   </tr>
                 </tbody>
               </table>
+
+
+              
             </div>
           </div>
         </div>

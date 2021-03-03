@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { Customer } from 'src/app/model/customer';
 import { NotificationService } from 'src/app/service/notification.service';
 import { CustomerService } from 'src/app/service/customer.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-customer',
@@ -18,6 +19,11 @@ export class EditCustomerComponent implements OnInit {
     switchMap(params => this.customerService.get(params.id))
   );
 
+ 
+  id: number = 0; 
+  updating: boolean = false;
+
+
   customer: Customer = new Customer();
  
 
@@ -25,33 +31,29 @@ export class EditCustomerComponent implements OnInit {
 
   clicked: boolean = false;
   category: string = 'new';
-  //customerService: any;
+ 
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private customerService: CustomerService,
     private router: Router,
     private notifyService: NotificationService,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
-    //Ildi
-    this.activatedRoute.params.subscribe(
-      params =>
-        this.customerService.get(params.id).subscribe(
-          customer => {
-            console.log(customer);
-            this.customer = customer || new Customer();
-          }
-        )
-    );
+    this.activatedRoute.params.subscribe(params => this.id = params.id);
+    this.customerService.get(this.id).subscribe(customer => this.customer = customer)
   }
+
+  
+ 
 
   onUpdate(form: NgForm, customer: Customer): void {
     this.clicked = true;
     if (!customer.id) {
       this.customerService.create(customer);
-      this.router.navigate(['customer']);
+      this.router.navigate(['customers']);
       } else {
         this.customerService.update(customer).subscribe(
           () => this.router.navigate(['customers'])
@@ -72,11 +74,13 @@ export class EditCustomerComponent implements OnInit {
       <table class="table">
         <thead>
           <tr>
-            <th>id</th>
+            <th>id</th> 
             <th>firstName</th>
             <th>lastName</th>
             <th>email</th>
             <th>address</th>
+            <th>active</th>
+            <th>notes</th>
             
             
           </tr>
@@ -88,6 +92,10 @@ export class EditCustomerComponent implements OnInit {
             <td>${customer.lastName}</td>
             <td>${customer.email}</td>
             <td>${customer.address}</td>
+            <td>${customer.active}</td>
+            <td>${customer.address.notes}</td>
+            <td></td>
+
             
           </tr>
         </tbody>

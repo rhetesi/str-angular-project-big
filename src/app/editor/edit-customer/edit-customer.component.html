@@ -187,15 +187,35 @@
         >
         The notes must be min 3 characters long!
         </div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">Active <span>*</span></label>
+            </div>
+          
+
+            <select class="custom-select border col-12 mr-5" name="active" 
+            [(ngModel)]="customer.active" required >
+              <option *ngFor="let key of ['true', 'false']" [value]="[key]">{{key}}</option>
+            </select>
+            <div [hidden]="customerForm.controls.status?.valid" 
+            class="error-message mt-1">
+              <!-- Choose a status (true or false)! -->
+            </div>
+        </div>
+
+
+
         <button
           [disabled]="customerForm.invalid || clicked"
           (click)="showHtmlToaster(customer)"
           type="submit"
-          class="btn btn-primary btn-block btn-lg mt-2"
+          class="btn btn-warning btn-block btn-lg mt-2"
         >
           <i *ngIf="!clicked" class="fa fa-save"></i>
           <i *ngIf="clicked" class="fa fa-refresh"></i>
         </button>
+
         <p>* Required!</p>
       </form>
     </div>

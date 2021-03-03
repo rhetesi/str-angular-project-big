@@ -620,7 +620,7 @@
       "lastName": "",
       "email": "characters@characters.domain",
       "address": {
-        "zip": "0",
+        "zip": "",
         "country": "",
         "city": "",
         "street": "",
