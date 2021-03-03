@@ -81,7 +81,7 @@
                             [(ngModel)]="choosen" checked>all
                         </label>
                       </div>
-                      <div class="m-3" *ngFor="let choise of ['new', 'shipped', 'paid']">
+                      <div class="m-3" *ngFor="let choise of ['new', 'paid']">
                         <label class="m-0" [for]="choise">
                           <input [id]="choise" class="mx-2 mt-1" type="radio" name="status" [value]="[choise]"
                             [(ngModel)]="choosen">{{ choise }}
