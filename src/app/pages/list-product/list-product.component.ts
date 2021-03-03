@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-list-product',
@@ -23,22 +24,51 @@ export class ListProductComponent implements OnInit {
   sortColumn: string = '';
   sortDirect: string = 'asc';
 
+  filterKey: string = 'productID';
+  filterKeys: string[] = Object.keys(new Product()).slice(1);
+
   constructor(
     private productService: ProductService,
+    private notifyService: NotificationService,
   ) { }
 
   ngOnInit(): void {
     this.productService.getAll();
-    this.phraseControl.valueChanges.pipe(
-      debounceTime(800)
-    ).subscribe(
-      newValue => this.phrase = newValue
-    );
+
   }
 
   onDelete(product: Product) {
     this.productService.remove(product);
+    this.notifyService.showSuccessWithTimeout(`
+      <table class="table">
+        <thead>
+          <tr>
+            <th>productID</th>
+            <th>catID</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>featured</th>
+            <th>active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-danger>
+            <td>${product.id}</td>
+            <td>${product.catID} </td>
+            <td>${product.name}</td>
+            <td>${product.description}</td>
+            <td>${product.price}</td>
+            <td>${product.featured}</td>
+            <td>${product.active}</td>
+          </tr>
+        </tbody>
+      </table>
+      </span>`,
+      "You have deleted this event:",
+      6000)
   }
+<<<<<<< HEAD
 
   onColumnSelect(columnHead: string): void{
     this.sortColumn = columnHead;
@@ -48,7 +78,11 @@ export class ListProductComponent implements OnInit {
     this.sortDirect = 'asc';
     }
 
+=======
+>>>>>>> origin/Roli
 }
+
+
 
 /*
 

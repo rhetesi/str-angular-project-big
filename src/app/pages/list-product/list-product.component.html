@@ -18,6 +18,24 @@
             </button>
           </div>
         </div> -->
+        <div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
+          <span class="font-weight-bold text-uppercase col-2 pt-2 ml-5">Search by:</span>
+          <select class="form-control border col-3 mr-5" [(ngModel)]="filterKey">
+            <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
+          </select>
+          <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
+          <button type="submit" class="btn btn-success btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+        <div class="card card-plain">
+          <div class="card-header">
+            <button [routerLink]="[0]" type="button" class="btn btn-success btn-block btn-lg">
+              Add new +
+            </button>
+          </div>
+        </div>
         <div class="card">
           <div class="card-header card-header-success">
             <h4 class="card-title text-uppercase">Products</h4>
@@ -32,28 +50,43 @@
                     <th (click)="onColumnSelect('catID')">catID</th>
                     <th (click)="onColumnSelect('name')">name</th>
                     <!-- <th>type</th> -->
-                    <th (click)="onColumnSelect('description')">description</th>
-                    <th (click)="onColumnSelect('price')">price</th>
-                    <th (click)="onColumnSelect('featured')">featured</th>
-                    <th (click)="onColumnSelect('active')">active</th>
-                    <th (click)="onColumnSelect('image')">image</th>
-                    <th><i *ngIf="!direction" class="material-icons">expand_more</i>
-                      <i *ngIf="direction" class="material-icons">expand_less</i>
-                      </th>
+                    <th>description</th>
+                    <th>price</th>
+                    <th>featured</th>
+                    <th>active</th>
+                    <th>image</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let product of productList$ | async | sorter:sortColumn:sortDirect">
-                    <td>{{ product.id}}</td>
-                    <td>{{ product.catID }} </td>
-                    <td>{{ product.name }}</td>
+                  <tr *ngFor="let product of productList$ | async">
+                    <td *ngIf="product.id!==0">{{ product.id }}</td>
+                    <td *ngIf="product.id!==0">{{ product.catID }} </td>
+                    <td *ngIf="product.id!==0">{{ product.name }}</td>
                     <!-- <td>{{ product.type }}</td> -->
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.price }}</td>
-                    <td>{{ product.featured }}</td>
-                    <td>{{ product.active }}</td>
-                    <td>
+                    <td *ngIf="product.id!==0">{{ product.description }}</td>
+                    <td *ngIf="product.id!==0">{{ product.price }}</td>
+                    <!-- <td>{{ product.featured }}</td> -->
+                    <td *ngIf="product.id!==0"><span *ngIf="product.featured" class="material-icons">
+                        done
+                      </span>
+                    </td>
+                    <!-- <td>{{ product.active }}</td> -->
+                    <td *ngIf="product.id!==0"><span *ngIf="product.active" class="material-icons">
+                        done
+                      </span></td>
+                    <td *ngIf="product.id!==0">
                       <img class="prod_image" [src]="product.image" [alt]="product.image">
+                    </td>
+                    <td *ngIf="product.id!==0">
+                      <div class="btn-group">
+                        <button [routerLink]="[product.id]" class="btn btn-success">
+                          <i class="material-icons">create</i>
+                        </button>
+                        <button (click)="onDelete(product)" class="btn btn-danger">
+                          <i class="material-icons">delete_forever</i>
+                        </button>
+                      </div>
                     </td>
                     <!-- Szerkesztés hiányzik, ideiglenesen letiltva
                       <td>

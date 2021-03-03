@@ -1,6 +1,18 @@
 {
   "products": [
     {
+      "id": 0,
+      "catID": 2,
+      "name": "Agárd",
+      "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+      "image": "./assets/img/agard.jpg",
+      "price": 17574,
+      "stock": 30,
+      "featured": true,
+      "type": "",
+      "active": true
+    },
+    {
       "id": 1,
       "catID": 2,
       "name": "Agárd",
@@ -615,10 +627,24 @@
   ],
   "customers": [
     {
+      "id": 0,
+      "firstName": "",
+      "lastName": "",
+      "email": "characters@characters.domain",
+      "address": {
+        "zip": "",
+        "country": "",
+        "city": "",
+        "street": "",
+        "notes": ""
+      },
+      "active": false
+    },
+    {
       "id": 1,
       "firstName": "József",
-      "lastName": "Cserkó",
-      "email": "jcserko@gmail.com",
+      "lastName": "Cserpes",
+      "email": "jozsefc@gmail.com",
       "address": {
         "zip": "6000",
         "country": "Hungary",
@@ -626,13 +652,13 @@
         "street": "Struktúraváltó út 1.",
         "notes": "dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo"
       },
-      "active": false
+      "active": "false"
     },
     {
       "id": 2,
       "firstName": "Gergely",
-      "lastName": "Gáll",
-      "email": "ggall@gamil.com",
+      "lastName": "Gárdos",
+      "email": "ggardos@gamil.com",
       "address": {
         "zip": "1000",
         "country": "Hungary",
@@ -640,7 +666,7 @@
         "street": "Budaörsi út 36.",
         "notes": "duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a"
       },
-      "active": true
+      "active": "false"
     },
     {
       "id": 3,
@@ -654,7 +680,7 @@
         "street": "Diósgyőri út 1.",
         "notes": "luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 4,
@@ -668,7 +694,7 @@
         "street": "Sóstói u. 1.",
         "notes": "proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 5,
@@ -696,7 +722,7 @@
         "street": "Szőregi út 1.",
         "notes": "sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 7,
@@ -710,7 +736,7 @@
         "street": "Nagyvárad tér 1.",
         "notes": "erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 8,
@@ -728,14 +754,14 @@
     },
     {
       "id": 9,
-      "firstName": "Randall",
-      "lastName": "Langstrath",
-      "email": "rlangstrath8@amazonaws.com",
+      "firstName": "Richárd",
+      "lastName": "Balogh",
+      "email": "rbalogh@gmail.com",
       "address": {
         "zip": "1000",
-        "country": "China",
-        "city": "Xiaomenjia",
-        "street": "38 Nobel Way",
+        "country": "Hungary",
+        "city": "Budapest",
+        "street": "Fehérvári út 1.",
         "notes": "nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti"
       },
       "active": true
@@ -2017,6 +2043,12 @@
   ],
   "bills": [
     {
+      "id": 0,
+      "orderID": 0,
+      "amount": 0,
+      "status": ""
+    },
+    {
       "id": 1,
       "orderID": 19,
       "amount": 15100,
@@ -2322,15 +2354,15 @@
       "id": 0,
       "customerID": 0,
       "productID": 0,
-      "amount": "",
+      "amount": 0,
       "status": ""
     },
     {
       "id": 1,
-      "customerID": 22,
+      "customerID": 16,
       "productID": 17,
       "amount": 19601,
-      "status": "paid"
+      "status": "shipped"
     },
     {
       "id": 2,
@@ -2352,6 +2384,13 @@
       "productID": 11,
       "amount": 7000,
       "status": "new"
+    },
+    {
+      "id": 5,
+      "customerID": 4,
+      "productID": 12,
+      "amount": 11700,
+      "status": "paid"
     },
     {
       "id": 6,
@@ -2581,7 +2620,7 @@
       "id": 38,
       "customerID": 15,
       "productID": 33,
-      "amount": "22100",
+      "amount": 22100,
       "status": "paid"
     },
     {
@@ -2671,29 +2710,62 @@
     {
       "id": 51,
       "customerID": 12,
+<<<<<<< HEAD
       "productID": 10,
+=======
+      "productID": "10",
+>>>>>>> origin/Roli
       "amount": 5000,
       "status": "new"
     },
     {
       "id": 52,
       "customerID": 17,
+<<<<<<< HEAD
       "productID": 18,
+=======
+      "productID": "18",
+>>>>>>> origin/Roli
       "amount": 2500,
       "status": "new"
     },
     {
       "id": 53,
       "customerID": 18,
+<<<<<<< HEAD
       "productID": 17,
+=======
+      "productID": "17",
+>>>>>>> origin/Roli
       "amount": 2001,
       "status": "new"
     },
     {
+<<<<<<< HEAD
       "id": 54,
       "customerID": 19,
       "productID": 19,
       "amount": 3000,
+=======
+      "id": 55,
+      "customerID": "15",
+      "productID": "15",
+      "amount": "2355",
+      "status": "new"
+    },
+    {
+      "id": 56,
+      "customerID": "15",
+      "productID": "16",
+      "amount": "2365",
+      "status": "new"
+    },
+    {
+      "id": 55,
+      "customerID": "12",
+      "productID": "17",
+      "amount": "2001",
+>>>>>>> origin/Roli
       "status": "new"
     }
   ]

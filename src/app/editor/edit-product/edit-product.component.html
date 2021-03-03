@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row mt-5">
+    <div *ngIf="(product$ | async) as product" class="col-6 offset-3">Edit product
+      <form #productForm="ngForm" (ngSubmit)="onUpdate(productForm, product)">
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">catID</label>
+            <div [hidden]="productForm.controls.catID?.valid" class="error-message mt-1">
+              The catID must be a positive integer.
+            </div>
+          </div>
+          <input name="catID" [(ngModel)]="product.catID" type="text"
+            class="form-control" pattern="^[1-9][0-9]*$" required>
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">product Name</label>
+            <div [hidden]="productForm.controls.name?.valid" class="error-message mt-1">
+              The productName must be a positive integer.
+            </div>
+          </div>
+          <input name="productName" [(ngModel)]="product.name" type="text"
+          class="form-control" pattern=".{ 5,20 }" required>
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">product type</label>
+            <div [hidden]="productForm.controls.type?.valid" class="error-message mt-1">
+              A névnek minimum 5 maximum 20 karakternek kell lennie
+            </div>
+          </div>
+          <input name="type" [(ngModel)]="product.type" type="text"
+            class="form-control" pattern="^[2-9][0-9]{3}$|^[1-4][0-9]{4}$" required>
+        </div>        
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">product description</label>
+            <div [hidden]="productForm.controls.description?.valid" class="error-message mt-1">
+              A leírás minimum20 maximum 1000 karakter hosszú lehet!
+            </div>
+          </div>
+          <input name="description" [(ngModel)]="product.description" type="text"
+            class="form-control" pattern=".{20,1000}" required>
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">product price</label>
+            <div [hidden]="productForm.controls.price?.valid" class="error-message mt-1">
+              Az ár minimum 4 maximum 10 karakter lehet!
+            </div>
+          </div>
+          <input name="price" [(ngModel)]="product.price" type="text"
+            class="form-control" pattern=".{4,10}" required>
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">featured</label>
+            <div [hidden]="productForm.controls.featured?.valid" class="error-message mt-1">
+              true / false
+            </div>
+          </div>
+          <input name="featured" [(ngModel)]="product.featured" type="text"
+            class="form-control" pattern="" required>
+            <!----featured re validation true /false-->
+        </div> 
+        <button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit" class="btn btn-success btn-block btn-lg mt-2">
+          <i *ngIf="!clicked" class="fa fa-save"></i>
+          <i *ngIf="clicked" class="fa fa-refresh"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

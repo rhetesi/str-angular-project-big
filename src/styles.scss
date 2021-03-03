@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .toast-container {
   position: relative;
+  height: 100vh;
 }
 
 .toast-container .ngx-toastr {
@@ -11,8 +12,8 @@
   box-shadow: 0 0 12px #999;
   color: rgb(105, 105, 105);
   font-weight: bold;
-  position: absolute;
-  top: -500px;
+  position: fixed;
+  top: 10%;
   right: 30px;
   animation-name: animation;
   animation-duration: 1s;
@@ -20,6 +21,6 @@
 }
 
 @keyframes animation {
-  0% {right: 30px; top: -550px; opacity: 0;}
-  100% {right: 30px; top: -500px; opacity: 1;}
+  0% {right: 30px; top: 0%; opacity: 0;}
+  100% {right: 30px; top: 10%; opacity: 1;}
 }
