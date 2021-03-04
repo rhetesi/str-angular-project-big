@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Customer } from 'src/app/model/customer';
 import { NotificationService } from 'src/app/service/notification.service';
 import { ToastrService } from 'ngx-toastr';
+import { ConfigService, ITableCol } from 'src/app/service/config.service';
 
 declare var $: any;
 
@@ -18,10 +19,13 @@ export class ListCustomerComponent implements OnInit {
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   testCustomer: Observable<Customer> = this.customerService.get(1);
 
-  column: string = '';
+  cols: ITableCol[] = this.configService.customerTableCols;
+
+  columnHead: string = '';
   direction: boolean = false;
   sortColumn: string = '';
   sortDirect: string = 'asc';
+
   phrase: string = '';
   filterKey: string = 'firstName';
   filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'country', 'city', 'notes', 'active'];
@@ -31,7 +35,8 @@ export class ListCustomerComponent implements OnInit {
   constructor(
     private customerService: CustomerService,
     private notifyService : NotificationService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private configService: ConfigService,
   ) { console.log(this.filterKeys);}
 
   ngOnInit(): void {

@@ -5,6 +5,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 import { NotificationService } from 'src/app/service/notification.service';
+import { ConfigService, ITableCol } from 'src/app/service/config.service';
 
 @Component({
   selector: 'app-list-product',
@@ -16,10 +17,13 @@ export class ListProductComponent implements OnInit {
   productList$: BehaviorSubject<Product[]> =
   this.productService.list$;
 
+  cols: ITableCol[] = this.configService.productTableCols;
+
   phraseControl: FormControl = new FormControl('');
 
   phrase: string = '';
-  column: string = '';
+
+  columnHead: string = '';
   direction: boolean = false;
   sortColumn: string = '';
   sortDirect: string = 'asc';
@@ -30,6 +34,7 @@ export class ListProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private notifyService: NotificationService,
+    private configService: ConfigService,
   ) { }
 
   ngOnInit(): void {
@@ -68,7 +73,6 @@ export class ListProductComponent implements OnInit {
       "You have deleted this event:",
       6000)
   }
-<<<<<<< HEAD
 
   onColumnSelect(columnHead: string): void{
     this.sortColumn = columnHead;
@@ -78,8 +82,6 @@ export class ListProductComponent implements OnInit {
     this.sortDirect = 'asc';
     }
 
-=======
->>>>>>> origin/Roli
 }
 
 

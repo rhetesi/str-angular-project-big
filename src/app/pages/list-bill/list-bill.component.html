@@ -33,17 +33,19 @@
               <table class="table table-hover">
                 <thead class="text-info">
                   <tr>
-                    <th (click)="onColumnSelect('orderID')">orderID</th>
-                    <th (click)="onColumnSelect('amount')">amount</th>
-                    <th (click)="onColumnSelect('status')">status</th>
-                    <th></th>
-                    <th><i *ngIf="!direction" class="material-icons">expand_more</i>
-                      <i *ngIf="direction" class="material-icons">expand_less</i>
-                    </th>
+                    <th (click)="onColumnSelect(col.key)"
+                        *ngFor="let col of cols">
+                        {{col.header}}
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
+                        class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
+                        class="material-icons">expand_less</i>
+                      </th>
+                      <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let bill of billList$ | async | filter:phrase:filterKey">
+                  <tr *ngFor="let bill of billList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
                     <td *ngIf="bill.id!==0">{{bill.orderID}} </td>
                     <td *ngIf="bill.id!==0">{{bill.amount}}</td>
                     <td *ngIf="bill.id!==0">

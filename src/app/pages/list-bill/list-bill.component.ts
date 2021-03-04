@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Bill } from 'src/app/model/bill';
 import { BillService } from 'src/app/service/bill.service';
 import { NotificationService } from 'src/app/service/notification.service';
+import { ConfigService, ITableCol } from 'src/app/service/config.service';
 
 @Component({
   selector: 'app-list-bill',
@@ -15,10 +16,13 @@ export class ListBillComponent implements OnInit {
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   testBill: Observable<Bill> = this.billService.get(1);
 
-  column: string = '';
+  cols: ITableCol[] = this.configService.billTableCols;
+
+  columnHead: string = '';
   direction: boolean = false;
   sortColumn: string = '';
   sortDirect: string = 'asc';
+
   phrase: string = '';
   filterKey: string = 'orderID';
   filterKeys: string[] = Object.keys(new Bill()).slice(1);
@@ -28,6 +32,7 @@ export class ListBillComponent implements OnInit {
   constructor(
     private billService: BillService,
     private notifyService : NotificationService,
+    private configService: ConfigService,
   ) { }
 
   ngOnInit(): void {
