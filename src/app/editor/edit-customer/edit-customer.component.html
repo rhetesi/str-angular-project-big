@@ -197,17 +197,15 @@
           <div class="d-flex justify-content-between">
             <label for="">Active <span>*</span></label>
             </div>
-          
-
-            <select class="custom-select border col-12 mr-5" name="active" 
-            [(ngModel)]="customer.active" required >
-              <option *ngFor="let key of ['true', 'false']" [value]="[key]">{{key}}</option>
-            </select>
-            <div [hidden]="customerForm.controls.status?.valid" 
-            class="error-message mt-1">
-              <!-- Choose a status (true or false)! -->
+            <div class="form-check my-3">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="active" [(ngModel)]="customer.active">true
+                <span class="form-check-sign">
+                  <span class="check"></span>
+                </span>
+              </label>
             </div>
-        </div>
+          </div>
 
 
 
