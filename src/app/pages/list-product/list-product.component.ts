@@ -22,8 +22,6 @@ export class ListProductComponent implements OnInit {
   filterKeys: string[] = Object.keys(new Product()).slice(1);
   choosen: string = 'all';
 
-  choosen: string = 'all';
-
   constructor(
     private productService: ProductService,
     private notifyService : NotificationService,
