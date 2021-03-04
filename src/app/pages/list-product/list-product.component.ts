@@ -17,6 +17,7 @@ export class ListProductComponent implements OnInit {
 
   phraseControl: FormControl = new FormControl('');
   phrase: string = '';
+  choosen: string = 'all';
 
   constructor(
     private productService: ProductService,
