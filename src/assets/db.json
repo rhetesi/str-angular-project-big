@@ -2049,12 +2049,6 @@
       "status": ""
     },
     {
-      "id": 1,
-      "orderID": 19,
-      "amount": 15100,
-      "status": "paid"
-    },
-    {
       "id": 2,
       "orderID": 15,
       "amount": 9100,
