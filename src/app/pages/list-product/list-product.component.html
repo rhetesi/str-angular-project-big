@@ -95,14 +95,16 @@
     <div class="table-responsive">
       <table class="table table-hover text-center">
         <thead class="text-success">
-          <th>Feature (piece)</th>
-           <th></th>
+          <th>Featured (piece)</th>
+          <th>Active (piece)</th>
         </thead>
         <tr>
           <td *ngIf="choosen==='all'">{{choosen}}: {{(productList$ | async )?.length}}</td>
           <td *ngIf="choosen!=='all'">{{choosen}}: {{(productList$ | async |
+            filter:choosen:'featured')?.length}}</td>
+          <td *ngIf="choosen==='all'">{{choosen}}: {{(productList$ | async )?.length}}</td>
+          <td *ngIf="choosen!=='all'">{{choosen}}: {{(productList$ | async |
             filter:choosen:'active')?.length}}</td>
-           <td></td>
         </tr>
       </table>
     </div>
