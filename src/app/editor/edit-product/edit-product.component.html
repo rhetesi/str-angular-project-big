@@ -20,7 +20,7 @@
             </div>
           </div>
           <input name="productName" [(ngModel)]="product.name" type="text"
-          class="form-control" pattern="^[a-záéüöóőú]{2,14}$" required>
+          class="form-control" pattern="[A-ZÁÉÓÖŐÜÚŰÍa-záéüöóőúűí\.]{1,14}" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -36,11 +36,13 @@
           <div class="d-flex justify-content-between">
             <label for="">product description</label>
             <div [hidden]="productForm.controls.description?.valid" class="error-message mt-1">
-              A leírás minimum20 maximum 1000 karakter hosszú lehet!
+              A leírás minimum2 maximum 1400 karakter hosszú lehet!
             </div>
           </div>
           <textarea name="description" [(ngModel)]="product.description" type="textarea"
-            class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰa-záéüöóőú_-]{2,1400}$" required></textarea>
+            class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰÍ][A-ZÁÉÓÖŐÜÚŰÍa-záéüöóőúűí\.\s\d]{2,1400}" required></textarea>
+          <!-- <textarea name="description" [(ngModel)]="product.description" type="textarea"
+            class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰa-záéüöóőú\s]{2,1400}$" required></textarea> -->
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
