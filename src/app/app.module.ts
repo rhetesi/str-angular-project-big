@@ -20,12 +20,9 @@ import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { InfoCardComponent } from './common/info-card/info-card.component';
 import { SumPipe } from './pipes/sum.pipe';
-<<<<<<< HEAD
 import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
-=======
 import { BarChartComponent } from './common/chart/bar-chart/bar-chart.component';
 import { PieChartComponent } from './common/chart/pie-chart/pie-chart.component';
->>>>>>> origin/Gabi
 
 @NgModule({
   declarations: [
@@ -43,12 +40,9 @@ import { PieChartComponent } from './common/chart/pie-chart/pie-chart.component'
     FilterPipe,
     InfoCardComponent,
     SumPipe,
-<<<<<<< HEAD
     EditBillComponent,
-=======
     BarChartComponent,
     PieChartComponent,
->>>>>>> origin/Gabi
   ],
   imports: [
     BrowserModule,
