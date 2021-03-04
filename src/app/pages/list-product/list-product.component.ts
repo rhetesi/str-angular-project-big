@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { NotificationService } from 'src/app/service/notification.service';
 import { ProductService } from 'src/app/service/product.service'
+import { ConfigService, ITableCol } from 'src/app/service/config.service';
 
 declare var $:any;
 @Component({
@@ -17,14 +18,25 @@ export class ListProductComponent implements OnInit {
   testProduct: Observable<Product> = this.productService.get(1);
 
 
+  cols: ITableCol[] = this.configService.productTableCols;
+
+  phraseControl: FormControl = new FormControl('');
+
   phrase: string = '';
+
+  columnHead: string = '';
+  direction: boolean = false;
+  sortColumn: string = '';
+  sortDirect: string = 'asc';
+
   filterKey: string = 'catID';
   filterKeys: string[] = Object.keys(new Product()).slice(1);
   choosen: string = 'all';
 
   constructor(
     private productService: ProductService,
-    private notifyService : NotificationService,
+    private notifyService: NotificationService,
+    private configService: ConfigService,
   ) { }
 
   ngOnInit(): void {
@@ -110,5 +122,14 @@ export class ListProductComponent implements OnInit {
       "You have deleted this event:",
       5000)
   }
+
+  onColumnSelect(columnHead: string): void{
+    this.sortColumn = columnHead;
+    this.direction = !this.direction;
+    this.sortDirect == 'asc' ?
+    this.sortDirect = 'dsc' :
+    this.sortDirect = 'asc';
+    }
+
 }
 

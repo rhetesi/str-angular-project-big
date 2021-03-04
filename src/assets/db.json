@@ -2704,43 +2704,29 @@
     {
       "id": 51,
       "customerID": 12,
-      "productID": "10",
+      "productID": 10,
       "amount": 5000,
       "status": "new"
     },
     {
       "id": 52,
       "customerID": 17,
-      "productID": "18",
+      "productID": 18,
       "amount": 2500,
       "status": "new"
     },
     {
       "id": 53,
       "customerID": 18,
-      "productID": "17",
+      "productID": 17,
       "amount": 2001,
       "status": "new"
     },
     {
-      "id": 55,
-      "customerID": "15",
-      "productID": "15",
-      "amount": "2355",
-      "status": "new"
-    },
-    {
-      "id": 56,
-      "customerID": "15",
-      "productID": "16",
-      "amount": "2365",
-      "status": "new"
-    },
-    {
-      "id": 55,
-      "customerID": "12",
-      "productID": "17",
-      "amount": "2001",
+      "id": 54,
+      "customerID": 19,
+      "productID": 19,
+      "amount": 3000,
       "status": "new"
     }
   ]

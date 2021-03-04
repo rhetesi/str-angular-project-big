@@ -46,20 +46,22 @@
               <table class="table table-hover">
                 <thead class=" text-success">
                   <tr>
-                    <th>productID</th>
-                    <th>catID</th>
-                    <th>name</th>
+                    <th (click)="onColumnSelect(col.key)"
+                        *ngFor="let col of cols">
+                        {{col.header}}
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
+                        class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
+                        class="material-icons">expand_less</i>
+                      </th>
+                      <th></th>
+
                     <!-- <th>type</th> -->
-                    <th>description</th>
-                    <th>price</th>
-                    <th>featured</th>
-                    <th>active</th>
-                    <th>image</th>
-                    <th></th>
+
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let product of productList$ | async">
+                  <tr *ngFor="let product of productList$ | async | sorter:sortColumn:sortDirect">
                     <td *ngIf="product.id!==0">{{ product.id }}</td>
                     <td *ngIf="product.id!==0">{{ product.catID }} </td>
                     <td *ngIf="product.id!==0">{{ product.name }}</td>

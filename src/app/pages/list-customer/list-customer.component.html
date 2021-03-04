@@ -34,17 +34,20 @@
                 <thead class=" text-warning">
                   <tr>
                     <!--  <th>ID</th> -->
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Notes</th>
-                    <th>Active</th>
+                    <th (click)="onColumnSelect(col.key)"
+                        *ngFor="let col of cols">
+                        {{col.header}}
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
+                        class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
+                        class="material-icons">expand_less</i>
+                      </th>
+                      <th></th>
                     <!-- <th> </th> -->
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let customer of customerList$ | async | filter:phrase:filterKey">
+                  <tr *ngFor="let customer of customerList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
                     <!--  <td *ngIf="customer.id!==0">{{customer.id}}</td> -->
                     <td *ngIf="customer.id!==0">{{customer.firstName}} </td>
                     <td *ngIf="customer.id!==0">{{customer.lastName}}</td>
