@@ -16,10 +16,11 @@ export class ListProductComponent implements OnInit {
   productList$: BehaviorSubject<Product[]> =
   this.productService.list$;
 
-  
+
   phrase: string = '';
   filterKey: string = 'productID';
   filterKeys: string[] = Object.keys(new Product()).slice(1);
+  choosen: string = 'all';
 
   constructor(
     private productService: ProductService,
@@ -28,7 +29,7 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAll();
-    
+
   }
 
   onDelete(product: Product) {
@@ -39,11 +40,11 @@ export class ListProductComponent implements OnInit {
           <tr>
             <th>productID</th>
             <th>catID</th>
-            <th>name</th>    
+            <th>name</th>
             <th>description</th>
             <th>price</th>
             <th>featured</th>
-            <th>active</th>            
+            <th>active</th>
           </tr>
         </thead>
         <tbody>
