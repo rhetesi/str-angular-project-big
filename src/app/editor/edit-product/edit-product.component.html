@@ -56,7 +56,7 @@
           <div class="d-flex justify-content-between">
             <label for="">featured</label>
             <div [hidden]="productForm.controls.featured?.valid" class="error-message mt-1">
-              true / false
+              checked true /unchecked false
             </div>
           </div>
           <input name="featured" [(ngModel)]="product.featured" type="checkbox"
@@ -67,7 +67,7 @@
           <div class="d-flex justify-content-between">
             <label for="">active</label>
             <div [hidden]="productForm.controls.active?.valid" class="error-message mt-1">
-              true / false
+              checked true /unchecked false
             </div>
           </div>
           <input name="active" [(ngModel)]="product.active" type="checkbox"
@@ -83,3 +83,20 @@
     </div>
   </div>
 </div>
+<!---
+<body ng-app="checkboxExample">
+  <script>
+  angular.module('checkboxExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.checkboxModel = {
+       value1 : true,
+            
+      };
+    }]);
+</script>
+<form name="myForm" ng-controller="ExampleController">
+  <label>Active:
+    <input type="checkbox" ng-model="checkboxModel.value1">
+  </label>
+ </form>
+</body>--->
