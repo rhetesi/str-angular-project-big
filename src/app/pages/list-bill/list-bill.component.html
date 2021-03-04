@@ -50,13 +50,14 @@
                       <span *ngIf="bill.status==='paid'" class="material-icons">
                         paid
                       </span>
+                      <!-- {{bill.status}} -->
                     </td>
                     <td *ngIf="bill.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[bill.id]" class="btn btn-info">
                           <i class="material-icons">create</i>
                         </button>
-                        <button (click)="onDelete(bill)" class="btn btn-danger">
+                        <button (click)="showNotification('top','right', bill)" class="btn btn-danger">
                           <i class="material-icons">delete_forever</i>
                         </button>
                       </div>
