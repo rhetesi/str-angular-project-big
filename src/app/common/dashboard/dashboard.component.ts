@@ -261,11 +261,11 @@ export class DashboardComponent implements OnInit {
     this.productService.getAll();
   }
 
-  ngOnDestroy(): void {
-    this.billList$.unsubscribe();
-    this.customerList$.unsubscribe();
-    this.orderList$.unsubscribe();
-    this.productList$.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.billList$.unsubscribe();
+  //   this.customerList$.unsubscribe();
+  //   this.orderList$.unsubscribe();
+  //   this.productList$.unsubscribe();
+  // }
 
 }
