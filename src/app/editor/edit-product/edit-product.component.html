@@ -10,7 +10,7 @@
             </div>
           </div>
           <input name="catID" [(ngModel)]="product.catID" type="text"
-            class="form-control" pattern="^[1-9][0-9]*$" required>
+            class="form-control" pattern="^[1-9]*$" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -20,17 +20,17 @@
             </div>
           </div>
           <input name="productName" [(ngModel)]="product.name" type="text"
-          class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰ][a-záéüöóőú]{2,14}$" required>
+          class="form-control" pattern="^[a-záéüöóőú]{2,14}$" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">product type</label>
             <div [hidden]="productForm.controls.type?.valid" class="error-message mt-1">
-              A típus minimum 5 maximum 20 karakternek kell lennie
+              A típus minimum 1 maximum 20 karakternek kell lennie
             </div>
           </div>
           <input name="type" [(ngModel)]="product.type" type="text"
-            class="form-control" pattern="^[2-9][0-9]{3}$|^[1-4][0-9]{4}$" required>
+            class="form-control" pattern="^[a-záéüöóőú]{1,20}$" required>
         </div>        
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -40,7 +40,7 @@
             </div>
           </div>
           <textarea name="description" [(ngModel)]="product.description" type="textarea"
-            class="form-control" pattern="[A-ZÁÉÓÖŐÜÚŰa-záéüöóőú]{2,1400}$" required></textarea>
+            class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰa-záéüöóőú_-]{2,1400}$" required></textarea>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -52,7 +52,7 @@
           <input name="price" [(ngModel)]="product.price" type="text"
             class="form-control" pattern="^[0-9]{4,10}$" required>
         </div>
-        <div class="form-group">
+      <!--  <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">featured</label>
             <div [hidden]="productForm.controls.featured?.valid" class="error-message mt-1">
@@ -60,9 +60,9 @@
             </div>
           </div>
           <input name="featured" [(ngModel)]="product.featured" type="checkbox"
-            class="form-check-control" pattern="" required>
+            class="form-check-control" pattern="" required>-->
             <!----featured re validation true /false-->
-        </div>
+      <!-- </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">active</label>
@@ -71,8 +71,33 @@
             </div>
           </div>
           <input name="active" [(ngModel)]="product.active" type="checkbox"
-            class="form-check-control" pattern="" required>
-            <!----featured re validation true /false-->
+            class="form-check-control" pattern="" required>-->
+      <!--  </div>-->
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">Featured<span>*</span></label>
+          </div>
+          <div class="form-check my-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="featured" [(ngModel)]="product.featured">true
+              <span class="form-check-sign">
+                <span class="check"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">Active<span>*</span></label>
+          </div>
+          <div class="form-check my-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="active" [(ngModel)]="product.active">true
+              <span class="form-check-sign">
+                <span class="check"></span>
+              </span>
+            </label>
+          </div>
         </div>
 
         <button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit" class="btn btn-success btn-block btn-lg mt-2">
