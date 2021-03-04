@@ -57,15 +57,15 @@
                     <td *ngIf="customer.id!==0"><span *ngIf="customer.active" class="material-icons">
                         done
                       </span></td>
-
-                    <div class="btn-group">
-                      <button [routerLink]="[customer.id]" class="btn btn-warning">
-                        <i class="material-icons">create</i>
-                      </button>
-                      <button (click)="showNotification('top','center', customer)" class="btn btn-danger">
-                        <i class="material-icons">delete_forever</i>
-                      </button>
-                    </div>
+                    <td>
+                      <div class="btn-group">
+                        <button [routerLink]="[customer.id]" class="btn btn-warning">
+                          <i class="material-icons">create</i>
+                        </button>
+                        <button (click)="showNotification('top','center', customer)" class="btn btn-danger">
+                          <i class="material-icons">delete_forever</i>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
