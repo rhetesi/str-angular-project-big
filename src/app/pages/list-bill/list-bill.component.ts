@@ -43,7 +43,7 @@ export class ListBillComponent implements OnInit {
         </thead>
         <tbody>
           <tr class="text-danger>
-            <td>${bill.orderID} </td>
+            <td>${bill.orderId} </td>
             <td>${bill.amount}</td>
             <td>${bill.status}</td>
           </tr>
