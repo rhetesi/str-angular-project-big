@@ -57,7 +57,7 @@
                     <td *ngIf="customer.id!==0"><span *ngIf="customer.active" class="material-icons">
                         done
                       </span></td>
-                    <td>
+                    <td *ngIf="customer.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[customer.id]" class="btn btn-warning">
                           <i class="material-icons">create</i>
