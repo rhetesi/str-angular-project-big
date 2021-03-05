@@ -74,18 +74,22 @@ export class ListProductComponent implements OnInit {
           <table class="table">
             <thead>
               <tr>
-                <th>customerID</th>
                 <th>productID</th>
-                <th>amount</th>
-                <th>status</th>
+                <th>catID</th>
+                <th>price</th>
+                <th>type</th>
+                <th>featured</th>
+                <th>active</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>${product.catID}</td>
-                <td>${product.id} </td>
+                <td>${product.id}</td>
+                <td>${product.catID} </td>
                 <td>${product.price}</td>
+                <td>${product.type}</td>
                 <td>${product.featured}</td>
+                <td>${product.active}</td>
               </tr>
             </tbody>
           </table>
@@ -99,22 +103,24 @@ export class ListProductComponent implements OnInit {
       <table class="table">
         <thead>
           <tr>
-            <th>customerID</th>
             <th>productID</th>
             <th>catID</th>
             <th>name</th>
             <th>description</th>
             <th>price</th>
+            <th>type</th>
             <th>featured</th>
             <th>active</th>
           </tr>
         </thead>
         <tbody>
           <tr class="text-danger">
-          <td>${product.catID}</td>
-          <td>${product.id} </td>
-          <td>${product.price}</td>
-          <td>${product.featured}</td>
+            <td>${product.id}</td>
+            <td>${product.catID} </td>
+            <td>${product.price}</td>
+            <td>${product.type}</td>
+            <td>${product.featured}</td>
+            <td>${product.active}</td>
           </tr>
         </tbody>
       </table>
