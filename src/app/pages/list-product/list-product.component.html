@@ -1,3 +1,16 @@
+<!-- Search -->
+<div class="form-group no-border d-flex flex-column flex-md-row" id="navbarDropdownMenuLink" role="button">
+  <span class="font-weight-bold text-uppercase col-md-2 pt-2 ml-0 pl-0 ml-md-5">Search by:</span>
+  <select class="form-control border col-12 col-md-3 mr-md-5 my-3 my-md-0" [(ngModel)]="filterKey">
+    <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
+  </select>
+  <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
+  <button type="submit" class="btn btn-white btn-round btn-just-icon">
+    <i class="material-icons">search</i>
+    <div class="ripple-container"></div>
+  </button>
+</div>
+
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -18,7 +31,9 @@
             </button>
           </div>
         </div> -->
-        <div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
+
+        <!-- régi search,  nem reszponzív -->
+        <!-- <div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
           <span class="font-weight-bold text-uppercase col-2 pt-2 ml-5">Search by:</span>
           <select class="form-control border col-3 mr-5" [(ngModel)]="filterKey">
             <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
@@ -28,7 +43,8 @@
             <i class="material-icons">search</i>
             <div class="ripple-container"></div>
           </button>
-        </div>
+        </div> -->
+
         <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-success btn-block btn-lg">
@@ -46,15 +62,12 @@
               <table class="table table-hover">
                 <thead class=" text-success">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)"
-                        *ngFor="let col of cols">
-                        {{col.header}}
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
-                        class="material-icons">expand_more</i>
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
-                        class="material-icons">expand_less</i>
-                      </th>
-                      <th></th>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      {{col.header}}
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                    </th>
+                    <th></th>
 
                     <!-- <th>type</th> -->
 
