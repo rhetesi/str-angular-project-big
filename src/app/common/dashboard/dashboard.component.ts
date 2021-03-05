@@ -123,6 +123,10 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
+  productAllChartData: ChartDataSets[] = [];
+  productAllChartLabels: Label[] = [];
+  productAllChartColor: Color[] = [];
+
   productChartData: ChartDataSets[] = [
       {
         data: [0],
@@ -235,10 +239,26 @@ export class DashboardComponent implements OnInit {
         const activeAndFeaturedProducts: number =
           data.filter(o => o.active && o.featured).length;
 
+        data.forEach((o, i) => {
+            Math.random()
+            this.productAllChartData[i]=
+              {
+                data: [o.price],
+                label: o.name,
+                borderColor: ['#fff'],
+                borderWidth: [2],
+                backgroundColor: `rgba(${Math.floor(Math.random() * 255)},
+                                       ${Math.floor(Math.random() * 255)},
+                                       ${Math.floor(Math.random() * 255)},
+                                       .7)`,
+              };
+            // this.productAllChartLabels[i] = [o.name];
+          });
+
         this.productChartData[0].data = [ activeProducts ];
         this.productChartData[1].data = [ featuredProducts ];
         this.productChartData[2].data = [ activeAndFeaturedProducts ];
-        console.log(this.productChartData)
+        console.log(this.productAllChartData, this.productAllChartLabels)
       }
     );
 
@@ -251,7 +271,7 @@ export class DashboardComponent implements OnInit {
           data.filter(o => o.active === false ).length;
 
         this.customerChartData[0].data = [ activeCustomers, inactiveCustomers ];
-        console.log(this.customerChartData)
+        // console.log(this.customerChartData)
       }
     );
 
