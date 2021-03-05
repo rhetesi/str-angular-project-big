@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { ListCustomerComponent } from './pages/list-customer/list-customer.component';
 import { ListOrderComponent } from './pages/list-order/list-order.component';
@@ -18,8 +19,11 @@ import { EditCustomerComponent } from './editor/edit-customer/edit-customer.comp
 import { EditOrderComponent } from './editor/edit-order/edit-order.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { InfoCardComponent } from './common/info-card/info-card.component';
+import { SorterPipe } from './pipes/sorter.pipe';
 import { SumPipe } from './pipes/sum.pipe';
 import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
+import { BarChartComponent } from './common/chart/bar-chart/bar-chart.component';
+import { PieChartComponent } from './common/chart/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +40,11 @@ import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
     EditOrderComponent,
     FilterPipe,
     InfoCardComponent,
+    SorterPipe,
     SumPipe,
     EditBillComponent,
+    BarChartComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,7 @@ import { EditBillComponent } from './editor/edit-bill/edit-bill.component';
       // positionClass: 'toast-top-right'
     }),
     ToastContainerModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

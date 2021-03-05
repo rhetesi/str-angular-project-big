@@ -1,53 +1,52 @@
 <div class="container">
 
-    <div class="row mt-5">
-      <div *ngIf="(bill$ | async) as bill" class="col-6 offset-3">Edit bill
-        <form #billForm="ngForm" (ngSubmit)="onUpdate(billForm, bill)">
-   
-          <div class="form-group">
-            <div class="d-flex justify-content-between">
-              <label for="">orderID</label>
-              <div [hidden]="billForm.controls.orderID?.valid" class="error-message mt-1">
-                The orderID must be a positive integer.
-              </div>
+  <div class="row mt-5">
+    <div *ngIf="(bill$ | async) as bill" class="col-6 offset-3">Edit bill
+      <form #billForm="ngForm" (ngSubmit)="onUpdate(billForm, bill)">
+
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">orderID</label>
+            <div [hidden]="billForm.controls.orderID?.valid" class="error-message mt-1">
+              The orderID must be a positive integer.
             </div>
-            <input name="orderID" [(ngModel)]="bill.orderID" type="number"
-            class="form-control" pattern="^[1-9][0-9]*$" required>
           </div>
-  
-          <div class="form-group">
-            <div class="d-flex justify-content-between">
-              <label for="">amount</label>
-              <div [hidden]="billForm.controls.amount?.valid" class="error-message mt-1">
-                The amount must be an integer between 2000 and 40000.
-              </div>
+          <input name="orderID" [(ngModel)]="bill.orderID" type="number" class="form-control" pattern="^[1-9][0-9]*$"
+            required>
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">amount</label>
+            <div [hidden]="billForm.controls.amount?.valid" class="error-message mt-1">
+              The amount must be an integer between 2000 and 40000.
             </div>
-            <input name="amount" [(ngModel)]="bill.amount" type="number"
-              class="form-control" pattern="^[2-9][0-9]{3}$|^[1-4][0-9]{4}$" required>
           </div>
-  
-          <div class="form-group">
-            <div class="d-flex justify-content-between">
-              <label for="">status</label>
-              <div [hidden]="billForm.controls.status?.valid" class="error-message mt-1">
-                Choose a status (new, paid)!
-              </div>
+          <input name="amount" [(ngModel)]="bill.amount" type="number" class="form-control"
+            pattern="^[2-9][0-9]{3}$|^[1-4][0-9]{4}$" required>
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="">status</label>
+            <div [hidden]="billForm.controls.status?.valid" class="error-message mt-1">
+              Choose a status (new, paid)!
             </div>
-            <!-- <input name="status" [(ngModel)]="bill.status" type="text" class="form-control"
+          </div>
+          <!-- <input name="status" [(ngModel)]="bill.status" type="text" class="form-control"
               pattern="^'new'||'paid'$" required> -->
-  
-              <select class="custom-select bill col-12 mr-5" name="status" [(ngModel)]="bill.status" required >
-                <option *ngFor="let key of ['new', 'paid']" [value]="[key]">{{key}}</option>
-              </select>
-          </div>
-          <button [disabled]="billForm.invalid || clicked" (click)="showNotification('top','right', bill)" type="submit" class="btn btn-info btn-block btn-lg mt-2">
-            <i *ngIf="!clicked" class="fa fa-save"></i>
-            <i *ngIf="clicked" class="fa fa-refresh"></i>
-          </button>
-        </form>
-      </div>
+
+          <select class="custom-select bill col-12 mr-5" name="status" [(ngModel)]="bill.status" required>
+            <option *ngFor="let key of ['new', 'paid']" [value]="[key]">{{key}}</option>
+          </select>
+        </div>
+        <button [disabled]="billForm.invalid || clicked" (click)="showNotification('top','right', bill)" type="submit"
+          class="btn btn-info btn-block btn-lg mt-2">
+          <i *ngIf="!clicked" class="fa fa-save"></i>
+          <i *ngIf="clicked" class="fa fa-refresh"></i>
+        </button>
+      </form>
     </div>
-  
-    </div>
-  
-  
+  </div>
+
+</div>

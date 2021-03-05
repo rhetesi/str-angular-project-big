@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Customer } from 'src/app/model/customer';
 import { NotificationService } from 'src/app/service/notification.service';
 import { ToastrService } from 'ngx-toastr';
+import { ConfigService, ITableCol } from 'src/app/service/config.service';
 
 declare var $: any;
 
@@ -18,25 +19,29 @@ export class ListCustomerComponent implements OnInit {
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   testCustomer: Observable<Customer> = this.customerService.get(1);
 
+  cols: ITableCol[] = this.configService.customerTableCols;
+
+  columnHead: string = '';
+  direction: boolean = false;
+  sortColumn: string = '';
+  sortDirect: string = 'asc';
+
   phrase: string = '';
   filterKey: string = 'firstName';
- //filterKeys: string[] = Object.keys(new Customer()).slice(1);
+  filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'country', 'city', 'notes', 'active'];
 
-     
-
-filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'country', 'city', 'notes', 'active'];
-
-
+  choosen: string = 'all';
 
   constructor(
     private customerService: CustomerService,
     private notifyService : NotificationService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private configService: ConfigService,
   ) { console.log(this.filterKeys);}
 
   ngOnInit(): void {
     this.customerService.getAll();
-  } 
+  }
 
   showNotification(from: string, align: string, customer: Customer) {
     this.customerService.remove(customer);
@@ -69,14 +74,14 @@ filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'count
           <table class="table">
             <thead>
               <tr>
-              <th>id</th> 
+              <th>id</th>
               <th>firstName</th>
               <th>lastName</th>
               <th>email</th>
               <th>address</th>
               <th>active</th>
               <th>Notes</th>
-              
+
               </tr>
             </thead>
             <tbody>
@@ -88,7 +93,7 @@ filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'count
               <td>${customer.address}</td>
               <td>${customer.active}</td>
               <td>${customer.address.notes}</td>
-              
+
               </tr>
             </tbody>
           </table>
@@ -113,7 +118,7 @@ filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'count
           <th>Address</th>
           <th>active</th>
           <th>Notes</th>
-          
+
           </tr>
         </thead>
         <tbody>
@@ -124,7 +129,7 @@ filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'count
           <td>${customer.email}</td>
           <td>${customer.address}</td>
           <td>${customer.address.notes}</td>
-         
+
           </tr>
         </tbody>
       </table>
@@ -135,7 +140,7 @@ filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'count
 
 
 
-  
+
   onCreate(customer: Customer) {
     const newCustomer: Customer = new Customer
   newCustomer.id = 0;
@@ -170,5 +175,13 @@ filterKeys:string[] = ['firstName', 'lastName', 'email', 'street', 'zip', 'count
       "You have created this event:",
       10000)
   }
+
+  onColumnSelect(columnHead: string): void{
+    this.sortColumn = columnHead;
+    this.direction = !this.direction;
+    this.sortDirect == 'asc' ?
+    this.sortDirect = 'dsc' :
+    this.sortDirect = 'asc';
+    }
 
 }

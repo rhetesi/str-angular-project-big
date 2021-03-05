@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Order } from 'src/app/model/order';
 import { OrderService } from 'src/app/service/order.service';
 import { NotificationService } from 'src/app/service/notification.service';
+import { ConfigService, ITableCol } from 'src/app/service/config.service';
 
 declare var $: any;
 
@@ -16,16 +17,24 @@ export class ListOrderComponent implements OnInit {
 
   orderList$: BehaviorSubject<Order[]> = this.orderService.list$;
   testOrder: Observable<Order> = this.orderService.get(1);
+  cols: ITableCol[] = this.configService.orderTableCols;
+
 
   phrase: string = '';
   filterKey: string = 'customerID';
   filterKeys: string[] = Object.keys(new Order()).slice(1);
+
+  columnHead: string = '';
+  direction: boolean = false;
+  sortColumn: string = '';
+  sortDirect: string = 'asc';
 
   choosen: string = 'all';
 
   constructor(
     private orderService: OrderService,
     private notifyService : NotificationService,
+    private configService: ConfigService,
   ) { }
 
   ngOnInit(): void {
@@ -107,5 +116,13 @@ export class ListOrderComponent implements OnInit {
       "You have deleted this event:",
       5000)
   }
+
+  onColumnSelect(columnHead: string): void{
+    this.sortColumn = columnHead;
+    this.direction = !this.direction;
+    this.sortDirect == 'asc' ?
+    this.sortDirect = 'dsc' :
+    this.sortDirect = 'asc';
+    }
 }
 

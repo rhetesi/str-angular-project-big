@@ -652,7 +652,7 @@
         "street": "Struktúraváltó út 1.",
         "notes": "dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo"
       },
-      "active": true
+      "active": "false"
     },
     {
       "id": 2,
@@ -828,13 +828,13 @@
       "lastName": "Mabbett",
       "email": "ymabbettd@cnbc.com",
       "address": {
-        "zip": "48410-000",
-        "country": "Brazil",
-        "city": "Cícero Dantas",
-        "street": "83 Dryden Lane",
+        "zip": "4841",
+        "country": "BRAZIL",
+        "city": "Cocero",
+        "street": "Dryden Lane",
         "notes": "dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 15,
@@ -843,12 +843,12 @@
       "email": "kacutte@google.com",
       "address": {
         "zip": "1000",
-        "country": "China",
+        "country": "CHINA",
         "city": "Sicheng",
-        "street": "2682 Dennis Parkway",
+        "street": "Dennis Parkway",
         "notes": "dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 16,
@@ -871,9 +871,9 @@
       "email": "rsetchfieldg@liveinternet.ru",
       "address": {
         "zip": "1000",
-        "country": "China",
+        "country": "CHINA",
         "city": "Luorong",
-        "street": "20 School Park",
+        "street": "School Park",
         "notes": "pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis"
       },
       "active": false
@@ -912,10 +912,10 @@
       "lastName": "Spybey",
       "email": "rspybeyj@dedecms.com",
       "address": {
-        "zip": "361424",
-        "country": "Russia",
+        "zip": "3614",
+        "country": "RUSSIA",
         "city": "Kenzhe",
-        "street": "5 Mayer Avenue",
+        "street": "Mayer Avenue",
         "notes": "primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est"
       },
       "active": false
@@ -2704,43 +2704,29 @@
     {
       "id": 51,
       "customerID": 12,
-      "productID": "10",
+      "productID": 10,
       "amount": 5000,
       "status": "new"
     },
     {
       "id": 52,
       "customerID": 17,
-      "productID": "18",
+      "productID": 18,
       "amount": 2500,
       "status": "new"
     },
     {
       "id": 53,
       "customerID": 18,
-      "productID": "17",
+      "productID": 17,
       "amount": 2001,
       "status": "new"
     },
     {
-      "id": 55,
-      "customerID": "15",
-      "productID": "15",
-      "amount": "2355",
-      "status": "new"
-    },
-    {
-      "id": 56,
-      "customerID": "15",
-      "productID": "16",
-      "amount": "2365",
-      "status": "new"
-    },
-    {
-      "id": 55,
-      "customerID": "12",
-      "productID": "17",
-      "amount": "2001",
+      "id": 54,
+      "customerID": 19,
+      "productID": 19,
+      "amount": 3000,
       "status": "new"
     }
   ]
