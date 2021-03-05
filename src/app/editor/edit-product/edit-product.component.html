@@ -9,8 +9,7 @@
               A catID csak pozitív szám lehet!
             </div>
           </div>
-          <input name="catID" [(ngModel)]="product.catID" type="text"
-            class="form-control" pattern="^[1-9]*$" required>
+          <input name="catID" [(ngModel)]="product.catID" type="text" class="form-control" pattern="^[1-9]*$" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -19,8 +18,8 @@
               A névnek nagybetűvel kell kezdődni és 1-20 karkter hosszú lehet!
             </div>
           </div>
-          <input name="name" [(ngModel)]="product.name" type="text"
-          class="form-control" pattern="[A-ZÁÉÓÖŐÜÚŰÍa-záéüöóőúűí\.]{1,20}" required>
+          <input name="name" [(ngModel)]="product.name" type="text" class="form-control"
+            pattern="[A-ZÁÉÓÖŐÜÚŰÍa-záéüöóőúűí\.]{1,20}" required>
         </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
@@ -29,9 +28,9 @@
               A típus minimum 1 maximum 50 karakter lehet!
             </div>
           </div>
-          <input name="type" [(ngModel)]="product.type" type="text"
-            class="form-control" pattern="[a-záéüöóőúűí\.\s]{1,50}" required>
-        </div>        
+          <input name="type" [(ngModel)]="product.type" type="text" class="form-control"
+            pattern="[a-záéüöóőúűí\.\s]{1,50}" required>
+        </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">product description</label>
@@ -39,8 +38,8 @@
               A leírásnak nagybetűvel kell kezdődnie, 2-1400 karakter hosszú lehet!
             </div>
           </div>
-          <textarea name="description" [(ngModel)]="product.description" type="textarea"
-            class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰÍ][A-ZÁÉÓÖŐÜÚŰÍa-záéüöóőúűí\.\s\d]{2,1400}" required></textarea>
+          <textarea name="description" [(ngModel)]="product.description" type="textarea" class="form-control"
+            pattern="^[A-ZÁÉÓÖŐÜÚŰÍ][A-ZÁÉÓÖŐÜÚŰÍa-záéüöóőúűí\.\,\s\d]{2,1400}" required></textarea>
           <!-- <textarea name="description" [(ngModel)]="product.description" type="textarea"
             class="form-control" pattern="^[A-ZÁÉÓÖŐÜÚŰa-záéüöóőú\s]{2,1400}$" required></textarea> -->
         </div>
@@ -51,10 +50,10 @@
               Az ár csak szám lehet, minimum 4 maximum 10 karakter!
             </div>
           </div>
-          <input name="price" [(ngModel)]="product.price" type="text"
-            class="form-control" pattern="^[0-9]{4,10}$" required>
+          <input name="price" [(ngModel)]="product.price" type="text" class="form-control" pattern="^[0-9]{4,10}$"
+            required>
         </div>
-      <!--  <div class="form-group">
+        <!--  <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">featured</label>
             <div [hidden]="productForm.controls.featured?.valid" class="error-message mt-1">
@@ -63,8 +62,8 @@
           </div>
           <input name="featured" [(ngModel)]="product.featured" type="checkbox"
             class="form-check-control" pattern="" required>-->
-            <!----featured re validation true /false-->
-      <!-- </div>
+        <!----featured re validation true /false-->
+        <!-- </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">active</label>
@@ -74,7 +73,7 @@
           </div>
           <input name="active" [(ngModel)]="product.active" type="checkbox"
             class="form-check-control" pattern="" required>-->
-      <!--  </div>-->
+        <!--  </div>-->
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <label for="">Featured<span>*</span></label>
@@ -102,7 +101,8 @@
           </div>
         </div>
 
-        <button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit" class="btn btn-success btn-block btn-lg mt-2">
+        <button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit"
+          class="btn btn-success btn-block btn-lg mt-2">
           <i *ngIf="!clicked" class="fa fa-save"></i>
           <i *ngIf="clicked" class="fa fa-refresh"></i>
         </button>
@@ -117,7 +117,7 @@
     .controller('ExampleController', ['$scope', function($scope) {
       $scope.checkboxModel = {
        value1 : true,
-            
+
       };
     }]);
 </script>
