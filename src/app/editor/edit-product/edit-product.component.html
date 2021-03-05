@@ -6,7 +6,7 @@
           <div class="d-flex justify-content-between">
             <label for="">catID</label>
             <div [hidden]="productForm.controls.catID?.valid" class="error-message mt-1">
-              A catID csak pozitíb szám lehet!
+              A catID csak pozitív szám lehet!
             </div>
           </div>
           <input name="catID" [(ngModel)]="product.catID" type="text"
