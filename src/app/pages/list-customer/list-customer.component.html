@@ -1,6 +1,20 @@
-<div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
+<!-- régi, nem reszponzív kereső -->
+<!-- <div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
   <span class="font-weight-bold text-uppercase col-2 pt-2 ml-5">Search by:</span>
   <select class="form-control border col-3 mr-5" [(ngModel)]="filterKey">
+    <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
+  </select>
+  <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
+  <button type="submit" class="btn btn-white btn-round btn-just-icon">
+    <i class="material-icons">search</i>
+    <div class="ripple-container"></div>
+  </button>
+</div> -->
+
+<!-- Search -->
+<div class="form-group no-border d-flex flex-column flex-md-row" id="navbarDropdownMenuLink" role="button">
+  <span class="font-weight-bold text-uppercase col-md-2 pt-2 ml-0 pl-0 ml-md-5">Search by:</span>
+  <select class="form-control border col-12 col-md-3 mr-md-5 my-3 my-md-0" [(ngModel)]="filterKey">
     <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
   </select>
   <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
@@ -34,20 +48,18 @@
                 <thead class=" text-warning">
                   <tr>
                     <!--  <th>ID</th> -->
-                    <th (click)="onColumnSelect(col.key)"
-                        *ngFor="let col of cols">
-                        {{col.header}}
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
-                        class="material-icons">expand_more</i>
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
-                        class="material-icons">expand_less</i>
-                      </th>
-                      <th></th>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      {{col.header}}
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                    </th>
+                    <th></th>
                     <!-- <th> </th> -->
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let customer of customerList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
+                  <tr
+                    *ngFor="let customer of customerList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
                     <!--  <td *ngIf="customer.id!==0">{{customer.id}}</td> -->
                     <td *ngIf="customer.id!==0">{{customer.firstName}} </td>
                     <td *ngIf="customer.id!==0">{{customer.lastName}}</td>
