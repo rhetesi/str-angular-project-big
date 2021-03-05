@@ -75,7 +75,8 @@
                 </thead>
                 <tbody>
                   <!-- <tr *ngFor="let product of productList$ | async | sorter:sortColumn:sortDirect"> -->
-                  <tr *ngFor="let product of productList$ | async | filter:phrase:filterKey">
+                  <tr
+                    *ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
                     <td *ngIf="product.id!==0">{{ product.id }}</td>
                     <td *ngIf="product.id!==0">{{ product.catID }} </td>
                     <td *ngIf="product.id!==0">{{ product.name }}</td>
