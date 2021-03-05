@@ -26,7 +26,7 @@
           <div class="d-flex justify-content-between">
             <label for="">product type</label>
             <div [hidden]="productForm.controls.type?.valid" class="error-message mt-1">
-              A típus minimum 1 maximum 50 karakternek lehet!
+              A típus minimum 1 maximum 50 karakter lehet!
             </div>
           </div>
           <input name="type" [(ngModel)]="product.type" type="text"
@@ -36,7 +36,7 @@
           <div class="d-flex justify-content-between">
             <label for="">product description</label>
             <div [hidden]="productForm.controls.description?.valid" class="error-message mt-1">
-              A leírásnak nagybetűvel kell kezdődnie 2-1400 karakter hosszú lehet!
+              A leírásnak nagybetűvel kell kezdődnie, 2-1400 karakter hosszú lehet!
             </div>
           </div>
           <textarea name="description" [(ngModel)]="product.description" type="textarea"
