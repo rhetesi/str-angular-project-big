@@ -34,20 +34,35 @@
               <table class="table table-hover">
                 <thead class=" text-primary">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)"
-                        *ngFor="let col of cols">
-                        {{col.header}}
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
-                        class="material-icons">expand_more</i>
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
-                        class="material-icons">expand_less</i>
-                      </th>
-                      <th></th>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols; index as i" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
+                      {{col.header}}
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                    </th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let order of orderList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
-                    <td *ngIf="order.id!==0">{{order.customerID}}</td>
+                    <ng-container *ngFor="let col of cols; index as i;" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
+                      <ng-container *ngIf="order[cols[0].key]!== 0">
+                        <td *ngIf="col.key !== 'status'">{{order[col.key]}}</td>
+                        <td *ngIf="col.key === 'status'">
+                          <span *ngIf="order.status==='new'" class="material-icons">
+                            fiber_new
+                          </span>
+                          <span *ngIf="order.status==='paid'" class="material-icons">
+                            paid
+                          </span>
+                          <span *ngIf="order.status==='shipped'" class="material-icons">
+                            local_shipping
+                          </span>
+                        </td>
+                      </ng-container>
+                    </ng-container>
+                    <!-- <td *ngIf="order.id!==0">{{order.customerID}}</td>
                     <td *ngIf="order.id!==0">{{order.productID}} </td>
                     <td *ngIf="order.id!==0">{{order.amount}}</td>
                     <td *ngIf="order.id!==0">
@@ -61,7 +76,7 @@
                         local_shipping
                       </span>
                       <!-- {{order.status}} -->
-                    </td>
+                    <!--  </td> -->
                     <td *ngIf="order.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[order.id]" class="btn btn-primary">
@@ -73,6 +88,7 @@
                       </div>
                     </td>
                   </tr>
+
                 </tbody>
               </table>
 

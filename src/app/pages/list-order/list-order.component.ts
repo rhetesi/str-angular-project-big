@@ -31,6 +31,8 @@ export class ListOrderComponent implements OnInit {
 
   choosen: string = 'all';
 
+  draggedColumnIndex: number = 0;
+
   constructor(
     private orderService: OrderService,
     private notifyService : NotificationService,
@@ -39,6 +41,24 @@ export class ListOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderService.getAll();
+  }
+
+
+  public arrayMove(arr: any[], from: number, to: any) {
+    let cutOut = arr.splice(from, 1)[0]; // remove the dragged element at index 'from'
+    arr.splice(to, 0, cutOut);            // insert it at index 'to'
+  }
+
+  public dragStartColumn(index: any) {
+    this.draggedColumnIndex = index;
+  }
+
+  public allowDrop(event: any) {
+    event.preventDefault();
+  }
+
+  public dropColumn(index: any) {
+    this.arrayMove(this.cols, this.draggedColumnIndex, index);
   }
 
   showNotification(from: string, align: string, order: Order) {
