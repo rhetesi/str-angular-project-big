@@ -75,8 +75,8 @@
                       <span *ngIf="order.status==='shipped'" class="material-icons">
                         local_shipping
                       </span>
-                      <!-- {{order.status}} -->
-                    <!--  </td> -->
+                      {{order.status}}
+                    </td> -->
                     <td *ngIf="order.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[order.id]" class="btn btn-primary">
