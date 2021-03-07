@@ -1,22 +1,39 @@
 .error-message {
-    font-style: italic;
-    font-size: 0.8em;
-    color: rgba(155, 4, 4, .7);
-    animation-name: error;
-    animation-duration: .5s;
-    position: relative;
+  font-style: italic;
+  font-size: 0.8em;
+  color: rgba(155, 4, 4, .7);
+  animation-name: error;
+  animation-duration: .5s;
+  position: relative;
 }
-  
-  @keyframes error {
-    0% {right: 10px; opacity: 0;}
-    100% {right: 0px; opacity: 1;}
-  }
-  
-  .fa-refresh {
-    animation: saving 8s linear infinite;
-  }
-  
-  @keyframes saving {
-    0% {rotate: 0deg;}
-    100% {rotate: 360deg;}
-  }
+
+@keyframes error {
+  0% {right: 10px; opacity: 0;}
+  100% {right: 0px; opacity: 1;}
+}
+
+@keyframes saving {
+  0% {rotate: 0deg;}
+  100% {rotate: 360deg;}
+}
+
+.fa-refresh {
+  animation: saving 1s linear infinite;
+}
+
+p{
+  color: rgb(231, 16, 16);
+}
+
+span{
+  color: rgb(231, 16, 16);
+}
+
+.form-control:invalid {
+  background-image: linear-gradient(0deg, #ff1100 2px,rgba(244,67,54,0) 0),
+  linear-gradient(0deg, #d2d2d2 1px,hsla(0,0%,82%,0) 0)
+}
+
+.form-control, .is-focused .form-control {
+  background-image: linear-gradient(to top, #4BB543 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}

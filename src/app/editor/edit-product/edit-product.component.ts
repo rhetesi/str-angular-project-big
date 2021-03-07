@@ -61,6 +61,7 @@ export class EditProductComponent implements OnInit {
             <th>product description</th>
             <th>product price</th>
             <th>featured</th>
+            <th>active</th>
           </tr>
         </thead>
         <tbody>
@@ -71,6 +72,7 @@ export class EditProductComponent implements OnInit {
             <td>${product.description}</td>
             <td>${product.price}</td>
             <td>${product.featured}</td>
+            <td>${product.active}</td>
           </tr>
         </tbody>
       </table>`,

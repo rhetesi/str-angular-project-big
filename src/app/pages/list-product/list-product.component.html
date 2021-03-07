@@ -1,3 +1,16 @@
+<!-- Search -->
+<div class="form-group no-border d-flex flex-column flex-md-row" id="navbarDropdownMenuLink" role="button">
+  <span class="font-weight-bold text-uppercase col-md-2 pt-2 ml-0 pl-0 ml-md-5">Search by:</span>
+  <select class="form-control border col-12 col-md-3 mr-md-5 my-3 my-md-0" [(ngModel)]="filterKey">
+    <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
+  </select>
+  <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
+  <button type="submit" class="btn btn-white btn-round btn-just-icon">
+    <i class="material-icons">search</i>
+    <div class="ripple-container"></div>
+  </button>
+</div>
+
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -18,17 +31,20 @@
             </button>
           </div>
         </div> -->
-        <div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
+
+        <!-- régi search,  nem reszponzív -->
+        <!-- <div class="input-group no-border d-flex flex-row" id="navbarDropdownMenuLink" role="button">
           <span class="font-weight-bold text-uppercase col-2 pt-2 ml-5">Search by:</span>
           <select class="form-control border col-3 mr-5" [(ngModel)]="filterKey">
             <option *ngFor="let key of filterKeys" [value]="[key]">{{key}}</option>
           </select>
           <input [(ngModel)]="phrase" class="form-control" type="text" placeholder="Search...">
-          <button type="submit" class="btn btn-success btn-round btn-just-icon">
+          <button type="submit" class="btn btn-white btn-round btn-just-icon">
             <i class="material-icons">search</i>
             <div class="ripple-container"></div>
           </button>
-        </div>
+        </div> -->
+
         <div class="card card-plain">
           <div class="card-header">
             <button [routerLink]="[0]" type="button" class="btn btn-success btn-block btn-lg">
@@ -106,6 +122,50 @@
                   </tr>
                 </tbody>
               </table>
+              <!-- Summary -->
+              <div class="card">
+                <div class="card-header card-header-success d-xl-flex flex-row flex-nowrap justify-content-between">
+                  <div>
+                    <h4 class="card-title text-uppercase">customers summary</h4>
+                    <p class="card-category">The status of products</p>
+                  </div>
+                  <div class="d-lg-flex flex-row flex-nowrap justify-content-around bg-white rounded m-1 mt-2 p-1">
+                    <h5 class="card-title font-weight-bold text-success m-3">Choose status!</h5>
+                    <div class="d-md-flex flex-row flex-nowrap">
+                      <div class="m-3">
+                        <label class="m-0" for="all">
+                          <input id="all" class="mx-2 mt-1" type="radio" name="all" [value]="'all'"
+                            [(ngModel)]="choosen" checked>all
+                        </label>
+                      </div>
+                      <div class="m-3" *ngFor="let choise of ['true', 'false']">
+                        <label class="m-0" [for]="choise">
+                          <input [id]="choise" class="mx-2 mt-1" type="radio" name="active" [value]="[choise]"
+                            [(ngModel)]="choosen">{{ choise }}
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover text-center">
+                      <thead class="text-success">
+                        <th>Featured (piece)</th>
+                        <th>Active (piece)</th>
+                      </thead>
+                      <tr>
+                        <td *ngIf="choosen==='all'">{{choosen}}: {{(productList$ | async )?.length}}</td>
+                        <td *ngIf="choosen!=='all'">{{choosen}}: {{(productList$ | async |
+            filter:choosen:'featured')?.length}}</td>
+                        <td *ngIf="choosen==='all'">{{choosen}}: {{(productList$ | async )?.length}}</td>
+                        <td *ngIf="choosen!=='all'">{{choosen}}: {{(productList$ | async |
+            filter:choosen:'active')?.length}}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

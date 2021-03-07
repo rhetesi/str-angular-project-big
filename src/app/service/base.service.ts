@@ -46,6 +46,20 @@ export class BaseService<T extends { id: number }> {
       entity
     );
   }
+
+  /* Eredeti Product.service create & update methodes
+  create(product: Product): void {
+    this.http.post<Product>(`${this.jsonUrl}`, product
+    ).subscribe(() => this.getAll());
+  }
+
+  update(product: Product): Observable<Product> {
+    return this.http.patch<Product>(`${this.jsonUrl}/${product.id}`, product
+    ).pipe(
+      tap(() => this.getAll())
+    );
+  }
+  */
 ​
   remove(entity: T): Observable<T> {
     return this.http.delete<T>(

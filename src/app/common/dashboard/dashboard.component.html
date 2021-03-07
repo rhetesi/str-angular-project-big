@@ -1,60 +1,112 @@
 <div class="row">
-  <div *ngFor="let card of cards" class="col-lg-3 col-md-6 col-sm-6">
+  <div *ngFor="let card of cards" class="col-lg-3 col-md-6 col-sm-6 mb-5">
     <app-info-card [cardClass]="card.cardClass" [icon]="card.icon" [title]="card.title"
-      [content]="card.content | async | number" [footer]="card.footer"></app-info-card>
+      [content]="card.content | async | number:'1.0-0':'en-US'" [footer]="card.footer"></app-info-card>
   </div>
 </div>
-<!-- <div class="row">
-  <div class="col-md-4">
-    <div class="card card-chart">
-      <div class="card-header card-header-success">
-        <div class="ct-chart" id="dailySalesChart"></div>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">Daily Sales</h4>
-        <p class="card-category">
-          <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-      </div>
-      <div class="card-footer">
-        <div class="stats">
-          <i class="material-icons">access_time</i> updated 4 minutes ago
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
+
+<div class="row d-flex flex-row flex-wrap">
+  <div class="col-lg-6 col-xl-4">
     <div class="card card-chart">
       <div class="card-header card-header-warning">
-        <div class="ct-chart" id="websiteViewsChart"></div>
+        <app-pie-chart [pieChartLabels]="customerChartLabels" [pieChartData]="customerChartData"
+          [pieChartColor]="customerChartColor">
+        </app-pie-chart>
       </div>
       <div class="card-body">
-        <h4 class="card-title">Email Subscriptions</h4>
-        <p class="card-category">Last Campaign Performance</p>
-      </div>
-      <div class="card-footer">
-        <div class="stats">
-          <i class="material-icons">access_time</i> campaign sent 2 days ago
-        </div>
+        <h4 class="card-title">Customers</h4>
+        <p class="card-category">
+          <span class="text-warning"><i class="fa fa-long-arrow-up"></i> </span> Active and inactive customers
+        </p>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+
+  <div class="col-lg-6 col-xl-4">
     <div class="card card-chart">
-      <div class="card-header card-header-danger">
-        <div class="ct-chart" id="completedTasksChart"></div>
+      <div class="card-header card-header-success">
+        <app-bar-chart [barChartLabels]="productChartLabels" [barChartData]="productChartData"
+          [barChartColor]="productChartColor">
+        </app-bar-chart>
       </div>
       <div class="card-body">
-        <h4 class="card-title">Completed Tasks</h4>
-        <p class="card-category">Last Campaign Performance</p>
+        <h4 class="card-title">Products</h4>
+        <p class="card-category">
+          <span class="text-success"><i class="fa fa-long-arrow-up"></i> </span> Active and featured products
+        </p>
       </div>
-      <div class="card-footer">
-        <div class="stats">
-          <i class="material-icons">access_time</i> campaign sent 2 days ago
-        </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-xl-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-primary">
+        <app-bar-chart [barChartLabels]="orderChartLabels" [barChartData]="orderChartData"
+          [barChartColor]="orderChartColor">
+        </app-bar-chart>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Orders</h4>
+        <p class="card-category">
+          <span class="text-primary"><i class="fa fa-long-arrow-up"></i> </span> Orders by status
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-xl-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-info">
+        <app-pie-chart [pieChartLabels]="billChartLabels" [pieChartData]="billChartData"
+          [pieChartColor]="billChartColor">
+        </app-pie-chart>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Bills</h4>
+        <p class="card-category">
+          <span class="text-info"><i class="fa fa-long-arrow-up"></i> </span> Number of bills by status
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-xl-4">
+    <div class="card card-chart">
+      <div class="card-header card-header-info">
+        <app-pie-chart [pieChartLabels]="billSumChartLabels" [pieChartData]="billSumChartData"
+          [pieChartColor]="billSumChartColor">
+        </app-pie-chart>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Bills</h4>
+        <p class="card-category">
+          <span class="text-info"><i class="fa fa-long-arrow-up"></i> </span> Sum of bills by status
+        </p>
       </div>
     </div>
   </div>
 </div>
+
+<div class="col-12">
+  <div class="card card-chart">
+    <div class="card-header card-header-success">
+      <app-bar-chart
+      [barChartLabels]="productChartLabels"
+      [barChartData]="productAllChartData"
+      [barChartColor]="productChartColor">
+      </app-bar-chart>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Products</h4>
+      <p class="card-category">
+        <span class="text-success"><i class="fa fa-long-arrow-up"></i> </span> Price of sights
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!--
 <div class="row">
   <div class="col-lg-6 col-md-12">
     <div class="card">
