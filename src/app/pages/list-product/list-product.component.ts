@@ -28,7 +28,7 @@ export class ListProductComponent implements OnInit {
   sortColumn: string = '';
   sortDirect: string = 'asc';
 
-  filterKey: string = 'productID';
+  filterKey: string = 'catID';
   filterKeys: string[] = Object.keys(new Product()).slice(1);
 
   constructor(
