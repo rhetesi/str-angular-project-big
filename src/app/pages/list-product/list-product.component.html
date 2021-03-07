@@ -64,43 +64,81 @@
                   <tr>
                     <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols; index as i" draggable="true"
                       (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
-                      {{col.header}}
-                    <!---<th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      <div class="d-flex flex-row flex-nowrap">
+                        {{col.header}}
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                      </div>
+                      <!---<th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
                       {{col.header}}--->
-                      <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
-                      <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                      <!-- <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                      <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i> -->
                     </th>
                     <th></th>
+                    <!-- <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      <div class="d-flex flex-row flex-nowrap">
+                        {{col.header}}
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                      </div>
+                    </th> -->
+                    <!-- <th></th> -->
 
                     <!-- <th>type</th> -->
 
                   </tr>
                 </thead>
-                  <tbody>
-                    <tr *ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
-                      <ng-container *ngFor="let col of cols; index as i;" draggable="true"
+                <tbody>
+                  <tr
+                    *ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
+                    <ng-container *ngFor="let col of cols; index as i;" draggable="true"
                       (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
                       <ng-container *ngIf="product[cols[0].key]!== 0">
-                        <td *ngIf="col.key !== 'image'">{{product[col.key]}}</td>
-                        <td *ngIf="col.key === 'image'"> 
+                        <td *ngIf="col.key === 'featured'">
+                          <span *ngIf="product.featured" class="material-icons">
+                            done
+                          </span>
+                        </td>
+                        <td *ngIf="col.key === 'active'">
+                          <span *ngIf="product.active" class="material-icons">
+                            done
+                          </span>
+                        </td>
+                        <td *ngIf="col.key !== 'image' && col.key !=='featured' && col.key !=='active'">
+                          {{product[col.key]}}</td>
+                        <td *ngIf="col.key === 'image'">
                           <img class="prod_image" [src]="product.image" [alt]="product.image">
-                        </td>      
+                        </td>
                       </ng-container>
                     </ng-container>
-                  
-                      <!--*ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
-                      <!---<td *ngIf="product.id!==0">{{ product.id }}</td>
+
+                    <!--*ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
+                      <td *ngIf="product.id!==0">{{ product.id }}</td>
                       <td *ngIf="product.id!==0">{{ product.catID }} </td>
                       <td *ngIf="product.id!==0">{{ product.name }}</td>
-                      <td>{{ product.type }}</td> 
+                      <td>{{ product.type }}</td>
                       <td *ngIf="product.id!==0">{{ product.description }}</td>
                       <td *ngIf="product.id!==0">{{ product.price }}</td>
                       <td>{{ product.featured }}</td>
                       <td *ngIf="product.id!==0"><span *ngIf="product.featured" class="material-icons">
+                <tbody>
+                  <tr *ngFor="let product of productList$ | async |  filter:phrase:filterKey | sorter:sortColumn:sortDirect">
+                    <td *ngIf="product.id!==0">{{ product.id }}</td>
+                    <td *ngIf="product.id!==0">{{ product.catID }} </td>
+                    <td *ngIf="product.id!==0">{{ product.name }}</td>
+                    <td>{{ product.type }}</td> -->
+
+                    <!-- <td *ngIf="product.id!==0">{{ product.description }}</td>
+                    <td *ngIf="product.id!==0">{{ product.price }}</td> -->
+
+                    <!-- <td>{{ product.featured }}</td> -->
+
+                    <!-- <td *ngIf="product.id!==0"><span *ngIf="product.featured" class="material-icons">
                         done
                       </span>
                     </td>
-                     <td>{{ product.active }}</td> -->
+                    <td>{{ product.active }}</td> -->
+
                     <!---<td *ngIf="product.id!==0"><span *ngIf="product.active" class="material-icons">
                         done
                       </span></td>
@@ -114,12 +152,12 @@
                         </button>
                         <button (click)="showNotification('top','center', product)" class="btn btn-danger">
                           <i class="material-icons">delete_forever</i>
-                        <!---<button (click)="onDelete(product)" class="btn btn-danger">
+                          <!---<button (click)="onDelete(product)" class="btn btn-danger">
                           <i class="material-icons">delete_forever</i>--->
                         </button>
                       </div>
                     </td>
-                      <!-- Szerkesztés hiányzik, ideiglenesen letiltva
+                    <!-- Szerkesztés hiányzik, ideiglenesen letiltva
                         <td>
                         <div class="btn-group">
                           <button [routerLink]="[product.id]" class="btn btn-success">
@@ -130,8 +168,8 @@
                           </button>
                         </div>
                       </td> -->
-                    </tr>
-                  </tbody>
+                  </tr>
+                </tbody>
               </table>
               <!-- Summary -->
               <div class="card">
