@@ -31,6 +31,8 @@ export class ListBillComponent implements OnInit {
 
   choosen: string = 'all';
 
+  draggedColumnIndex: number = 0;
+
   constructor(
     private billService: BillService,
     private notifyService : NotificationService,
@@ -39,6 +41,23 @@ export class ListBillComponent implements OnInit {
 
   ngOnInit(): void {
     this.billService.getAll();
+  }
+
+  public arrayMove(arr: any[], from: number, to: any) {
+    let cutOut = arr.splice(from, 1)[0]; // remove the dragged element at index 'from'
+    arr.splice(to, 0, cutOut);            // insert it at index 'to'
+  }
+
+  public dragStartColumn(index: any) {
+    this.draggedColumnIndex = index;
+  }
+
+  public allowDrop(event: any) {
+    event.preventDefault();
+  }
+
+  public dropColumn(index: any) {
+    this.arrayMove(this.cols, this.draggedColumnIndex, index);
   }
 
   showNotification(from: string, align: string, bill: Bill) {
@@ -113,11 +132,19 @@ export class ListBillComponent implements OnInit {
       5000)
   }
 
+  currentHead: string = 'id';
+
   onColumnSelect(columnHead: string): void{
     this.sortColumn = columnHead;
-    this.direction = !this.direction;
-    this.sortDirect == 'asc' ?
-    this.sortDirect = 'dsc' :
-    this.sortDirect = 'asc';
+    if (columnHead !== this.currentHead) {
+      this.sortDirect = 'asc'
+    }
+    // this.direction = !this.direction;
+    if (columnHead == this.currentHead) {
+      this.sortDirect == 'asc' ?
+      this.sortDirect = 'dsc' :
+        this.sortDirect = 'asc';
+    }
+    this.currentHead = columnHead;
     }
 }

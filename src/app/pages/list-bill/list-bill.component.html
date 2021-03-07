@@ -34,30 +34,38 @@
               <table class="table table-hover">
                 <thead class="text-info">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)"
-                        *ngFor="let col of cols">
+                    <!-- <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols; index as i" draggable="true"
+                        (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
                         {{col.header}}
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
-                        class="material-icons">expand_more</i>
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
-                        class="material-icons">expand_less</i>
-                      </th>
-                      <th></th>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i> -->
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols ; index as i" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
+                      <div class="d-flex flex-row flex-nowrap">
+                        {{col.header}}
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                      </div>
+                    </th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let bill of billList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
-                    <td *ngIf="bill.id!==0">{{bill.orderID}} </td>
-                    <td *ngIf="bill.id!==0">{{bill.amount}}</td>
-                    <td *ngIf="bill.id!==0">
-                      <span *ngIf="bill.status==='new'" class="material-icons">
-                        fiber_new
-                      </span>
-                      <span *ngIf="bill.status==='paid'" class="material-icons">
-                        paid
-                      </span>
-                      <!-- {{bill.status}} -->
-                    </td>
+                    <ng-container *ngFor="let col of cols; index as i;" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
+                      <ng-container *ngIf="bill[cols[0].key]!== 0">
+                        <td *ngIf="col.key !== 'status'">{{bill[col.key]}}</td>
+                        <td *ngIf="col.key === 'status'">
+                          <span *ngIf="bill.status==='new'" class="material-icons">
+                            fiber_new
+                          </span>
+                          <span *ngIf="bill.status==='paid'" class="material-icons">
+                            paid
+                          </span>
+                        </td>
+                      </ng-container>
+                    </ng-container>
                     <td *ngIf="bill.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[bill.id]" class="btn btn-info">

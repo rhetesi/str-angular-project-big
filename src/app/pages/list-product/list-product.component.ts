@@ -32,7 +32,7 @@ export class ListProductComponent implements OnInit {
   choosen: string = 'all';
 
   draggedColumnIndex: number = 0;
-  
+
   constructor(
     private productService: ProductService,
     private notifyService: NotificationService,
@@ -146,15 +146,23 @@ export class ListProductComponent implements OnInit {
       "You have deleted this product:",
       5000)
   }
-    
+
+
+  currentHead: string = 'id';
 
   onColumnSelect(columnHead: string): void{
     this.sortColumn = columnHead;
-    this.direction = !this.direction;
-    this.sortDirect == 'asc' ?
-    this.sortDirect = 'dsc' :
-    this.sortDirect = 'asc';
-  }
+    if (columnHead !== this.currentHead) {
+      this.sortDirect = 'asc'
+    }
+    // this.direction = !this.direction;
+    if (columnHead == this.currentHead) {
+      this.sortDirect == 'asc' ?
+      this.sortDirect = 'dsc' :
+        this.sortDirect = 'asc';
+    }
+    this.currentHead = columnHead;
+    }
 
 }
 

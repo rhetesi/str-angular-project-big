@@ -32,6 +32,8 @@ export class ListCustomerComponent implements OnInit {
 
   choosen: string = 'all';
 
+  draggedColumnIndex: number = 0;
+
   constructor(
     private customerService: CustomerService,
     private notifyService : NotificationService,
@@ -41,6 +43,23 @@ export class ListCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerService.getAll();
+  }
+
+  public arrayMove(arr: any[], from: number, to: any) {
+    let cutOut = arr.splice(from, 1)[0]; // remove the dragged element at index 'from'
+    arr.splice(to, 0, cutOut);            // insert it at index 'to'
+  }
+
+  public dragStartColumn(index: any) {
+    this.draggedColumnIndex = index;
+  }
+
+  public allowDrop(event: any) {
+    event.preventDefault();
+  }
+
+  public dropColumn(index: any) {
+    this.arrayMove(this.cols, this.draggedColumnIndex, index);
   }
 
   showNotification(from: string, align: string, customer: Customer) {
@@ -71,32 +90,30 @@ export class ListCustomerComponent implements OnInit {
           </div>
           <a href="{3}" target="{4}" data-notify="url"></a>
           <br>
-          <table class="table">
-            <thead>
-              <tr>
-              <th>id</th>
-              <th>firstName</th>
-              <th>lastName</th>
-              <th>email</th>
-              <th>address</th>
-              <th>active</th>
-              <th>Notes</th>
+          <table class="table-responsive table-bordered">
+          <thead>
+            <tr>
 
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-              <td>${customer.id}</td>
-              <td>${customer.firstName} </td>
-              <td>${customer.lastName}</td>
-              <td>${customer.email}</td>
-              <td>${customer.address}</td>
-              <td>${customer.active}</td>
-              <td>${customer.address.notes}</td>
-
-              </tr>
-            </tbody>
-          </table>
+            <th scope="col">firstName</th>
+            <th scope="col">lastName</th>
+            <th scope="col">email</th>
+            <th scope="col">address</th>
+            <th scope="col">active</th>
+            <th scope="col">notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td scope="row">${customer.firstName} </td>
+            <td scope="row">${customer.lastName}</td>
+            <td scope="row">${customer.email}</td>
+            <td scope="row">${customer.address.zip+customer.address.country+customer.address.city+customer.address.street}</td>
+            <td scope="row">${customer.active}</td>
+            <td scope="row">${customer.address.notes}</td>
+            <td></td>
+            </tr>
+          </tbody>
+        </table>
           </div>`
     });
   }
@@ -108,28 +125,26 @@ export class ListCustomerComponent implements OnInit {
    onDelete(customer: Customer) {
     this.customerService.remove(customer);
     this.notifyService.showSuccessWithTimeout(`
-      <table class="table">
-        <thead>
-          <tr>
-          <th>id</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>active</th>
-          <th>Notes</th>
-
-          </tr>
-        </thead>
-        <tbody>
+    <table class="table-responsive table-bordered">
+    <thead>
+      <tr>
+      <th scope="col">firstName</th>
+      <th scope="col">lastName</th>
+      <th scope="col">email</th>
+      <th scope="col">address</th>
+      <th scope="col">active</th>
+      <th scope="col">notes</th>
+      </tr>
+    </thead>
+    <tbody>
           <tr class="text-danger>
-          <td>${customer.id}</td>
-          <td>${customer.firstName} </td>
-          <td>${customer.lastName}</td>
-          <td>${customer.email}</td>
-          <td>${customer.address}</td>
-          <td>${customer.address.notes}</td>
-
+          <td scope="row">${customer.firstName} </td>
+          <td scope="row">${customer.lastName}</td>
+          <td scope="row">${customer.email}</td>
+          <td scope="row">${customer.address.zip+customer.address.country+customer.address.city+customer.address.street}</td>
+          <td scope="row">${customer.active}</td>
+          <td scope="row">${customer.address.notes}</td>
+          <td></td>
           </tr>
         </tbody>
       </table>
@@ -149,25 +164,28 @@ export class ListCustomerComponent implements OnInit {
 
 
      this.notifyService.showSuccessWithTimeout(`
-      <table class="table">
+      <table class="table-responsive table-bordered">
         <thead>
           <tr>
-          <th>id</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Notes</th>
+
+          <th scope="col">firstName</th>
+      <th scope="col">lastName</th>
+      <th scope="col">email</th>
+      <th scope="col">address</th>
+      <th scope="col">active</th>
+      <th scope="col">notes</th>
           </tr>
         </thead>
         <tbody>
           <tr class="text-danger>
-          <td>${customer.id}</td>
-          <td>${customer.firstName} </td>
-          <td>${customer.lastName}</td>
-          <td>${customer.email}</td>
-          <td>${customer.address}</td>
-          <td>${customer.address.notes}</td>
+
+          <td scope="row">${customer.firstName} </td>
+          <td scope="row">${customer.lastName}</td>
+          <td scope="row">${customer.email}</td>
+          <td scope="row">${customer.address.zip+customer.address.country+customer.address.city+customer.address.street}</td>
+          <td scope="row">${customer.active}</td>
+          <td scope="row">${customer.address.notes}</td>
+          <td></td>
           </tr>
         </tbody>
       </table>
@@ -176,12 +194,20 @@ export class ListCustomerComponent implements OnInit {
       10000)
   }
 
+  currentHead: string = 'id';
+
   onColumnSelect(columnHead: string): void{
     this.sortColumn = columnHead;
-    this.direction = !this.direction;
-    this.sortDirect == 'asc' ?
-    this.sortDirect = 'dsc' :
-    this.sortDirect = 'asc';
+    if (columnHead !== this.currentHead) {
+      this.sortDirect = 'asc'
+    }
+    // this.direction = !this.direction;
+    if (columnHead == this.currentHead) {
+      this.sortDirect == 'asc' ?
+      this.sortDirect = 'dsc' :
+        this.sortDirect = 'asc';
+    }
+    this.currentHead = columnHead;
     }
 
 }
