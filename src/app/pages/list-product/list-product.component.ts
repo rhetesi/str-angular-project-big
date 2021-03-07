@@ -77,7 +77,7 @@ export class ListProductComponent implements OnInit {
             from: from,
             align: align
         },
-        template: `<div data-notify="container" class="col-xl-4 col-lg-4 col-11 col-sm-4 col-md-4 alert alert-{0} alert-with-icon" role="alert">
+        template: `<div data-notify="container" class="col-xl-6 col-lg-4 col-11 col-sm-4 col-md-4 alert alert-{0} alert-with-icon" role="alert">
           <button mat-button  type="button" aria-hidden="true" class="close mat-button" data-notify="dismiss">  <i class="material-icons">close</i></button>
           <i class="material-icons" data-notify="icon">notifications</i>
           <span data-notify="title">{1}</span>
@@ -93,7 +93,7 @@ export class ListProductComponent implements OnInit {
                 <th>productID</th>
                 <th>catID</th>
                 <th>name</th>
-                <th>description</td>
+                <th>description</th>
                 <th>price</th>
                 <th>featured</th>
                 <th>active</th>
