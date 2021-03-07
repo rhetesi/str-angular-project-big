@@ -56,7 +56,7 @@
             <label for="">Email <span>*</span></label>
           </div>
           <input name="email" [(ngModel)]="customer.email" type="email" class="form-control"
-            pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,6}" required />
+            pattern="[\w\.]+@([\w-]+\.)+[\w-]{2,6}" required />
         </div>
         <div [hidden]="customerForm.controls.email?.valid" class="error-message mt-1">
           Email that must be in the following order: characters@characters.domain
