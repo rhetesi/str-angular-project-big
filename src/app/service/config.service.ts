@@ -16,7 +16,7 @@ export class ConfigService {
   apiUrl: string = 'http://localhost:3000';
 
   customerTableCols: ITableCol[] = [
-    { key: 'id', header: 'Customer ID'},
+    // { key: 'id', header: 'Customer ID'},
     { key: 'firstName', header: 'First Name'},
     { key: 'lastName', header: 'Last Name'},
     { key: 'email', header: 'Email'},
@@ -26,7 +26,7 @@ export class ConfigService {
   ];
 
   productTableCols: ITableCol[] = [
-    { key: 'id', header: 'Product ID'},
+    // { key: 'id', header: 'Product ID'},
     { key: 'catID', header: 'Cat ID'},
     { key: 'name', header: 'Name'},
     { key: 'description', header: 'Description'},
@@ -37,7 +37,7 @@ export class ConfigService {
   ];
 
   orderTableCols: ITableCol[] = [
-    { key: 'id', header: 'Order ID'},
+    // { key: 'id', header: 'Order ID'},
     { key: 'customerID', header: 'Customer ID'},
     { key: 'productID', header: 'Product ID'},
     { key: 'amount', header: 'Amount'},
@@ -45,7 +45,7 @@ export class ConfigService {
   ];
 
   billTableCols: ITableCol[] = [
-    { key: 'id', header: 'Bill ID'},
+    // { key: 'id', header: 'Bill ID'},
     { key: 'orderID', header: 'Order ID'},
     { key: 'amount', header: 'Amount'},
     { key: 'status', header: 'Status'},

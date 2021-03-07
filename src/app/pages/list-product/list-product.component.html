@@ -93,7 +93,7 @@
                     *ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
                     <ng-container *ngFor="let col of cols; index as i;" draggable="true"
                       (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
-                      <ng-container *ngIf="product[cols[0].key]!== 0">
+                      <ng-container *ngIf="product[cols[0].key]!= 0">
                         <td *ngIf="col.key === 'featured'">
                           <span *ngIf="product.featured" class="material-icons">
                             done
