@@ -29,10 +29,6 @@ export class EditCustomerComponent implements OnInit {
 
   customer: Customer = new Customer();
 
-  
- 
-
-
 
   clicked: boolean = false;
   category: string = 'new';
@@ -97,31 +93,35 @@ export class EditCustomerComponent implements OnInit {
           </div>
           <a href="{3}" target="{4}" data-notify="url"></a>
           <br>
-          <table class="table">
+
+         
+          <table class="table-responsive table-bordered">
             <thead>
               <tr>
-              <th>id</th> 
-              <th>firstName</th>
-              <th>lastName</th>
-              <th>email</th>
-              <th>address</th>
-              <th>active</th>
-              <th>notes</th>
+              
+              <th scope="col">firstName</th>
+              <th scope="col">lastName</th>
+              <th scope="col">email</th>
+              <th scope="col">address</th>
+              <th scope="col">active</th>
+              <th scope="col">notes</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-              <td>${customer.id}</td>
-              <td>${customer.firstName} </td>
-              <td>${customer.lastName}</td>
-              <td>${customer.email}</td>
-              <td>${customer.address}</td>
-              <td>${customer.active}</td>
-              <td>${customer.address.notes}</td>
+              
+              <td scope="row">${customer.firstName} </td>
+              <td scope="row">${customer.lastName}</td>
+              <td scope="row">${customer.email}</td>
+              
+              <td scope="row">${customer.address.zip+customer.address.country+customer.address.city+customer.address.street}</td>
+              <td scope="row">${customer.active}</td>
+              <td scope="row">${customer.address.notes}</td>
               <td></td>
               </tr>
             </tbody>
           </table>
+          
           </div>`
     });
   }
@@ -143,7 +143,7 @@ export class EditCustomerComponent implements OnInit {
       <table class="table">
         <thead>
           <tr>
-            <th>id</th> 
+            
             <th>firstName</th>
             <th>lastName</th>
             <th>email</th>
@@ -156,11 +156,11 @@ export class EditCustomerComponent implements OnInit {
         </thead>
         <tbody>
           <tr class="text-success">
-            <td>${customer.id}</td>
+            
             <td>${customer.firstName} </td>
             <td>${customer.lastName}</td>
             <td>${customer.email}</td>
-            <td>${customer.address}</td>
+            <td>${customer.address.zip+customer.address.country+customer.address.city+customer.address.street}</td>
             <td>${customer.active}</td>
             <td>${customer.address.notes}</td>
             <td></td>
