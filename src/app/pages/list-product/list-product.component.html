@@ -62,8 +62,11 @@
               <table class="table table-hover">
                 <thead class=" text-success">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols; index as i" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
                       {{col.header}}
+                    <!---<th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      {{col.header}}--->
                       <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
                       <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
                     </th>
@@ -73,51 +76,62 @@
 
                   </tr>
                 </thead>
-                <tbody>
-                  <!-- <tr *ngFor="let product of productList$ | async | sorter:sortColumn:sortDirect"> -->
-                  <tr
-                    *ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
-                    <td *ngIf="product.id!==0">{{ product.id }}</td>
-                    <td *ngIf="product.id!==0">{{ product.catID }} </td>
-                    <td *ngIf="product.id!==0">{{ product.name }}</td>
-                    <!-- <td>{{ product.type }}</td> -->
-                    <td *ngIf="product.id!==0">{{ product.description }}</td>
-                    <td *ngIf="product.id!==0">{{ product.price }}</td>
-                    <!-- <td>{{ product.featured }}</td> -->
-                    <td *ngIf="product.id!==0"><span *ngIf="product.featured" class="material-icons">
+                  <tbody>
+                    <tr *ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
+                      <ng-container *ngFor="let col of cols; index as i;" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
+                      <ng-container *ngIf="product[cols[0].key]!== 0">
+                        <td *ngIf="col.key !== 'image'">{{product[col.key]}}</td>
+                        <td *ngIf="col.key === 'image'"> 
+                          <img class="prod_image" [src]="product.image" [alt]="product.image">
+                        </td>      
+                      </ng-container>
+                    </ng-container>
+                  
+                      <!--*ngFor="let product of productList$ | async | filter:phrase:filterKey | sorter:sortColumn:sortDirect">
+                      <!---<td *ngIf="product.id!==0">{{ product.id }}</td>
+                      <td *ngIf="product.id!==0">{{ product.catID }} </td>
+                      <td *ngIf="product.id!==0">{{ product.name }}</td>
+                      <td>{{ product.type }}</td> 
+                      <td *ngIf="product.id!==0">{{ product.description }}</td>
+                      <td *ngIf="product.id!==0">{{ product.price }}</td>
+                      <td>{{ product.featured }}</td>
+                      <td *ngIf="product.id!==0"><span *ngIf="product.featured" class="material-icons">
                         done
                       </span>
                     </td>
-                    <!-- <td>{{ product.active }}</td> -->
-                    <td *ngIf="product.id!==0"><span *ngIf="product.active" class="material-icons">
+                     <td>{{ product.active }}</td> -->
+                    <!---<td *ngIf="product.id!==0"><span *ngIf="product.active" class="material-icons">
                         done
                       </span></td>
                     <td *ngIf="product.id!==0">
                       <img class="prod_image" [src]="product.image" [alt]="product.image">
-                    </td>
+                    </td>---->
                     <td *ngIf="product.id!==0">
                       <div class="btn-group">
                         <button [routerLink]="[product.id]" class="btn btn-success">
                           <i class="material-icons">create</i>
                         </button>
-                        <button (click)="onDelete(product)" class="btn btn-danger">
+                        <button (click)="showNotification('top','center', product)" class="btn btn-danger">
                           <i class="material-icons">delete_forever</i>
+                        <!---<button (click)="onDelete(product)" class="btn btn-danger">
+                          <i class="material-icons">delete_forever</i>--->
                         </button>
                       </div>
                     </td>
-                    <!-- Szerkesztés hiányzik, ideiglenesen letiltva
-                      <td>
-                      <div class="btn-group">
-                        <button [routerLink]="[product.id]" class="btn btn-success">
-                          <i class="material-icons">create</i>
-                        </button>
-                        <button (click)="onDelete(product)" class="btn btn-danger">
-                          <i class="material-icons">delete_forever</i>
-                        </button>
-                      </div>
-                    </td> -->
-                  </tr>
-                </tbody>
+                      <!-- Szerkesztés hiányzik, ideiglenesen letiltva
+                        <td>
+                        <div class="btn-group">
+                          <button [routerLink]="[product.id]" class="btn btn-success">
+                            <i class="material-icons">create</i>
+                          </button>
+                          <button (click)="onDelete(product)" class="btn btn-danger">
+                            <i class="material-icons">delete_forever</i>
+                          </button>
+                        </div>
+                      </td> -->
+                    </tr>
+                  </tbody>
               </table>
               <!-- Summary -->
               <div class="card">

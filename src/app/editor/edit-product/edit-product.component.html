@@ -103,8 +103,12 @@
           </div>
         </div>
 
-        <button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit"
+        <!--<button [disabled]="productForm.invalid || clicked" (click)="showHtmlToaster(product)" type="submit"
           class="btn btn-success btn-block btn-lg mt-2">
+          <i *ngIf="!clicked" class="fa fa-save"></i>
+          <i *ngIf="clicked" class="fa fa-refresh"></i>
+        </button>--->
+        <button [disabled]="productForm.invalid || clicked" (click)="showNotification('top','center', product)" type="submit" class="btn btn-success btn-block btn-lg mt-2">
           <i *ngIf="!clicked" class="fa fa-save"></i>
           <i *ngIf="clicked" class="fa fa-refresh"></i>
         </button>
