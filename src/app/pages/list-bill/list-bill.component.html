@@ -36,11 +36,11 @@
                   <tr>
                     <th (click)="onColumnSelect(col.key)"
                         *ngFor="let col of cols">
-                        {{col.header}}
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
-                        class="material-icons">expand_more</i>
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
-                        class="material-icons">expand_less</i>
+                        <div class="d-flex flex-row flex-nowrap">
+                          {{col.header}}
+                          <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                          <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
+                        </div>
                       </th>
                       <th></th>
                   </tr>
