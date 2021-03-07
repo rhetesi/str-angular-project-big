@@ -34,17 +34,15 @@
               <table class="table table-hover">
                 <thead class=" text-primary">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)"
-                        *ngFor="let col of cols">
-                        <div class="d-flex flex-row flex-nowrap">
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols; index as i" draggable="true"
+                      (dragstart)="dragStartColumn(i)" (dragover)="allowDrop($event)" (drop)="dropColumn(i)">
+                      <div class="d-flex flex-row flex-nowrap">
                         {{col.header}}
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'"
-                        class="material-icons">expand_more</i>
-                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'"
-                        class="material-icons">expand_less</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'asc'" class="material-icons">expand_more</i>
+                        <i *ngIf="sortColumn === col.key && sortDirect === 'dsc'" class="material-icons">expand_less</i>
                       </div>
-                      </th>
-                      <th></th>
+                    </th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
