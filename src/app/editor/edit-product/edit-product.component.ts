@@ -15,14 +15,14 @@ declare var $: any;
   styleUrls: ['./edit-product.component.scss']
 })
 export class EditProductComponent implements OnInit {
-  
+
   product$: Observable<Product> = this.activatedRoute.params.pipe(
     switchMap( params => this.productService.get(params.id))
   );
 
 
   clicked: boolean = false;
-  
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
@@ -43,7 +43,7 @@ export class EditProductComponent implements OnInit {
           () => this.router.navigate(['products'])
         );
       }
-      console.log('onUpdate:',form.value, product)
+      //console.log('onUpdate:',form.value, product)
   }
   showNotification(from:string, align:string, product: Product){
     const type = ['','info','success','warning','danger'];
@@ -53,7 +53,7 @@ export class EditProductComponent implements OnInit {
       title = "You have added this new product:";
       color = 1;
     }
-  
+
     $.notify({
         icon: "notifications",
         message: title
@@ -102,7 +102,7 @@ export class EditProductComponent implements OnInit {
           </div>`
       });
     }
-  
+
     showHtmlToaster(product: Product) {
       let title: string = "You have updated this order:";
       if (!product.id) {
@@ -138,7 +138,7 @@ export class EditProductComponent implements OnInit {
         title,
         5000)
     }
-  
+
 }
-  
+
 

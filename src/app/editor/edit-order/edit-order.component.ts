@@ -43,7 +43,7 @@ export class EditOrderComponent implements OnInit {
           () => this.router.navigate(['orders'])
           );
         }
-        console.log('onUpdate:',form.value, order)
+        //console.log('onUpdate:',form.value, order)
   }
 
   showNotification(from:string, align:string, order: Order){

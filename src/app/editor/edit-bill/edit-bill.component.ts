@@ -43,7 +43,7 @@ export class EditBillComponent implements OnInit {
           () => this.router.navigate(['bills'])
           );
         }
-        console.log('onUpdate:',form.value, bill)
+        // console.log('onUpdate:',form.value, bill)
   }
 
   showNotification(from:string, align:string, bill: Bill){

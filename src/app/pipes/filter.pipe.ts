@@ -18,7 +18,7 @@ export class FilterPipe implements PipeTransform {
       }
 
       if (key === 'zip' || key === 'country' || key === 'city' || key === 'street' || key === 'notes') {
-        console.log('object', item.address)
+        //console.log('object', item.address)
         for (let key1 in item.address) {
           if (key1 === key) {
             const strItem: string = ('' + item.address[key1]).toLowerCase();

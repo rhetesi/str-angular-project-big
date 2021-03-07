@@ -39,7 +39,7 @@ export class ListCustomerComponent implements OnInit {
     private notifyService : NotificationService,
     private toastr: ToastrService,
     private configService: ConfigService,
-  ) { console.log(this.filterKeys);}
+  ) { /*console.log(this.filterKeys);*/}
 
   ngOnInit(): void {
     this.customerService.getAll();
@@ -159,7 +159,7 @@ export class ListCustomerComponent implements OnInit {
   onCreate(customer: Customer) {
     const newCustomer: Customer = new Customer
   newCustomer.id = 0;
-  console.log(newCustomer)
+  // console.log(newCustomer)
   this.customerService.create(newCustomer);
 
 

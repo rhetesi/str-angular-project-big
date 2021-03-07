@@ -225,7 +225,7 @@ export class DashboardComponent implements OnInit {
 
         this.billChartData[0].data = [newBills, paidBills];
         this.billSumChartData[0].data = [newBillsSum, paidBillsSum];
-        console.log(this.billChartData)
+        // console.log(this.billChartData)
       }
     );
 
@@ -258,7 +258,7 @@ export class DashboardComponent implements OnInit {
         this.productChartData[0].data = [ activeProducts ];
         this.productChartData[1].data = [ featuredProducts ];
         this.productChartData[2].data = [ activeAndFeaturedProducts ];
-        console.log(this.productAllChartData, this.productAllChartLabels)
+        // console.log(this.productAllChartData, this.productAllChartLabels)
       }
     );
 
