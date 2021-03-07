@@ -143,7 +143,7 @@ export class ListProductComponent implements OnInit {
         </tbody>
       </table>
       </span>`,
-      "You have deleted this event:",
+      "You have deleted this product:",
       5000)
   }
     
