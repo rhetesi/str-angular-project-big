@@ -93,7 +93,7 @@ export class ListCustomerComponent implements OnInit {
           <table class="table-responsive table-bordered">
           <thead>
             <tr>
-            
+
             <th scope="col">firstName</th>
             <th scope="col">lastName</th>
             <th scope="col">email</th>
@@ -167,7 +167,7 @@ export class ListCustomerComponent implements OnInit {
       <table class="table-responsive table-bordered">
         <thead>
           <tr>
-          
+
           <th scope="col">firstName</th>
       <th scope="col">lastName</th>
       <th scope="col">email</th>
@@ -178,7 +178,7 @@ export class ListCustomerComponent implements OnInit {
         </thead>
         <tbody>
           <tr class="text-danger>
-          
+
           <td scope="row">${customer.firstName} </td>
           <td scope="row">${customer.lastName}</td>
           <td scope="row">${customer.email}</td>
@@ -194,12 +194,20 @@ export class ListCustomerComponent implements OnInit {
       10000)
   }
 
+  currentHead: string = 'id';
+
   onColumnSelect(columnHead: string): void{
     this.sortColumn = columnHead;
-    this.direction = !this.direction;
-    this.sortDirect == 'asc' ?
-    this.sortDirect = 'dsc' :
-    this.sortDirect = 'asc';
+    if (columnHead !== this.currentHead) {
+      this.sortDirect = 'asc'
+    }
+    // this.direction = !this.direction;
+    if (columnHead == this.currentHead) {
+      this.sortDirect == 'asc' ?
+      this.sortDirect = 'dsc' :
+        this.sortDirect = 'asc';
+    }
+    this.currentHead = columnHead;
     }
 
 }
